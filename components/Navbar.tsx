@@ -1,3 +1,5 @@
+// This Navbar component is configured only for light theme.
+// Need to configure for the Dark theme to proper visuals
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { FaTimes } from 'react-icons/fa';
