@@ -25,15 +25,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} max-w-full overflow-x-hidden antialiased`}
       >
         <ThemeProvider
             attribute="class"
             defaultTheme="light"
           >
-          {children}
+          <div className="max-w-full overflow-x-hidden">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

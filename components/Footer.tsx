@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebookF, FaTwitter, FaYoutube, FaUser } from 'react-ic
 
 export default function Footer() {
   return (
-    <div className='overflow-x-hidden p-[12px] md:p-[24px] lg:p-[45px]' style={{ backgroundColor: 'black', color: 'white' }}>
+    <div className='p-[12px] md:p-[24px] lg:p-[45px]' style={{ backgroundColor: 'black', color: 'white' }}>
       {/* Header Section */}
       <div className='flex flex-col md:flex-row md:justify-between lg:justify-between'>
         <div className='p-[12px] text-white md:p-0' style={{ fontFamily: 'Poppins' }}>
@@ -32,11 +32,11 @@ export default function Footer() {
       <div className='grid grid-cols-1 gap-4 md:grid-cols-12'>
         <div className='flex justify-center text-center md:col-span-4 md:text-left' style={{ fontFamily: 'Poppins' }}>
           <div>
-            <Image width={500} height={500} src={'/assets/newevplogo.png'} alt="EVP Logo" className="h-auto w-80 object-contain" />
+            <Image width={500} height={500} src={'/assets/newevplogo.png'} alt="EVP Logo" className="size-auto max-w-[80%] object-contain md:w-80" />
             <p className="mt-4">Incubating India - for the world!</p>
           </div>
         </div>
-        <div className='flex justify-center space-x-8 font-[Poppins] md:col-span-8'>
+        <div className='flex flex-wrap justify-center space-x-4 font-[Poppins] md:col-span-8 md:space-x-8'>
           <div className='p-4'>
             <ul className='space-y-2'>
               <li>About Us</li>
