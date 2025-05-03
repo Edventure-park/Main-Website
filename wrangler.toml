@@ -1,5 +1,5 @@
-name = "your-app-name"
-compatibility_date = "2024-07-29"
+name = "edventure-park-main-website"
+compatibility_date = "2025-07-29"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
 
