@@ -1,0 +1,40 @@
+{
+    "extends": [
+      "next/core-web-vitals",
+      "prettier",
+      "plugin:tailwindcss/recommended"
+    ],
+    "plugins": ["react", "unused-imports"],
+    "rules": {
+      "newline-before-return": "error",
+      "tailwindcss/no-custom-classname": "off",
+      "padded-blocks": ["error", { "blocks": "never" }],
+      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+      "react/jsx-indent": ["error", 2],
+      "react/jsx-no-useless-fragment": "error",
+      "react/jsx-newline": ["error", { "prevent": true }],
+      "unused-imports/no-unused-imports": "error",
+      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index"
+          ],
+          "newlines-between": "always"
+        }
+      ],
+      "import/no-duplicates": "error", // Prevents duplicate imports
+      "import/newline-after-import": ["error", { "count": 1 }], // Ensures newline after import statements
+      "import/no-useless-path-segments": "error", // Prevents unnecessary path segments in imports
+      "import/no-unresolved": "error", // Prevents unresolved imports
+      "import/first": "error", // Ensures that imports are at the top of the file
+      "import/no-named-as-default": "error", // Prevents using the same name as default export
+      "import/no-cycle": ["error", { "maxDepth": 1 }] // Prevents circular dependencies in imports
+    }
+  }

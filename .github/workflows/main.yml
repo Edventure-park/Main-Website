@@ -1,0 +1,51 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - dev
+      - test
+      - main
+  pull_request:
+    branches:
+      - dev
+      - test
+      - main
+
+jobs:
+  lint:
+    name: ES-Lint Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: "latest"
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run ES-Lint
+        run: bun run lint
+
+  build:
+    name: Build Next.js Application
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: "latest"
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build Next.js
+        run: bun run build
