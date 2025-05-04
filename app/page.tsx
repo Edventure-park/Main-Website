@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar"
@@ -6,6 +8,18 @@ export default function Home() {
   return (
     <>
       <Navbar currentPage="home"/>
+      <center>
+        <Image src={'/assets/'} alt="Edventurepark-Aim" />
+      </center>
+      <div className="text-center">
+        <p className="text-3xl font-medium">Giving India</p>
+        <p className="text-5xl font-bold text-green-700">Its True</p>
+        <p className="text-3xl font-medium">
+          Student-Startup{" "}
+          <span className="text-6xl font-extrabold text-green-700">UNICORN</span>
+        </p>
+      </div>
+      <br />
       <div className="mb-4 bg-emerald-600 p-4">
         <div className="flex flex-col items-center md:flex-row">
           <div className="w-full text-white md:w-1/2">
