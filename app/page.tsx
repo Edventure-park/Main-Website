@@ -6,6 +6,30 @@ export default function Home() {
   return (
     <>
       <Navbar currentPage="home"/>
+      <div className="mb-4 bg-emerald-600 p-4">
+        <div className="flex flex-col items-center md:flex-row">
+          <div className="w-full text-white md:w-1/2">
+            <p className="mb-4 text-5xl font-bold md:text-6xl lg:text-7xl">
+              450+
+            </p>
+            <p
+              className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl"
+              style={{ color: "black" }}
+            >
+              Student entrepreneurs
+            </p>
+            <p className="mb-4 text-5xl font-bold md:text-6xl lg:text-7xl">
+              9 Million
+            </p>
+            <p
+              className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl"
+              style={{ color: "black" }}
+            >
+              Investment Raised
+            </p>
+          </div>
+        </div>
+      </div>
       <FAQ/>
       <div className="flex w-full flex-col items-center bg-emerald-600 py-24">
         <h2 className="font-poppins max-w-3xl px-4 text-center text-2xl leading-tight text-black sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
