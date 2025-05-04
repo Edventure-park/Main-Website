@@ -8,9 +8,17 @@ export default function Home() {
   return (
     <>
       <Navbar currentPage="home"/>
-      <center>
-        <Image src={'/assets/'} alt="Edventurepark-Aim" />
-      </center>
+      <div className="w-full">
+        <Image 
+      src="/assets/heroSection.png" 
+      alt="Edventurepark-Aim" 
+      width={500} 
+      height={500} 
+      className="h-auto w-full"
+      />
+      </div>
+      <br />
+      <br />
       <div className="text-center">
         <p className="text-3xl font-medium">Giving India</p>
         <p className="text-5xl font-bold text-green-700">Its True</p>
