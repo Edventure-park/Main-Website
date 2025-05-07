@@ -6,10 +6,10 @@ import Navbar from "@/components/Navbar"
 import Incubation_info from "@/components/home/Incubation-Info";
 import Apply_Process from "@/components/home/Apply-Process";
 import Founders_Collage from "@/components/home/Founders-Collage";
-import What_To_Expect from "@/components/home/What-To-Expect";
 import Headlines from "@/components/home/Headlines";
 import Partners from "@/components/home/Partners";
 import PostGrid from "@/components/home/PostGrid";
+import { What_To_Expect } from "@/components/home/What-To-Expect";
 
 export default function Home() {
   return (
