@@ -3,10 +3,10 @@ import Image from 'next/image';
 import React from 'react';
 
 // News images
-const news1 = "/assets/news/News1.png";
-const news2 = "/assets/news/News2.png";
-const news3 = "/assets/news/News3.png";
-const news4 = "/assets/news/News4.png";
+const news1 = "/assets/news/news1.png";
+const news2 = "/assets/news/news2.png";
+const news3 = "/assets/news/news3.png";
+const news4 = "/assets/news/news4.png";
 
 // News data array
 const newsImages = [
