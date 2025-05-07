@@ -89,7 +89,7 @@ const Partners: React.FC = () => {
   return (
     <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-left text-3xl font-bold text-black">Our <strong className="text-blue-600">Partners</strong></h2>
+        <h2 className="mb-12 text-left text-3xl font-bold text-gray-900">Our <strong className="text-black">Partners</strong></h2>
         <div 
           ref={outerContainerRef}
           className="relative w-full overflow-hidden py-8"
