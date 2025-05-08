@@ -115,7 +115,11 @@ export default function RootLayout({
         <link rel="canonical" href={metadata.alternates?.canonical} />
       </Head>
       <body className="max-w-full overflow-x-hidden antialiased">
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" 
+        defaultTheme="light" 
+        enableSystem={false} 
+        forcedTheme="light"
+        >
           <div className="max-w-full overflow-x-hidden">{children}</div>
         </ThemeProvider>
       </body>
