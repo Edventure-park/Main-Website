@@ -10,6 +10,7 @@ import Headlines from "@/components/home/Headlines";
 import Partners from "@/components/home/Partners";
 import PostGrid from "@/components/home/PostGrid";
 import { What_To_Expect } from "@/components/home/What-To-Expect";
+import LatestBuzz from "@/components/home/LatestBuzz";
 
 export default function Home() {
   return (
@@ -74,6 +75,7 @@ export default function Home() {
           <span className="text-5xl">Let yours be the next!</span>
         </h2>
       </div>
+      <LatestBuzz/>
       <Footer/>
       {/* <div>This is content</div> */}
       {/* <h1>Home Page is here</h1> */}

@@ -30,7 +30,7 @@ export default function Footer() {
       </div>
       {/* Main Content */}
       <div className='grid grid-cols-1 gap-4 md:grid-cols-12'>
-        <div className='flex justify-center text-center md:col-span-4 md:text-left' style={{ fontFamily: 'Poppins' }}>
+        <div className='flex items-center justify-center text-center md:col-span-4 md:items-start md:text-left' style={{ fontFamily: 'Poppins' }}>
           <div>
             <Image width={500} height={500} src={'/assets/newevplogo.png'} alt="EVP Logo" className="size-auto max-w-[80%] object-contain md:w-80" />
             <p className="mt-4">Incubating India - for the world!</p>
@@ -74,7 +74,7 @@ export default function Footer() {
           © Copyright Edventure Park. All Rights Reserved
         </div>
         <div className='order-1 text-center md:order-2 md:text-center'>
-          Developed By <Link href={"https://www.linkedin.com/in/syedadnanali99/"}>Adnan</Link>
+          Developed and Refactored By <Link href={"https://www.linkedin.com/in/syedadnanali99/"}>Adnan</Link>
         </div>
         {/* Social Icons */}
         <div className='order-3 flex justify-center space-x-4 md:justify-end'>
