@@ -100,7 +100,7 @@ Example: feat: add user authentication to login page.
 The CI/CD pipeline must run error-free.
 Both ESLint checks and Next.js build must pass successfully for the PR to be valid.
 ## 5. Conflict Resolution
-If any merge conflicts arise, contributors should immediately contact the CTO for resolution.
+If any merge conflicts arise, contributors should immediately contact Adnan for resolution.
 ## 6. PR Review Time
 All PRs should be reviewed and resolved within 5 days of submission.
 
