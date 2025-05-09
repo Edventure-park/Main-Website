@@ -8,9 +8,10 @@ import Apply_Process from "@/components/home/Apply-Process";
 import Founders_Collage from "@/components/home/Founders-Collage";
 import Headlines from "@/components/home/Headlines";
 import Partners from "@/components/home/Partners";
-import PostGrid from "@/components/home/PostGrid";
+// import PostGrid from "@/components/home/PostGrid";
 import { What_To_Expect } from "@/components/home/What-To-Expect";
 import LatestBuzz from "@/components/home/LatestBuzz";
+import Grid from "@/components/home/Grid";
 
 export default function Home() {
   return (
@@ -27,7 +28,8 @@ export default function Home() {
       </div>
       <br />
       <br />
-      <PostGrid/>
+      <Grid/>
+      {/* <PostGrid/> */}
       <div className="text-center">
         <p className="text-3xl font-medium">Giving India</p>
         <p className="text-5xl font-bold text-green-700">Its True</p>

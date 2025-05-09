@@ -1,0 +1,261 @@
+/* eslint-disable no-unused-vars */
+"use client";
+import React, { useEffect, createRef } from 'react'
+import Link from 'next/link'
+import localFont from 'next/font/local'
+import Image from 'next/image'
+
+const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
+const BlackMangoBold = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Bold.ttf' })
+
+function PostGrid() {
+    const bigText = createRef(null);
+    useEffect(() => {
+        // Effect logic if needed
+    }, [])
+    
+    return (
+      <div className="relative w-full">
+        {/* Big text overlay */}
+        <div className="absolute left-0 top-0 z-10 w-full">
+          <h1 className={`${BlackMangoBold.className} text-center text-[24px] font-black tracking-normal md:text-[67px] lg:text-[92px]`}>
+            <span className='bg-[#169D53] text-white'>S</span>
+            <span className='bg-[#169D53] text-white'>T</span>
+            <span className='bg-white text-black'>U</span>
+            <span className='bg-white text-black'>D</span>
+            <span className='bg-white text-black'>E</span>
+            <span className='bg-white text-black'>N</span>
+            <span className='bg-white text-black'>T</span>
+            <span className='text-transparent'>-</span>
+            <span className='bg-white text-black'>F</span>
+            <span className='bg-white text-black'>O</span>
+            <span className='bg-white text-black'>U</span>
+            <span className='bg-white text-black'>N</span>
+            <span className='bg-white text-black'>D</span>
+            <span className='bg-white text-black'>E</span>
+            <span className='bg-[#169D53] text-white'>R</span>
+            <span className='bg-[#169D53] text-white'>S</span>
+          </h1>
+        </div>
+        {/* Desktop layout */}
+        <div className="hidden md:block">
+          <div className="grid grid-cols-8">
+            {/* Row 1 */}
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            {/* Row 2 */}
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='azhar img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/azhar.png' />
+            </div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            {/* Row 3 */}
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='arma img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/arma.png' />
+            </div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='rahman img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/abdulrahman.png' />
+            </div>
+            {/* Row 4 */}
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='fouzan img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/fouzan.png' />
+            </div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba1.png' />
+            </div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba2.png' />
+            </div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='nisa img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/nisa.png' />
+            </div>
+            <div className="h-[100px] bg-white"></div>
+            {/* Row 5 */}
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='person img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba5.png' />
+            </div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba3.png' />
+            </div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            {/* Row 6 */}
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba4.png' />
+            </div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='omer img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/omer.png' />
+            </div>
+            {/* Row 7 */}
+            <div className="h-[100px] bg-white"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba6.png' />
+            </div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='tahera img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/tahera.png' />
+            </div>
+            <div className="h-[100px] bg-white"></div>
+            {/* Center content - visible in desktop */}
+            <div className="absolute left-1/2 top-1/2 z-20 flex w-full max-w-md -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
+              <div className="rounded-lg bg-white p-6 text-center shadow-lg">
+                <h1 className="text-3xl font-['Archivo_Narrow,_sans-serif'] font-semibold">Giving India</h1>
+                <h1 className="text-4xl font-['Archivo_Narrow,_sans-serif'] font-semibold text-[#169D53]">Its True</h1>
+                <h1 className="text-2xl font-['Archivo_Narrow,_sans-serif'] font-semibold">Student-</h1>
+                <h1 className="text-2xl font-['Archivo_Narrow,_sans-serif'] font-semibold">Startup</h1>
+                <h1 className="mb-4 text-5xl font-['Archivo_Narrow,_sans-serif'] font-black tracking-wider text-[#169D53]">UNICORN</h1>
+                <div className="mt-4">
+                  <Link href="https://edventurepark.incubators.app/register">
+                    <button className="rounded border border-gray-400 bg-white px-6 py-2 text-gray-800 shadow-sm transition-colors hover:bg-gray-100">Apply Now</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Row 8 */}
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-white"></div>
+            <div className="h-[100px] bg-[#169D53]"></div>
+            <div className="relative h-[100px] overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba7.png' />
+            </div>
+            {/* Bottom spacer */}
+            <div className="col-span-8 h-[50px] bg-white"></div>
+          </div>
+        </div>
+        {/* Mobile layout */}
+        <div className="md:hidden">
+          {/* Top grid */}
+          <div className="grid auto-rows-[60px] grid-cols-4">
+            {/* Row 1 */}
+            <div className="bg-[#169D53]"></div>
+            <div className="bg-[#169D53]"></div>
+            <div className="bg-white"></div>
+            <div className="bg-white"></div>
+            {/* Row 2 */}
+            <div className="bg-white"></div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='azhar img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/azhar.png' />
+            </div>
+            <div className="bg-white"></div>
+            <div className="bg-[#169D53]"></div>
+            {/* Row 3 */}
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='arma img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/arma.png' />
+            </div>
+            <div className="bg-[#169D53]"></div>
+            <div className="bg-white"></div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='rahman img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/abdulrahman.png' />
+            </div>
+            {/* Row 4 */}
+            <div className="bg-[#169D53]"></div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='fouzan img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/fouzan.png' />
+            </div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba1.png' />
+            </div>
+            <div className="bg-white"></div>
+          </div>
+          {/* Center content */}
+          <div className="my-4 rounded bg-white p-6 text-center shadow-lg">
+            <h1 className="text-2xl font-['Archivo_Narrow,_sans-serif'] font-semibold">Giving India</h1>
+            <h1 className="text-3xl font-['Archivo_Narrow,_sans-serif'] font-semibold text-[#169D53]">Its True</h1>
+            <h1 className="text-xl font-['Archivo_Narrow,_sans-serif'] font-semibold">Student-</h1>
+            <h1 className="text-xl font-['Archivo_Narrow,_sans-serif'] font-semibold">Startup</h1>
+            <h1 className="mb-4 text-4xl font-['Archivo_Narrow,_sans-serif'] font-black tracking-wider text-[#169D53]">UNICORN</h1>
+            <div className="mt-4">
+              <Link href="https://edventurepark.incubators.app/register">
+                <button className="rounded border border-gray-400 bg-white px-6 py-2 text-gray-800 shadow-sm">Apply Now</button>
+              </Link>
+            </div>
+          </div>
+          {/* Bottom grid */}
+          <div className="grid auto-rows-[60px] grid-cols-4">
+            {/* Row 5 */}
+            <div className="bg-white"></div>
+            <div className="bg-white"></div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba2.png' />
+            </div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='nisa img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/nisa.png' />
+            </div>
+            {/* Row 6 */}
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba3.png' />
+            </div>
+            <div className="bg-white"></div>
+            <div className="bg-white"></div>
+            <div className="bg-[#169D53]"></div>
+            {/* Row 7 */}
+            <div className="bg-white"></div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba4.png' />
+            </div>
+            <div className="bg-white"></div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='omer img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/omer.png' />
+            </div>
+            {/* Row 8 */}
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='tahera img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/tahera.png' />
+            </div>
+            <div className="bg-white"></div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba6.png' />
+            </div>
+            <div className="bg-white"></div>
+            {/* Row 9 */}
+            <div className="bg-[#169D53]"></div>
+            <div className="bg-white"></div>
+            <div className="bg-white"></div>
+            <div className="relative overflow-hidden bg-[#169D53]">
+              <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba7.png' />
+            </div>
+            {/* Bottom spacer */}
+            <div className="col-span-4 h-[30px] bg-white"></div>
+          </div>
+        </div>
+      </div>
+    );
+};
+
+export default PostGrid;
