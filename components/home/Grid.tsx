@@ -126,36 +126,103 @@ function Grid() {
         <div className="aspect-square bg-green-600"></div>
         {/* Column 3 - Person's Image */}
         <div className="relative aspect-square">
-          <Image alt='person img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba5.png' />
+          <Image 
+            fill
+            src='/assets/grid/ba5.png'
+            alt='person img'
+            className="object-cover"
+            sizes="(max-width: 768px) 12.5vw, 12.5vw"
+          />
         </div>
         {/* Columns 4-5 - Blank Boxes */}
         <div className="aspect-square bg-white"></div>
         <div className="aspect-square bg-white"></div>
         {/* Column 6 - Person's Image */}
         <div className="relative aspect-square">
-          <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba3.png' />
+          <Image 
+            fill
+            src='/assets/grid/ba3.png'
+            alt='grid img'
+            className="object-cover"
+            sizes="(max-width: 768px) 12.5vw, 12.5vw"
+          />
         </div>
         {/* Columns 7-8 - Green Boxes */}
         <div className="aspect-square bg-green-600"></div>
         <div className="aspect-square bg-green-600"></div>
       </div>
-      {/* Row 6 - Fifth 8 Column Grid */}
+      {/* Row 6 - With Logo */}
       <div className="grid w-full grid-cols-8">
         {/* Column 1 - Person's Image */}
         <div className="relative aspect-square">
-          <Image alt='grid img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/ba4.png' />
+          <Image 
+            fill
+            src='/assets/grid/ba4.png'
+            alt='grid img'
+            className="object-cover"
+            sizes="(max-width: 768px) 12.5vw, 12.5vw"
+          />
         </div>
-        {/* Columns 2-7 - Blank Boxes */}
-        <div className="aspect-square bg-white"></div>
-        <div className="aspect-square bg-white"></div>
-        <div className="aspect-square bg-white"></div>
-        <div className="aspect-square bg-white"></div>
-        <div className="aspect-square bg-white"></div>
-        <div className="aspect-square bg-white"></div>
+        {/* Columns 2-7 - Logo Container spanning 6 columns */}
+        <div className="col-span-6 flex items-center justify-center bg-white">
+          <div className="flex size-full items-center justify-center p-2 sm:p-4 md:p-6">
+            <Image 
+              src="/assets/newevplogo.png"
+              alt="EdVenture Park Logo"
+              width={500}
+              height={300}
+              className="w-full max-w-lg object-contain"
+            />
+          </div>
+        </div>
         {/* Column 8 - Person's Image */}
         <div className="relative aspect-square">
-          <Image alt='omer img' width={500} height={500} className="h-full w-auto object-cover" src='/assets/grid/omer.png' />
+          <Image 
+            fill
+            src='/assets/grid/omer.png'
+            alt='omer img'
+            className="object-cover"
+            sizes="(max-width: 768px) 12.5vw, 12.5vw"
+          />
         </div>
+      </div>
+      {/* Row 7 - With Text Content */}
+      <div className="grid w-full grid-cols-8">
+        {/* Column 1 - Blank Box */}
+        <div className="aspect-square bg-white"></div>
+        {/* Column 2 - Person's Image */}
+        <div className="relative aspect-square">
+          <Image 
+            fill
+            src='/assets/grid/ba6.png'
+            alt='grid img'
+            className="object-cover"
+            sizes="(max-width: 768px) 12.5vw, 12.5vw"
+          />
+        </div>
+        {/* Columns 3-6 - Text Content */}
+        <div className="col-span-4 flex items-center justify-center bg-white">
+          <div className="px-1 text-center sm:px-2 md:px-4">
+            <p className="text-xl font-medium sm:text-2xl md:text-3xl">Giving India</p>
+            <p className="text-2xl font-bold text-green-700 sm:text-3xl md:text-5xl">Its True</p>
+            <p className="text-xl font-medium sm:text-2xl md:text-3xl">
+              Student-Startup{" "}
+              <span className="text-3xl font-extrabold text-green-700 sm:text-4xl md:text-6xl">UNICORN</span>
+            </p>
+          </div>
+        </div>
+        {/* Column 7 - Person's Image */}
+        <div className="relative aspect-square">
+          <Image 
+            fill
+            src='/assets/grid/tahera.png'
+            alt='tahera img'
+            className="object-cover"
+            sizes="(max-width: 768px) 12.5vw, 12.5vw"
+          />
+        </div>
+        {/* Column 8 - Blank Box */}
+        <div className="aspect-square bg-white"></div>
       </div>
     </div>
   );

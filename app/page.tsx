@@ -30,14 +30,6 @@ export default function Home() {
       <br />
       <Grid/>
       {/* <PostGrid/> */}
-      <div className="text-center">
-        <p className="text-3xl font-medium">Giving India</p>
-        <p className="text-5xl font-bold text-green-700">Its True</p>
-        <p className="text-3xl font-medium">
-          Student-Startup{" "}
-          <span className="text-6xl font-extrabold text-green-700">UNICORN</span>
-        </p>
-      </div>
       <br />
       <div className="mb-4 bg-emerald-600 p-4">
         <div className="flex flex-col items-center md:flex-row">
