@@ -189,7 +189,7 @@ function Grid() {
       {/* Row 7 - With Text Content */}
       <div className="grid w-full grid-cols-8">
         {/* Column 1 - Blank Box */}
-        <div className="aspect-square bg-white"></div>
+        <div className="aspect-square bg-green-600"></div>
         {/* Column 2 - Person's Image */}
         <div className="relative aspect-square">
           <Image 
@@ -222,7 +222,7 @@ function Grid() {
           />
         </div>
         {/* Column 8 - Blank Box */}
-        <div className="aspect-square bg-white"></div>
+        <div className="aspect-square bg-green-600"></div>
       </div>
     </div>
   );
