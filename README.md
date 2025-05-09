@@ -79,7 +79,7 @@ bun run deploy
 At least 2 members must review and approve the PR before merging into the test branch.
 ### Step 3: Production
 After successful testing, create a PR from the test branch to the main branch.
-This PR must be approved by the CTO and at least 1 other member.
+This PR must be approved by Adnan and at least 1 other member.
 Once approved, the changes will be deployed to production.
 ## 3. Commit Message Guidelines
 Use the following prefixes for clear and consistent commit messages:
