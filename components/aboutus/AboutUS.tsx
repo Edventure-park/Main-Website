@@ -19,7 +19,8 @@ const AboutUS = () => {
           </p>
           <Image
             width={500}
-            src=".public/assets/colorColage.jpg"
+            height={500}
+            src="/public/assets/colorColage.png"
             alt="Core Team"
             className="mb-4 h-[450px] w-[300px] rounded-lg object-cover md:w-[500px]"
           />
@@ -138,7 +139,7 @@ const AboutUS = () => {
             Our Core Team
           </h2>
           <p className="text-left text-xl font-[Black_Mango] leading-relaxed">
-            At the heart of EdVenture Park, you'll find our dedicated Core Team,
+            At the heart of EdVenture Park, you`ll find our dedicated Core Team,
             the driving force behind the dynamic <br />
             engine that is EdVenture Park. They take charge of running the
             operations, funding initiatives, and executing our pre-incubation
@@ -158,7 +159,7 @@ const AboutUS = () => {
           </h2>
           <p className="font-poppins text-left text-xl font-medium leading-relaxed">
             when it comes to exponential growth and taking startups to new
-            heights, our X team is the "X" factor. They are the multipliers that
+            heights, our X team is the `X` factor. They are the multipliers that
             propel student founders beyound expectations. These creative minds
             bring their expertise to the table whenever it's needed, working
             alongside students founders to help them transform their ideas into
@@ -191,6 +192,8 @@ const AboutUS = () => {
             thrive.
           </p>
           <Image
+            width={500}
+            height={500}
             src="https://via.placeholder.com/500x450.png?text=CEO+Image+Placeholder"
             alt="Core Team"
             className="mb-4 h-[450px] w-[300px] rounded-lg object-cover md:w-[500px]"
