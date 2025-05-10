@@ -1,6 +1,6 @@
-import AboutUS from "@/components/aboutus/AboutUS";
-
 import React from 'react'
+
+import AboutUS from "@/components/aboutus/AboutUS";
 
 function AboutPage() {
   return (
