@@ -4,11 +4,9 @@ import React from 'react';
 const CEO = () => {
   return (
     <div className="mx-auto w-full max-w-4xl">
-      {/* Main heading */}
       <h1 className="mb-4 text-2xl font-bold md:text-3xl">The Man Behind it all - Our CEO</h1>
       {/* Green card with overlapping image and quote */}
       <div className="relative mt-12 md:mt-16">
-        {/* Image that overlaps the border */}
         <div className="absolute left-3 top-8 z-10 max-w-xs -translate-y-1/2">
           <div className="rounded-md bg-white p-1 shadow-lg">
             <Image
@@ -20,10 +18,8 @@ const CEO = () => {
             />
           </div>
         </div>
-        {/* Green card */}
         <div className="rounded-lg bg-emerald-500 p-4 pt-16 text-white md:pl-56 md:pt-4 lg:pl-64">
           <div className="flex flex-col items-center md:items-start md:pl-12">
-            {/* Quote section */}
             <div className="w-full text-center md:pl-4 md:text-left lg:pl-8">
               <blockquote className="text-xl font-semibold md:text-2xl">
                 "YOUR TIME HAS COME, 
@@ -39,7 +35,6 @@ const CEO = () => {
           </div>
         </div>
       </div>
-      {/* Bio paragraph */}
       <div className="mt-4 text-sm md:text-base">
         <p className="leading-relaxed">
           Meraj Faheem is a serial entrepreneur, who started first as a student entrepreneur. He founded India's first coding 
