@@ -22,6 +22,17 @@ function Ceo() {
               </div>
             </div>
           </div>
+          {/* ✅ Text added inside the green box */}
+          <div className="mt-[160px] text-white md:ml-[440px]">
+            <p className="mb-4 text-2xl font-bold md:text-3xl lg:text-4xl">
+              "YOUR TIME HAS COME, AND THE SHOW IS ON!"
+            </p>
+            <p className="text-xl">
+              - Meraj Faheem, Founder & CEO,
+              <br />
+              EdVenture Park, The Hacking School, Code for India
+            </p>
+          </div>
         </div>
       </div>
     </section>
