@@ -19,8 +19,8 @@ function Bod() {
                 className="rounded-[20px] object-cover"
               />
             </div>
-            <p className="-bg-white -mt-5 rounded-[10px] px-8 py-4 text-center text-lg font-medium text-black shadow-md">
-              Member 1
+            <p className="z-10 mt-[-50px] rounded-[20px] bg-white px-12 py-6 text-center text-xl font-medium text-black shadow-xl">
+              TEST
             </p>
           </div>
           <div className="flex flex-col items-center">
@@ -32,7 +32,7 @@ function Bod() {
                 className="rounded-[20px] object-cover"
               />
             </div>
-            <p className="-bg-white -mt-5 rounded-[10px] px-8 py-4 text-center text-lg font-medium text-black shadow-md">
+            <p className="z-10 mt-[-50px] rounded-[20px] bg-white px-12 py-6 text-center text-xl font-medium text-black shadow-xl">
               Member 2
             </p>
           </div>
@@ -46,7 +46,7 @@ function Bod() {
                 className="rounded-[20px] object-cover"
               />
             </div>
-            <p className="-bg-white -mt-5 rounded-[10px] px-8 py-4 text-center text-lg font-medium text-black shadow-md">
+            <p className="z-10 mt-[-50px] rounded-[20px] bg-white px-12 py-6 text-center text-xl font-medium text-black shadow-xl">
               Member 3
             </p>
           </div>
@@ -60,7 +60,7 @@ function Bod() {
                 className="rounded-[20px] object-cover"
               />
             </div>
-            <p className="-bg-white -mt-5 rounded-[10px] px-8 py-4 text-center text-lg font-medium text-black shadow-md">
+            <p className="z-10 mt-[-50px] rounded-[20px] bg-white px-12 py-6 text-center text-xl font-medium text-black shadow-xl">
               Member 4
             </p>
           </div>

@@ -119,19 +119,19 @@ function Team2() {
         </p>
       </div>
       {/* Yellow Grid */}
-      <div className="rounded-xl bg-yellow-400 p-8">
+      <div className="rounded-lg bg-yellow-400 p-8">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {teamMembers.map((member, index) => (
             <div
               key={index}
               className="rounded-xl bg-white p-4 text-center shadow-md"
             >
-              <div className="relative mb-4 h-56 w-full overflow-hidden rounded-lg">
+              <div className="relative mb-4 h-56 w-full overflow-hidden rounded-tl-lg">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="rounded-lg object-cover"
+                  className="rounded-tr-[50%] object-cover"
                 />
               </div>
               <p className="text-lg font-semibold text-gray-800">
