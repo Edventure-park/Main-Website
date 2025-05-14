@@ -131,5 +131,5 @@ If any merge conflicts arise, contributors should immediately contact [Adnan](ht
 All PRs should be reviewed and resolved within 5 days of submission.
 
 ### Deployed on CloudFlare
-The Planto-Mart platform is deployed on Cloudflare for improved security, performance, and scalability.
+The Edventure-Park Main-Website is deployed on Cloudflare for improved security, performance, and scalability.
 
