@@ -2,6 +2,7 @@
 import React from 'react'
 
 import ProgramInfo from './ProgramInfo'
+import DarkImageGrid from './DarkPostGrid';
 
 interface ProgramInfoProps {
   slug: string;
@@ -49,6 +50,32 @@ const programData: Record<string, ProgramInfoProps> = {
   }
 }
 
+  const imageData = {
+    title: "Founders' Friday × Business Showers",
+    images: [
+      {
+        url: "/assets/LeadsBanner.jpg",
+        alt: "Group of founders cutting ribbon"
+      },
+      {
+        url: "/assets/LeadsBanner.jpg",
+        alt: "Audience at business event"
+      },
+      {
+        url: "/assets/LeadsBanner.jpg",
+        alt: "Speaker presenting at event"
+      },
+      {
+        url: "/assets/LeadsBanner.jpg",
+        alt: "Celebration cake with HURON logo"
+      },
+      {
+        url: "/assets/LeadsBanner.jpg",
+        alt: "Speaker and audience at event"
+      }
+    ]
+  };
+
 function CompleteProgramPage({ slug }: { slug: string }) {
   const programInfo = programData[slug];
 
@@ -57,9 +84,16 @@ function CompleteProgramPage({ slug }: { slug: string }) {
   }
 
   return (
-    <div>
+    <>
       <ProgramInfo ProgramInfoData={programInfo} />
-    </div>
+      {/* {programInfo.slug === 'edtalk'} */}
+      <div className="container mx-auto">
+        <DarkImageGrid 
+        title={imageData.title} 
+        images={imageData.images} 
+      />
+      </div>
+    </>
   );
 }
 
