@@ -41,30 +41,6 @@ The platform is built with scalability, security, and ease of use in mind.
 <br>
 
 
-1. Admin Panel
-- Super Admin Controls: The platform includes an overarching admin panel where the platform administrators can monitor all vendor activity, approve product listings, handle disputes, and enforce platform rules.
-- Transaction Management: Admins can track all platform-wide transactions, including vendor payouts and customer purchases.
-- User & Role Management: The admin can assign and manage roles to different users, such as moderators, vendors, and customer service representatives, ensuring smooth operation.
-
-2. Scalable Architecture
-- Modular Design: Planto-Mart's architecture is modular, allowing for easy addition of new features and expansion as the platform grows. Whether you’re scaling to hundreds or thousands of vendors, the system can handle high traffic and large volumes of data.
-- Microservices-based: The platform leverages a microservices-based architecture, making it easier to update, maintain, and scale each component independently without disrupting the entire system.
-- Cloud-Optimized: Deployed on Cloudflare for performance optimization, security enhancements, and scalability, ensuring fast load times and high availability.
-
-3. Security and Privacy
-- Secure Authentication: Users and vendors are required to log in via secure authentication protocols, including multi-factor authentication (MFA), ensuring that only authorized users can access sensitive data.
-- Data Encryption: All user and transaction data is encrypted, maintaining the privacy and security of sensitive information.
-- PCI-DSS Compliance: The platform follows PCI-DSS standards for payment processing, ensuring all transactions are secure and compliant with industry regulations.
-- Fraud Prevention: Built-in fraud detection systems monitor suspicious activity, protecting both vendors and customers from potential scams.
-
-4. Mobile-Responsive Design
-- The platform is fully mobile-responsive, offering an optimized experience for customers and vendors alike. Whether browsing products, placing orders, or managing store settings, users can seamlessly interact with the platform on any device.
-
-5. Integrated Marketing and SEO Tools
-- SEO Optimization: Vendors can optimize their products with detailed SEO fields to improve visibility on search engines.
-- Promotions & Coupons: The platform allows vendors to create promotions, coupons, and discount codes, helping them boost sales and attract new customers.
-- Product Reviews: Customers can leave feedback on products, helping vendors build trust and enabling shoppers to make informed decisions.
-
 
 
 ## Getting Started
@@ -157,29 +133,3 @@ All PRs should be reviewed and resolved within 5 days of submission.
 ### Deployed on CloudFlare
 The Planto-Mart platform is deployed on Cloudflare for improved security, performance, and scalability.
 
-
-## Benefits of this Platform:
-**For Vendors:**
-
-- Increased Reach: Planto-Mart provides vendors with access to a broad customer base, eliminating the need to drive traffic to a standalone website.
-- Analytics: Real-time performance tracking and actionable insights help vendors optimize their offerings.
-- Cost-Effective: By utilizing a shared platform, vendors don’t have to build their own infrastructure from scratch, saving on development and hosting costs.
-- Easy Management: A user-friendly dashboard simplifies the process of managing inventory, orders, and customer interactions.
-
-**For Customers:**
-
-- Convenience: Shoppers can explore a wide variety of products across different vendors in one place, with a unified cart and checkout process.
-- Competitive Prices: Customers can compare prices from various vendors, helping them find the best deals.
-- Trustworthy Reviews: The ability to read reviews from other customers adds a layer of trust and transparency to the shopping experience.
-
-**For Platform Administrators:**
-
-- Centralized Control: Admins can oversee all platform operations, monitor transactions, and enforce policies in one place.
-- Revenue Generation: The platform offers various monetization strategies, including subscription fees, transaction fees, or featured product listings.
-- User Management: Admins can easily manage users, resolve disputes, and ensure compliance with platform guidelines.
-
-## Use Cases:
-- Small-to-Medium Enterprises (SMEs) looking for an affordable way to manage their online stores.
-- Large Marketplaces with multiple vendors who need centralized management tools for both the platform and vendors.
-- Niche Vendors who want to sell their products to a broader audience but lack the infrastructure for an independent eCommerce site.
-- Global Enterprises that need scalable, secure solutions for managing multiple vendors in various regions.
