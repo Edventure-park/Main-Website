@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -12,12 +12,14 @@ import Partners from "@/components/home/Partners";
 import { What_To_Expect } from "@/components/home/What-To-Expect";
 import LatestBuzz from "@/components/home/LatestBuzz";
 import Grid from "@/components/home/Grid";
+import DynamicRing from "@/components/DynamicRing";
 
 export default function Home() {
   return (
     <>
       <Navbar currentPage="home"/>
-      <div className="w-full">
+      <DynamicRing/>
+      {/* <div className="w-full">
         <Image 
       src="/assets/heroSection.png" 
       alt="Edventurepark-Aim" 
@@ -25,7 +27,7 @@ export default function Home() {
       height={500} 
       className="h-auto w-full"
       />
-      </div>
+      </div> */}
       <br />
       <br />
       <Grid/>
