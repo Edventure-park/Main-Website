@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
+import CompleteProgramPage from "@/components/Programs/CompleteProgramPage"
+
 export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  
-  return <div>My Post: {slug}</div>
+
+  return <CompleteProgramPage slug={(await params).slug} />
 }
