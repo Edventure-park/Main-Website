@@ -1,4 +1,5 @@
 import React from 'react';
+import localFont from 'next/font/local'
 
 interface ProgramInfoProps {
   slug: string;
@@ -7,6 +8,8 @@ interface ProgramInfoProps {
   Paragraph: string;
   lists: string[];
 }
+
+const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
 
 export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: ProgramInfoProps }) {
   return (
@@ -28,8 +31,8 @@ export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: Prog
           </aside>
           {/* Right Side - Content */}
           <article className="md:w-3/4 md:pl-8 lg:w-4/5">
-            <h1 className="mb-4 text-2xl font-bold text-black md:text-3xl lg:text-4xl">
-              {ProgramInfoData.Heading}
+            <h1 className="mb-4 text-2xl text-black md:text-3xl lg:text-4xl">
+              <span className={`${BlackMangoRegular.className}`}>{ProgramInfoData.Heading}</span>
             </h1>
             <p className="text-base leading-relaxed text-gray-800 md:text-lg">
               {ProgramInfoData.Paragraph}
