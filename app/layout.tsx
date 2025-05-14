@@ -90,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-x-hidden">
+    <html lang="en" className="overflow-x-hidden" data-theme="light">
       <Head>
         {/* Open Graph */}
         <meta property="og:title" content={metadata.openGraph.title} />
@@ -115,10 +115,11 @@ export default function RootLayout({
         <link rel="canonical" href={metadata.alternates?.canonical} />
       </Head>
       <body className="max-w-full overflow-x-hidden antialiased">
-        <ThemeProvider attribute="class" 
-        defaultTheme="light" 
-        enableSystem={false} 
-        forcedTheme="light"
+        <ThemeProvider 
+          attribute="data-theme" 
+          defaultTheme="light" 
+          enableSystem={false} 
+          forcedTheme="light"
         >
           <div className="max-w-full overflow-x-hidden">{children}</div>
         </ThemeProvider>

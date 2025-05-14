@@ -13,11 +13,12 @@ function Bod() {
           <div className="flex flex-col items-center">
             <div className="relative h-[450px] w-full">
               <Image
-                src="https://via.placeholder.com/500x450.png?text=Image+Placeholder"
+                src="/assets/BoD/BoD1.png"
                 alt="Team Member 1"
                 fill
                 className="rounded-[20px] object-cover"
               />
+              src="/assests/BoD/BoD1.png"
             </div>
             <p className="z-10 mt-[-50px] rounded-[20px] bg-white px-12 py-6 text-center text-xl font-medium text-black shadow-xl">
               TEST
@@ -26,7 +27,7 @@ function Bod() {
           <div className="flex flex-col items-center">
             <div className="relative h-[450px] w-full">
               <Image
-                src="https://via.placeholder.com/500x450.png?text=Image+Placeholder"
+                src="/assets/BoD/BoD2.png"
                 alt="Team Member 2"
                 fill
                 className="rounded-[20px] object-cover"
@@ -40,7 +41,7 @@ function Bod() {
           <div className="flex flex-col items-center">
             <div className="relative h-[450px] w-full">
               <Image
-                src="https://via.placeholder.com/500x450.png?text=Image+Placeholder"
+                src="/assets/BoD/BoD3.png"
                 alt="Team Member 3"
                 fill
                 className="rounded-[20px] object-cover"
@@ -54,7 +55,7 @@ function Bod() {
           <div className="flex flex-col items-center">
             <div className="relative h-[450px] w-full">
               <Image
-                src="https://via.placeholder.com/500x450.png?text=Image+Placeholder"
+                src="/assets/BoD/BoD4.png"
                 alt="Team Member 4"
                 fill
                 className="rounded-[20px] object-cover"

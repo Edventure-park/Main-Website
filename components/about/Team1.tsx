@@ -18,7 +18,7 @@ function Team1() {
         take charge of running the operations, funding initiatives, and
         executing our pre-incubation program.
       </p>
-      <div className="mt-8 rounded-lg bg-red-400 p-8">
+      <div className="mt-8 rounded-xl bg-red-400 p-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
           {/* Team Member 1 */}
           <div className="flex flex-col items-center bg-white p-4 shadow-lg">
@@ -26,13 +26,13 @@ function Team1() {
               <Image
                 width={500}
                 height={500}
-                src="https://via.placeholder.com/500x450.png?text=CEO+Image+Placeholder"
+                src="/assets/CoreTeam/CT1.png"
                 alt="Core Team"
-                className="size-full rounded-tr-[50%] object-cover"
+                className="size-full rounded-tr-[25%] object-cover"
               />
             </div>
-            <h3 className="text-lg font-bold text-neutral-900">John Doe</h3>
-            <p className="text-md text-neutral-600">Member & CEO</p>
+            <h3 className="text-lg font-extrabold text-neutral-900">ILYAS SHAH KHAN</h3>
+            <p className="text-md text-neutral-600">INCUBATION MANAGER</p>
           </div>
           {/* Team Member 2 */}
           <div className="flex flex-col items-center bg-white p-4 shadow-lg">
@@ -40,13 +40,13 @@ function Team1() {
               <Image
                 width={500}
                 height={500}
-                src="https://via.placeholder.com/500x450.png?text=CEO+Image+Placeholder"
+                src="/assets/CoreTeam/CT2.png"
                 alt="Core Team"
-                className="size-full rounded-tr-[50%] object-cover"
+                className="size-full rounded-tr-[25%] object-cover"
               />
             </div>
-            <h3 className="text-lg font-bold text-neutral-900">Jane Smith</h3>
-            <p className="text-md text-neutral-600">Member & CTO</p>
+            <h3 className="text-lg font-extrabold text-neutral-900">SHAIK AHMED</h3>
+            <p className="text-md text-neutral-600">OPERATIONS MANAGER</p>
           </div>
           {/* Team Member 3 */}
           <div className="flex flex-col items-center bg-white p-4 shadow-lg">
@@ -54,13 +54,13 @@ function Team1() {
               <Image
                 width={500}
                 height={500}
-                src="https://via.placeholder.com/500x450.png?text=CEO+Image+Placeholder"
+                src="/assets/CoreTeam/CT3.png"
                 alt="Core Team"
-                className="size-full rounded-tr-[50%] object-cover"
+                className="size-full rounded-tr-[25%] object-cover"
               />
             </div>
-            <h3 className="text-lg font-bold text-neutral-900">Michael Lee</h3>
-            <p className="text-md text-neutral-600">Member & COO</p>
+            <h3 className="text-lg font-extrabold text-neutral-900">ZUHA ANSARI</h3>
+            <p className="text-md text-neutral-600">PROGRAM MANAGER</p>
           </div>
           {/* Team Member 4 */}
           <div className="flex flex-col items-center bg-white p-4 shadow-lg">
@@ -68,13 +68,13 @@ function Team1() {
               <Image
                 width={500}
                 height={500}
-                src="https://via.placeholder.com/500x450.png?text=CEO+Image+Placeholder"
+                src="/assets/CoreTeam/CT4.png"
                 alt="Core Team"
-                className="size-full rounded-tr-[50%] object-cover"
+                className="size-full rounded-tr-[25%] object-cover"
               />
             </div>
-            <h3 className="text-lg font-bold text-neutral-900">Alice Wang</h3>
-            <p className="text-md text-neutral-600">Member & CFO</p>
+            <h3 className="text-lg font-extrabold text-neutral-900">SYED FAWAZ ALI</h3>
+            <p className="text-md text-neutral-600">PROGRAM</p>
           </div>
           {/* Team Member 5 */}
           <div className="flex flex-col items-center bg-white p-4 shadow-lg">
@@ -82,13 +82,13 @@ function Team1() {
               <Image
                 width={500}
                 height={500}
-                src="https://via.placeholder.com/500x450.png?text=CEO+Image+Placeholder"
+                src="/assets/CoreTeam/CT5.png"
                 alt="Core Team"
-                className="size-full rounded-tr-[50%] object-cover"
+                className="size-full rounded-tr-[25%] object-cover"
               />
             </div>
-            <h3 className="text-lg font-bold text-neutral-900">Sara Patel</h3>
-            <p className="text-md text-neutral-600">Member & CMO</p>
+            <h3 className="text-lg font-extrabold text-neutral-900">OSAID SHARIF</h3>
+            <p className="text-md text-neutral-600">PROGRAM MANAGER - HARDWARE</p>
           </div>
           {/* Team Member 6 */}
           <div className="flex flex-col items-center bg-white p-4 shadow-lg">
@@ -96,15 +96,13 @@ function Team1() {
               <Image
                 width={500}
                 height={500}
-                src="https://via.placeholder.com/500x450.png?text=CEO+Image+Placeholder"
+                src="/assets/CoreTeam/CT6.png"
                 alt="Core Team"
-                className="size-full rounded-tr-[50%] object-cover"
+                className="size-full rounded-tr-[25%] object-cover"
               />
             </div>
-            <h3 className="text-lg font-bold text-neutral-900">David Kim</h3>
-            <p className="text-md text-neutral-600">
-              Member & Head of Operations
-            </p>
+            <h3 className="text-lg font-extrabold text-neutral-900">HUDA HAJIRA</h3>
+            <p className="text-md text-neutral-600">COMMUNITY MANAGER</p>
           </div>
         </div>
       </div>

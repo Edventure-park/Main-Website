@@ -3,84 +3,84 @@ import Image from "next/image";
 
 const teamMembers = [
   {
-    name: "Alice Johnson",
-    image: "https://via.placeholder.com/500x450.png?text=Alice",
+    name: "Syed Osman",
+    image: "/assets/ExecutiveTeam/ET00.png",
   },
   {
-    name: "Bob Smith",
-    image: "https://via.placeholder.com/500x450.png?text=Bob",
+    name: "Fatima Khader",
+    image: "/assets/ExecutiveTeam/ET01.png",
   },
   {
-    name: "Charlie Brown",
-    image: "https://via.placeholder.com/500x450.png?text=Charlie",
+    name: "Ruqayyah Sara",
+    image: "/assets/ExecutiveTeam/ET02.png",
   },
   {
-    name: "David Wilson",
-    image: "https://via.placeholder.com/500x450.png?text=David",
+    name: "Issam Uddin",
+    image: "/assets/ExecutiveTeam/ET03.png",
   },
   {
-    name: "Ella Anderson",
-    image: "https://via.placeholder.com/500x450.png?text=Ella",
+    name: "Hajera Zia",
+    image: "/assets/ExecutiveTeam/ET04.png",
   },
   {
-    name: "Fiona Clarke",
-    image: "https://via.placeholder.com/500x450.png?text=Fiona",
+    name: "Mohammed Noor",
+    image: "/assets/ExecutiveTeam/ET05.png",
   },
   {
-    name: "George Lee",
-    image: "https://via.placeholder.com/500x450.png?text=George",
+    name: "Obaid Ullah Khan",
+    image: "/assets/ExecutiveTeam/ET06.png",
   },
   {
-    name: "Hannah King",
-    image: "https://via.placeholder.com/500x450.png?text=Hannah",
+    name: "Mustafa Kakeem",
+    image: "/assets/ExecutiveTeam/ET07.png",
   },
   {
-    name: "Ian Scott",
-    image: "https://via.placeholder.com/500x450.png?text=Ian",
+    name: "Rabiya Noreen",
+    image: "/assets/ExecutiveTeam/ET08.png",
   },
   {
-    name: "Jasmine Green",
-    image: "https://via.placeholder.com/500x450.png?text=Jasmine",
+    name: "Masarrath Fatima ",
+    image: "/assets/ExecutiveTeam/ET09.png",
   },
   {
-    name: "Kevin Moore",
-    image: "https://via.placeholder.com/500x450.png?text=Kevin",
+    name: "Saniya",
+    image: "/assets/ExecutiveTeam/ET10.png",
   },
   {
-    name: "Luna Taylor",
-    image: "https://via.placeholder.com/500x450.png?text=Luna",
+    name: "Rehan Algaari",
+    image: "/assets/ExecutiveTeam/ET11.png",
   },
   {
-    name: "Michael Adams",
-    image: "https://via.placeholder.com/500x450.png?text=Michael",
+    name: "Aliya Noorain",
+    image: "/assets/ExecutiveTeam/ET12.png",
   },
   {
-    name: "Nina Thomas",
-    image: "https://via.placeholder.com/500x450.png?text=Nina",
+    name: "Sumaiyya Fasiuddun",
+    image: "/assets/ExecutiveTeam/ET13.png",
   },
   {
-    name: "Oliver Harris",
-    image: "https://via.placeholder.com/500x450.png?text=Oliver",
+    name: "Yousuf Afreen",
+    image: "/assets/ExecutiveTeam/ET14.png",
   },
   {
-    name: "Paula Baker",
-    image: "https://via.placeholder.com/500x450.png?text=Paula",
+    name: "Huda Hajera",
+    image: "/assets/ExecutiveTeam/ET15.png",
   },
   {
-    name: "Quincy Martin",
-    image: "https://via.placeholder.com/500x450.png?text=Quincy",
+    name: "Maaz Ahmed Khan",
+    image: "/assets/ExecutiveTeam/ET16.png",
   },
   {
-    name: "Rachel Hill",
-    image: "https://via.placeholder.com/500x450.png?text=Rachel",
+    name: "Adnan Ali Khanl",
+    image: "/assets/ExecutiveTeam/ET17.png",
   },
   {
-    name: "Sam Reed",
-    image: "https://via.placeholder.com/500x450.png?text=Sam",
+    name: "Daiq Hussain",
+    image: "/assets/ExecutiveTeam/ET18.png",
   },
   {
-    name: "Tina Collins",
-    image: "https://via.placeholder.com/500x450.png?text=Tina",
+    name: "Saad Mirza",
+    image: "/assets/ExecutiveTeam/ET19.png",
   },
 ];
 
@@ -88,17 +88,17 @@ const extraMembers = [
   {
     name: "Sarah Alieah",
     title: "Chief Creative Officer",
-    image: "https://via.placeholder.com/500x450.png?text=Uma",
+    image: "",
   },
   {
     name: "Jonathan Leon",
     title: "Chief Talent Officer",
-    image: "https://via.placeholder.com/500x450.png?text=Victor",
+    image: "",
   },
   {
     name: "Dean Johaness",
     title: "Chief Marketing Officer",
-    image: "https://via.placeholder.com/500x450.png?text=Wendy",
+    image: "",
   },
 ];
 
@@ -126,15 +126,15 @@ function Team2() {
               key={index}
               className="rounded-xl bg-white p-4 text-center shadow-md"
             >
-              <div className="relative mb-4 h-56 w-full overflow-hidden rounded-tl-lg">
+              <div className="relative mx-auto mb-4 h-72 w-56 overflow-hidden rounded-tl-lg">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="rounded-tr-[50%] object-cover"
+                  className="rounded-tr-[25%] object-cover"
                 />
               </div>
-              <p className="text-lg font-semibold text-gray-800">
+              <p className="text-lg font-semibold text-gray-800"> 
                 {member.name}
               </p>
             </div>
