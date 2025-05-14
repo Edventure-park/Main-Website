@@ -8,6 +8,7 @@ import Bod from "@/components/about/Bod";
 import Team1 from "@/components/about/Team1";
 import Team2 from "@/components/about/Team2";
 import Cl from "@/components/about/Cl";
+import Footer from "@/components/Footer";
 
 function AboutPage() {
   return (
@@ -20,6 +21,7 @@ function AboutPage() {
       <Team1 />
       <Team2 />
       <Cl />
+      <Footer />
     </div>
 
   );

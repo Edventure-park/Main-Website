@@ -21,7 +21,7 @@ function Cl() {
         <div className="mt-16 w-full">
           <div className="relative h-64 w-full overflow-hidden rounded-xl">
             <Image
-              src="https://via.placeholder.com/1600x400.png?text=Campus+Leads+Banner"
+              src="/assets/LeadsBanner.jpg"
               alt="Campus Leads Banner"
               fill
               className="object-cover"
@@ -29,7 +29,6 @@ function Cl() {
           </div>
         </div>
       </div>
-      {/* Green Section with Text */}
       <div className="mt-24 w-full bg-emerald-600 px-4 py-24">
         <div className="mx-6 md:mx-12 lg:mx-24">
           <h2 className="font-poppins text-left text-2xl font-medium leading-tight text-black sm:text-3xl md:text-5xl lg:text-6xl">

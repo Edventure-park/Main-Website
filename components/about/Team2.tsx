@@ -86,7 +86,7 @@ const teamMembers = [
 
 const extraMembers = [
   {
-    name: "Sarsh Alieah",
+    name: "Sarah Alieah",
     title: "Chief Creative Officer",
     image: "https://via.placeholder.com/500x450.png?text=Uma",
   },
