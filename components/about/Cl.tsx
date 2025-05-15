@@ -1,15 +1,18 @@
 import React from "react";
 import Image from "next/image";
+import localFont from "next/font/local";
+
+const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
 
 function Cl() {
   return (
     <section className="w-full bg-white px-0 py-8">
       {/* Padding container for consistent alignment */}
       <div className="mx-6 md:mx-12 lg:mx-24">
-        <h2 className="mb-6 text-left text-3xl font-[Black_Mango] tracking-tight md:text-3xl lg:text-4xl xl:text-5xl">
+        <h2 className={`mb-6 text-left text-3xl tracking-tight md:text-3xl lg:text-4xl xl:text-5xl ${BlackMangoRegular.className}`}>
           Campus Leads
         </h2>
-        <p className="text-left text-xl font-[Black_Mango] leading-relaxed">
+        <p className="text-left text-xl leading-relaxed">
           Our Campus Leads are the backbone of our community – the CEOs of{" "}
           <br />
           EdVenture Park within their respective campuses. These students have{" "}

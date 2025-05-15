@@ -1,5 +1,6 @@
 import React from 'react';
 import localFont from 'next/font/local'
+import Link from 'next/link';
 
 interface ProgramInfoProps {
   slug: string;
@@ -12,6 +13,19 @@ interface ProgramInfoProps {
 const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
 
 export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: ProgramInfoProps }) {
+  // Map program names to their respective slugs
+  const programSlugs: Record<string, string> = {
+    'Pre-Incubation Program': 'preincubation',
+    'Incubation Program': 'incubation',
+    'Campus Leadership Program': 'campusleadership',
+    'Incubation Manager Fellowship': 'fellowship',
+    'Internships': 'internships',
+    'Founders Friday': 'foundersfriday',
+    'Founders Fest': 'foundersfest',
+    'EdTalk': 'edtalk',
+    'Builders Sunday': 'builderssunday'
+  };
+  
   return (
     <section className="w-full bg-white px-4 py-12 md:px-10 lg:px-20">
       <div className="mx-auto max-w-7xl">
@@ -22,8 +36,10 @@ export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: Prog
             <div className="border-r border-green-600 pr-4">
               <ul className="space-y-4 text-left font-medium text-black">
                 {ProgramInfoData.lists.map((item, idx) => (
-                  <li key={idx} className="cursor-pointer transition-all duration-200 hover:text-green-600">
-                    {item}
+                  <li key={idx} className={`cursor-pointer transition-all duration-200 hover:text-green-600 ${ProgramInfoData.slug === programSlugs[item] ? 'font-bold text-green-600' : ''}`}>
+                    <Link href={`/programs/${programSlugs[item]}`}>
+                      {item}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -56,8 +72,10 @@ export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: Prog
           <aside>
             <ul className="space-y-4 text-left font-medium text-black">
               {ProgramInfoData.lists.map((item, idx) => (
-                <li key={idx} className="cursor-pointer transition-all duration-200 hover:text-green-600">
-                  {item}
+                <li key={idx} className={`cursor-pointer transition-all duration-200 hover:text-green-600 ${ProgramInfoData.slug === programSlugs[item] ? 'font-bold text-green-600' : ''}`}>
+                  <Link href={`/programs/${programSlugs[item]}`}>
+                    {item}
+                  </Link>
                 </li>
               ))}
             </ul>
