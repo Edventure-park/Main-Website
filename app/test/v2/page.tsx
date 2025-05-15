@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
-import Portfolio from '@/components/Portfolio/PortfolioPage'
+import Portfolio from '@/components/portfolio/P2'
 
 function Page() {
   return (
