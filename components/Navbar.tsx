@@ -156,7 +156,7 @@ function Navbar({ currentPage }: { currentPage: string }) {
             <li
               className={`text-lg transition-colors hover:text-[#169D53] ${currentPage === "programs" ? "font-bold text-[#169D53]" : "text-black"}`}
             >
-              <Link href="/desktop3">Programs</Link>
+              <Link href="/programs/preincubation">Programs</Link>
             </li>
           </ul>
           <Link
