@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
-const ai1 = '/assets/Incubation_Component_Im-2.png';
-const ai2 = '/assets/Incubation_Component_Im-1.png';
+const ai1 = '/assets/home_2.png';
+const ai2 = '/assets/home_1.png';
 
 function Incubation_info() {
   return (
@@ -58,7 +58,7 @@ function Incubation_info() {
             </div>
           </div>
           {/* Text at bottom */}
-          <div className="absolute bottom-0 left-0 right-20 p-6 text-black">
+          <div className="absolute bottom-0 left-0 right-20 p-6 text-white">
             <p className="text-base md:text-lg">
               EdVenture Park's Incubation Program Ensures Startups Find Their Product-Market Fit (PMF) And Then Supports Expansion Through Personalized Strategies And Investor Connections. It's All About Individualized Growth And Securing Investments.
             </p>
