@@ -1,5 +1,4 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
-/* eslint-disable unused-imports/no-unused-imports */
 "use client";
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
@@ -589,7 +588,7 @@ return () => currentRef.removeEventListener('scroll', handleScroll);
       {/* Main content area - Scrollable */}
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* Header with search, sort, and filter button for mobile */}
-        <div className="sticky top-0 z-10 border-b border-gray-200 bg-white bg-opacity-95 shadow-sm backdrop-blur-sm">
+        <div className="sticky top-0 z-10 border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-sm">
           <div className="flex flex-wrap items-center justify-between gap-3 p-4">
             {/* Mobile heading and filter button */}
             <div className="flex w-full items-center justify-between md:hidden">
