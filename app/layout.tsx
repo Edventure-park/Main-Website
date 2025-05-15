@@ -90,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-x-hidden" data-theme="light">
+    <html lang="en" className="overflow-x-hidden" data-theme="light" style={{ colorScheme: "light" }}>
       <Head>
         {/* Open Graph */}
         <meta property="og:title" content={metadata.openGraph.title} />

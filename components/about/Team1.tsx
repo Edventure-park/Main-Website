@@ -1,5 +1,8 @@
 import Image from "next/image";
 import React from "react";
+import localFont from "next/font/local";
+
+const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
 
 function Team1() {
   return (
@@ -9,10 +12,10 @@ function Team1() {
           Raising Unicorns
         </h1>
       </div>
-      <h2 className="mb-6 text-3xl font-[Black_Mango] tracking-tight md:text-3xl lg:text-4xl xl:text-5xl">
+      <h2 className={`mb-6 text-3xl tracking-tight md:text-3xl lg:text-4xl xl:text-5xl ${BlackMangoRegular.className}`}>
         Our Core Team
       </h2>
-      <p className="text-left text-xl font-[Black_Mango] leading-relaxed">
+      <p className="text-left text-xl leading-relaxed">
         At the heart of EdVenture Park, you'll find our dedicated Core Team, the
         driving force behind the dynamic engine that is EdVenture Park. They
         take charge of running the operations, funding initiatives, and

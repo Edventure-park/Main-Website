@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import localFont from "next/font/local";
+
+const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
 
 const teamMembers = [
   {
@@ -107,7 +110,7 @@ function Team2() {
     <section className="bg-white px-4 py-16 md:px-10 lg:px-20">
       {/* Header */}
       <div className="mb-12 text-left">
-        <h2 className="mb-4 text-3xl font-[Black_Mango] tracking-tight lg:text-4xl xl:text-5xl">
+        <h2 className={`mb-4 text-3xl tracking-tight lg:text-4xl xl:text-5xl ${BlackMangoRegular.className}`}>
           Our Executive Team
         </h2>
         <p className="font-poppins text-xl font-medium leading-relaxed text-gray-700">
