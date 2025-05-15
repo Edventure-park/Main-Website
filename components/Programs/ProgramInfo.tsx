@@ -2,17 +2,11 @@ import React from 'react';
 import localFont from 'next/font/local'
 import Link from 'next/link';
 
-interface ProgramInfoProps {
-  slug: string;
-  Heading: string;
-  SubHeading: string;
-  Paragraph: string;
-  lists: string[];
-}
+import { ProgramData } from '@/data/programData';
 
 const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
 
-export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: ProgramInfoProps }) {
+export default function ProgramInfo({ programData }: { programData: ProgramData }) {
   // Map program names to their respective slugs
   const programSlugs: Record<string, string> = {
     'Pre-Incubation Program': 'preincubation',
@@ -35,8 +29,8 @@ export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: Prog
           <aside className="md:w-1/4 lg:w-1/5">
             <div className="border-r border-green-600 pr-4">
               <ul className="space-y-4 text-left font-medium text-black">
-                {ProgramInfoData.lists.map((item, idx) => (
-                  <li key={idx} className={`cursor-pointer transition-all duration-200 hover:text-green-600 ${ProgramInfoData.slug === programSlugs[item] ? 'font-bold text-green-600' : ''}`}>
+                {programData.lists.map((item, idx) => (
+                  <li key={idx} className={`cursor-pointer transition-all duration-200 hover:text-green-600 ${programData.slug === programSlugs[item] ? 'font-bold text-green-600' : ''}`}>
                     <Link href={`/programs/${programSlugs[item]}`}>
                       {item}
                     </Link>
@@ -48,10 +42,13 @@ export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: Prog
           {/* Right Side - Content */}
           <article className="md:w-3/4 md:pl-8 lg:w-4/5">
             <h1 className="mb-4 text-2xl text-black md:text-3xl lg:text-4xl">
-              <span className={`${BlackMangoRegular.className}`}>{ProgramInfoData.Heading}</span>
+              <span className={`${BlackMangoRegular.className}`}>{programData.heading}</span>
             </h1>
+            <h2 className="mb-3 text-xl text-gray-700">
+              {programData.subHeading}
+            </h2>
             <p className="text-base leading-relaxed text-gray-800 md:text-lg">
-              {ProgramInfoData.Paragraph}
+              {programData.paragraph}
             </p>
           </article>
         </div>
@@ -60,10 +57,13 @@ export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: Prog
           {/* Content First */}
           <article className="mb-8">
             <h1 className="mb-4 text-2xl font-bold text-black">
-              {ProgramInfoData.Heading}
+              {programData.heading}
             </h1>
+            <h2 className="mb-3 text-lg text-gray-700">
+              {programData.subHeading}
+            </h2>
             <p className="text-base leading-relaxed text-gray-800">
-              {ProgramInfoData.Paragraph}
+              {programData.paragraph}
             </p>
           </article>
           {/* Horizontal Line for Mobile */}
@@ -71,8 +71,8 @@ export default function ProgramInfo({ ProgramInfoData }: { ProgramInfoData: Prog
           {/* List Below */}
           <aside>
             <ul className="space-y-4 text-left font-medium text-black">
-              {ProgramInfoData.lists.map((item, idx) => (
-                <li key={idx} className={`cursor-pointer transition-all duration-200 hover:text-green-600 ${ProgramInfoData.slug === programSlugs[item] ? 'font-bold text-green-600' : ''}`}>
+              {programData.lists.map((item, idx) => (
+                <li key={idx} className={`cursor-pointer transition-all duration-200 hover:text-green-600 ${programData.slug === programSlugs[item] ? 'font-bold text-green-600' : ''}`}>
                   <Link href={`/programs/${programSlugs[item]}`}>
                     {item}
                   </Link>
