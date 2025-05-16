@@ -2,7 +2,9 @@ import React from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
 
-const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
+const BlackMangoRegular = localFont({
+  src: "../../public/fonts/BlackMango/BlackMango-Regular.ttf",
+});
 
 const teamMembers = [
   {
@@ -14,75 +16,75 @@ const teamMembers = [
     image: "/assets/ExecutiveTeam/ET01.png",
   },
   {
-    name: "Ruqayyah Sara",
+    name: "Faiq Hussain",
     image: "/assets/ExecutiveTeam/ET02.png",
   },
   {
-    name: "Issam Uddin",
+    name: "Saad Mirza",
     image: "/assets/ExecutiveTeam/ET03.png",
   },
   {
-    name: "Hajera Zia",
+    name: "Ruqayyah Sara",
     image: "/assets/ExecutiveTeam/ET04.png",
   },
   {
-    name: "Mohammed Noor",
+    name: "Issam Uddin",
     image: "/assets/ExecutiveTeam/ET05.png",
   },
   {
-    name: "Obaid Ullah Khan",
+    name: "Hajera Zia",
     image: "/assets/ExecutiveTeam/ET06.png",
   },
   {
-    name: "Mustafa Kakeem",
+    name: "Mohammed Noor",
     image: "/assets/ExecutiveTeam/ET07.png",
   },
   {
-    name: "Rabiya Noreen",
+    name: "Obaid Ullah Khan ",
     image: "/assets/ExecutiveTeam/ET08.png",
   },
   {
-    name: "Masarrath Fatima ",
+    name: "Mustafa Kaleem ",
     image: "/assets/ExecutiveTeam/ET09.png",
   },
   {
-    name: "Saniya",
+    name: "Rabiya Noreen ",
     image: "/assets/ExecutiveTeam/ET10.png",
   },
   {
-    name: "Rehan Algaari",
+    name: "Masarrath Fatima",
     image: "/assets/ExecutiveTeam/ET11.png",
   },
   {
-    name: "Aliya Noorain",
+    name: "Saniya",
     image: "/assets/ExecutiveTeam/ET12.png",
   },
   {
-    name: "Sumaiyya Fasiuddun",
+    name: "Rehan Algaari",
     image: "/assets/ExecutiveTeam/ET13.png",
   },
   {
-    name: "Yousuf Afreen",
+    name: "Aliya Noorain",
     image: "/assets/ExecutiveTeam/ET14.png",
   },
   {
-    name: "Huda Hajera",
+    name: "Sumaiyya Fasiuddin",
     image: "/assets/ExecutiveTeam/ET15.png",
   },
   {
-    name: "Maaz Ahmed Khan",
+    name: "Yousuf Affreen",
     image: "/assets/ExecutiveTeam/ET16.png",
   },
   {
-    name: "Adnan Ali Khanl",
+    name: "Huda Hajera",
     image: "/assets/ExecutiveTeam/ET17.png",
   },
   {
-    name: "Daiq Hussain",
+    name: "Maaz Ahmed Khan  ",
     image: "/assets/ExecutiveTeam/ET18.png",
   },
   {
-    name: "Saad Mirza",
+    name: "Adnan Ali Khanl",
     image: "/assets/ExecutiveTeam/ET19.png",
   },
 ];
@@ -110,7 +112,9 @@ function Team2() {
     <section className="bg-white px-4 py-16 md:px-10 lg:px-20">
       {/* Header */}
       <div className="mb-12 text-left">
-        <h2 className={`mb-4 text-3xl tracking-tight lg:text-4xl xl:text-5xl ${BlackMangoRegular.className}`}>
+        <h2
+          className={`mb-4 text-3xl tracking-tight lg:text-4xl xl:text-5xl ${BlackMangoRegular.className}`}
+        >
           Our Executive Team
         </h2>
         <p className="font-poppins text-xl font-medium leading-relaxed text-gray-700">
@@ -137,7 +141,7 @@ function Team2() {
                   className="rounded-tr-[25%] object-cover"
                 />
               </div>
-              <p className="text-lg font-semibold text-gray-800"> 
+              <p className="text-lg font-semibold text-gray-800">
                 {member.name}
               </p>
             </div>
