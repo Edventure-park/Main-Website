@@ -8,9 +8,9 @@ function Grid() {
   return (
     <div className="flex w-full flex-col">
       {/* Row 1 - Header */}
-      <div className="flex w-full flex-nowrap items-center justify-center gap-2 overflow-x-hidden whitespace-nowrap text-2xl font-bold tracking-wider sm:gap-4 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+      <div className="flex w-full items-center justify-center gap-2 overflow-hidden text-2xl font-bold tracking-wider sm:gap-4 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
         {/* STUDENT Group */}
-        <div className="flex">
+        <div className="flex shrink-0">
           <div className={`${BlackMangoBold.className} bg-green-600 px-2 py-1 text-white`}>
             STUD
           </div>
@@ -19,7 +19,7 @@ function Grid() {
           </div>
         </div>
         {/* FOUNDERS Group */}
-        <div className="flex">
+        <div className="flex shrink-0">
           <div className={`${BlackMangoBold.className} bg-white px-2 py-1 text-black`}>
             FOUND
           </div>
