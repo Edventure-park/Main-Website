@@ -201,14 +201,13 @@ function Grid() {
           />
         </div>
         {/* Columns 3-6 - Text Content */}
-        <div className="col-span-4 flex items-center justify-center bg-white">
-          <div className="px-1 text-center sm:px-2 md:px-4">
-            <p className="text-xl font-medium sm:text-2xl md:text-3xl">Giving India</p>
-            <p className="text-2xl font-bold text-green-700 sm:text-3xl md:text-5xl">Its True</p>
-            <p className="text-xl font-medium sm:text-2xl md:text-3xl">
-              Student-Startup{" "}
-              <span className="text-3xl font-extrabold text-green-700 sm:text-4xl md:text-6xl">UNICORN</span>
-            </p>
+        <div className="col-span-4 flex flex-col items-center justify-center bg-white">
+          <div className="flex w-full flex-col items-center justify-center px-1 sm:px-2 md:px-4">
+            {/* Text split into 4 distinct rows as in the image */}
+            <p className="w-full text-center text-xl font-medium sm:text-2xl md:text-3xl">Giving India</p>
+            <p className="w-full text-center text-2xl font-bold text-green-700 sm:text-3xl md:text-5xl">Its True</p>
+            <p className="w-full text-center text-xl font-medium sm:text-2xl md:text-3xl">Student-Startup</p>
+            <p className="w-full text-center text-3xl font-extrabold text-green-700 sm:text-4xl md:text-6xl">UNICORN</p>
           </div>
         </div>
         {/* Column 7 - Person's Image */}
