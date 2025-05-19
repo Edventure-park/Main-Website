@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const rocket = '/assets/rocket.png'
+const rocket = '/assets/rocket-bg-removed.png'
 
 function Apply_Process() {
   return (

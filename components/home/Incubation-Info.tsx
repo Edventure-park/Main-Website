@@ -65,7 +65,7 @@ function Incubation_info() {
           </div>
         </div>
       </div>
-      <div className="w-full">
+      {/* <div className="w-full">
         <div className="w-full px-4 py-8">
           <h1 className="w-full text-5xl font-black tracking-tighter text-gray-900 sm:text-6xl md:text-7xl lg:text-9xl" style={{ 
             letterSpacing: '-0.02em', 
@@ -76,7 +76,7 @@ function Incubation_info() {
             TURN YOUR IDEAS
           </h1>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

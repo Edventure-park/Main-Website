@@ -13,6 +13,7 @@ import { What_To_Expect } from "@/components/home/What-To-Expect";
 import LatestBuzz from "@/components/home/LatestBuzz";
 import Grid from "@/components/home/Grid";
 import DynamicRing from "@/components/DynamicRing";
+import NumbersHeadline from "@/components/home/NumbersHeadline";
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
       <Grid/>
       {/* <PostGrid/> */}
       <br />
-      <div className="mb-4 bg-emerald-600 p-4">
+      {/* <div className="mb-4 bg-emerald-600 p-4">
         <div className="flex flex-col items-center md:flex-row">
           <div className="w-full text-white md:w-1/2">
             <p className="mb-4 text-5xl font-bold md:text-6xl lg:text-7xl">
@@ -56,7 +57,8 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
+      <NumbersHeadline/>
       <Incubation_info/>
       <Founders_Collage/>
       <Apply_Process/>
