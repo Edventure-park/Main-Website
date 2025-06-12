@@ -72,7 +72,8 @@ function CompleteProgramPage({ slug }: { slug: string }) {
         >
           <DarkImageGrid 
             title={programData.gallery.title} 
-            images={programData.gallery.images} 
+            images={programData.gallery.images}
+            renderState={slug==="edtalk" || slug==="foundersfriday" ? true : false } 
           />
         </motion.div>
         <motion.div 

@@ -3,13 +3,16 @@ import Image from 'next/image';
 
 interface DarkImageGridProps {
   title: string;
+  renderState: boolean
   images: {
     url: string;
     alt?: string;
   }[];
 }
 
-export default function DarkImageGrid({ title, images }: DarkImageGridProps) {
+export default function DarkImageGrid({ title, images,renderState }: DarkImageGridProps) {
+  if (!renderState)
+    return null;
   return (
     <div className="flex w-full justify-center">
       <div className="w-4/5 rounded bg-black p-3">
