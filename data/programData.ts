@@ -31,20 +31,20 @@ const programsData: Record<ProgramSlug, ProgramData> = {
     paragraph: 'We work with student entrepreneurs, taking them through the fundamental tracks of building a company, organizing exclusive sessions/workshops, and giving them all the support & guidance they need for them to take their idea to the next level. Students can experiment with their ideas and have an opportunity of starting their own companies while still in college.',
     lists: ['Pre-Incubation Program', 'Incubation Program', 'Campus Leadership Program', 'Incubation Manager Fellowship', 'Internships', 'Founders Friday', 'Founders Fest', 'EdTalk', 'Builders Sunday'],
     banner: {
-      title: "Want to join our Pre-Incubation Program?",
-      subtitle: "Apply for the next cohort",
+      title: "India's First Student",
+      subtitle: "Join our Pre-Incubation Program",
       cta: "Apply Now",
-      ctaLink: "/apply/preincubation"
+      ctaLink: ""
     },
     gallery: {
       title: "Pre-Incubation Program Gallery",
       images: [
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/rocket.png",
           alt: "Group of founders cutting ribbon"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/EvpPreInc.png",
           alt: "Audience at business event"
         },
         {
@@ -389,7 +389,7 @@ export const defaultProgramData: ProgramData = {
         alt: "Program image"
       }
     ]
-  }
+  },
 };
 
 export default programsData;

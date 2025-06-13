@@ -10,9 +10,9 @@ import Footer from '../Footer';
 import ProgramInfo from './ProgramInfo'
 import DarkImageGrid from './DarkPostGrid';
 import GreenBanner from './GreenBanner';
+import GreenRocket from './GreenRocket';
 
 function CompleteProgramPage({ slug }: { slug: string }) {
-  // Type assertion to ensure we can safely access the program data
   const programSlug = slug as ProgramSlug;
   
   // Get program data or use default if not found
@@ -74,6 +74,11 @@ function CompleteProgramPage({ slug }: { slug: string }) {
             title={programData.gallery.title} 
             images={programData.gallery.images}
             renderState={slug==="edtalk" || slug==="foundersfriday" ? true : false } 
+          />
+          <GreenRocket
+          title={programData.gallery.title}
+          images={programData.gallery.images}
+          renderState={slug==="preincubation" ? true : false }
           />
         </motion.div>
         <motion.div 
