@@ -75,10 +75,10 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       ctaLink: "/apply/incubation"
     },
     gallery: {
-      title: "Incubation Program Gallery",
+      title: "Building Fundametally",
       images: [
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/.jpg",
           alt: "Group of founders cutting ribbon"
         },
         {
@@ -227,7 +227,7 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       ctaLink: "/apply/campus-lead"
     },
     gallery: {
-      title: "Edtalk Gallery",
+      title: "Here' some of our EdTalk Snapshots",
       images: [
         {
           url: "/assets/LeadsBanner.jpg",
@@ -265,7 +265,7 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       ctaLink: "/register/builders-sunday"
     },
     gallery: {
-      title: "Builders' Sunday Gallery",
+      title: "Innovation meets Instruction",
       images: [
         {
           url: "/assets/LeadsBanner.jpg",
@@ -303,26 +303,26 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       ctaLink: "/events/founders-friday"
     },
     gallery: {
-      title: "Founders' Friday × Business Showers",
+      title: "",
       images: [
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assests ",
           alt: "Group of founders cutting ribbon"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assests",
           alt: "Audience at business event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assests",
           alt: "Speaker presenting at event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assests",
           alt: "Celebration cake with HURON logo"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets",
           alt: "Speaker and audience at event"
         }
       ]

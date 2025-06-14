@@ -1,59 +1,71 @@
 "use client";
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
+import type { Variants, TargetAndTransition } from "framer-motion";
 
-import programsData, { ProgramSlug, defaultProgramData } from '@/data/programData';
+import programsData, {
+  ProgramSlug,
+  defaultProgramData,
+} from "@/data/programData";
 
-import Navbar from '../Navbar';
-import Footer from '../Footer';
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
-import ProgramInfo from './ProgramInfo'
-import DarkImageGrid from './DarkPostGrid';
-import GreenBanner from './GreenBanner';
-import GreenRocket from './GreenRocket';
+import ProgramInfo from "./ProgramInfo";
+import DarkImageGrid from "./DarkPostGrid";
+import GreenBanner from "./GreenBanner";
+import GreenRocket from "./GreenRocket";
+import TrackSection from "./TrackSection";
+import Fundamentals from "./Fundamentals";
+import BuilderSunday from "./BuilderSunday";
+import FoundersFriday from "./FounderFriday";
 
 function CompleteProgramPage({ slug }: { slug: string }) {
   const programSlug = slug as ProgramSlug;
-  
+
   // Get program data or use default if not found
   const programData = programsData[programSlug] || defaultProgramData;
 
   // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (custom: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { 
-        delay: custom * 0.2,
-        duration: 0.6, 
-        ease: "easeOut"  as const
-      }
-    })
-  };
+  const fadeIn: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (custom: number): TargetAndTransition => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: custom * 0.2,
+      duration: 0.6,
+      ease: [0.42, 0, 0.58, 1], // proper easing format
+    },
+  }),
+};
 
   // Add a safety check to prevent rendering with undefined data
   if (!programData) {
-    return <div className="container mx-auto p-8 text-center">Program not found or loading...</div>;
+    return (
+      <div className="container mx-auto p-8 text-center">
+        Program not found or loading...
+      </div>
+    );
   }
 
   return (
     <>
-      <Navbar currentPage='program'/>
-      <motion.div 
+      <Navbar currentPage="program" />
+      <motion.div
         className="container mx-auto px-4 py-12"
         initial="hidden"
         animate="visible"
         variants={{
           hidden: { opacity: 0 },
-          visible: { 
+          visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.3 }
-          }
+            transition: { staggerChildren: 0.3 },
+          },
         }}
       >
-        <motion.h1 
-          className='relative mb-12 text-center text-3xl font-bold md:text-4xl lg:text-5xl'
+        <motion.h1
+          className="relative mb-12 text-center text-3xl font-bold md:text-4xl lg:text-5xl"
           variants={fadeIn}
           custom={0}
         >
@@ -65,30 +77,50 @@ function CompleteProgramPage({ slug }: { slug: string }) {
         <motion.div variants={fadeIn} custom={1}>
           <ProgramInfo programData={programData} />
         </motion.div>
-        <motion.div 
+        <motion.div
           className="container mx-auto my-12"
           variants={fadeIn}
           custom={2}
         >
-          <DarkImageGrid 
-            title={programData.gallery.title} 
+          <FoundersFriday
+            title={programData.gallery.title}
             images={programData.gallery.images}
-            renderState={slug==="edtalk" || slug==="foundersfriday" ? true : false } 
+            renderState={slug === "foundersfriday" ? true : false}
+          />
+          <DarkImageGrid
+            title={programData.gallery.title}
+            images={programData.gallery.images}
+            renderState={
+              slug === "edtalk" || slug === "foundersfriday" ? true : false
+            }
           />
           <GreenRocket
-          title={programData.gallery.title}
-          images={programData.gallery.images}
-          renderState={slug==="preincubation" ? true : false }
+            title={programData.gallery.title}
+            images={programData.gallery.images}
+            renderState={slug === "preincubation" ? true : false}
+          />
+          <Fundamentals
+            title={programData.gallery.title}
+            images={programData.gallery.images}
+            renderState={slug === "incubation" ? true : false}
+          />
+          <BuilderSunday
+            title={programData.gallery.title}
+            renderState={slug === "builderssunday" ? true : false}
+          />
+          <TrackSection
+            title={programData.gallery.title}
+            images={programData.gallery.images}
+            renderState={
+              slug === "preincubation" || slug === "incubation" ? true : false
+            }
           />
         </motion.div>
-        <motion.div 
-          variants={fadeIn}
-          custom={3}
-        >
+        <motion.div variants={fadeIn} custom={3}>
           <GreenBanner bannerInfo={programData.banner} />
         </motion.div>
       </motion.div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
