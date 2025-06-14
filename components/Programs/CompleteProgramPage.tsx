@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import type { Variants, TargetAndTransition } from "framer-motion";
 
 import programsData, {
   ProgramSlug,
@@ -26,18 +27,18 @@ function CompleteProgramPage({ slug }: { slug: string }) {
   const programData = programsData[programSlug] || defaultProgramData;
 
   // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (custom: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: custom * 0.2,
-        duration: 0.6, 
-        ease: "easeOut" 
-      }
-    })
-  };
+  const fadeIn: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (custom: number): TargetAndTransition => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: custom * 0.2,
+      duration: 0.6,
+      ease: [0.42, 0, 0.58, 1], // proper easing format
+    },
+  }),
+};
 
   // Add a safety check to prevent rendering with undefined data
   if (!programData) {
