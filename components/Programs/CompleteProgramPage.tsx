@@ -11,6 +11,8 @@ import ProgramInfo from './ProgramInfo'
 import DarkImageGrid from './DarkPostGrid';
 import GreenBanner from './GreenBanner';
 import GreenRocket from './GreenRocket';
+import TrackSection from './TrackSection';
+import Fundamentals from './Fundamentals';
 
 function CompleteProgramPage({ slug }: { slug: string }) {
   const programSlug = slug as ProgramSlug;
@@ -79,6 +81,16 @@ function CompleteProgramPage({ slug }: { slug: string }) {
           title={programData.gallery.title}
           images={programData.gallery.images}
           renderState={slug==="preincubation" ? true : false }
+          />
+          <Fundamentals
+            title={programData.gallery.title}
+            images={programData.gallery.images}
+            renderState={slug==="incubation" ? true : false }
+          />
+          <TrackSection
+            title={programData.gallery.title}
+            images={programData.gallery.images}
+            renderState={slug==="preincubation" || slug==="incubation" ? true : false }
           />
         </motion.div>
         <motion.div 

@@ -75,10 +75,10 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       ctaLink: "/apply/incubation"
     },
     gallery: {
-      title: "Incubation Program Gallery",
+      title: "Building Fundametally",
       images: [
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/.jpg",
           alt: "Group of founders cutting ribbon"
         },
         {
@@ -227,7 +227,7 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       ctaLink: "/apply/campus-lead"
     },
     gallery: {
-      title: "Edtalk Gallery",
+      title: "Here' some of our EdTalk Snapshots",
       images: [
         {
           url: "/assets/LeadsBanner.jpg",
