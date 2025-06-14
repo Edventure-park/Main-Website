@@ -265,7 +265,7 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       ctaLink: "/register/builders-sunday"
     },
     gallery: {
-      title: "Builders' Sunday Gallery",
+      title: "Innovation meets Instruction",
       images: [
         {
           url: "/assets/LeadsBanner.jpg",
@@ -303,26 +303,26 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       ctaLink: "/events/founders-friday"
     },
     gallery: {
-      title: "Founders' Friday × Business Showers",
+      title: "",
       images: [
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assests ",
           alt: "Group of founders cutting ribbon"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assests",
           alt: "Audience at business event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assests",
           alt: "Speaker presenting at event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assests",
           alt: "Celebration cake with HURON logo"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets",
           alt: "Speaker and audience at event"
         }
       ]
