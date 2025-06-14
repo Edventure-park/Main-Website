@@ -33,10 +33,10 @@ function CompleteProgramPage({ slug }: { slug: string }) {
       y: 0,
       transition: {
         delay: custom * 0.2,
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    }),
+        duration: 0.6, 
+        ease: "easeOut" 
+      }
+    })
   };
 
   // Add a safety check to prevent rendering with undefined data
