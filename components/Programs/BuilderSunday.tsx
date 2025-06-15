@@ -11,12 +11,12 @@ export default function BuilderSunday({
   title,
   renderState,
   images = [
-    { url: "/assets/BuilderSunday1.jpg", alt: "Builder Sunday Image 1" },
-    { url: "/assets/BuilderSunday2.jpg", alt: "Builder Sunday Image 2" },
-    { url: "/assets/BuilderSunday3.jpg", alt: "Builder Sunday Image 3" },
-    { url: "/assets/BuilderSunday4.jpg", alt: "Builder Sunday Image 4" },
-    { url: "/assets/BuilderSunday5.jpg", alt: "Builder Sunday Image 5" },
-    { url: "/assets/BuilderSunday6.jpg", alt: "Builder Sunday Image 6" },
+    { url: "/assets/TopLeftBs.png", alt: "Builder Sunday Image 1" },
+    { url: "/assets/TopRigthBs.png", alt: "Builder Sunday Image 2" },
+    { url: "/assets/MidLeftBs.png", alt: "Builder Sunday Image 3" },
+    { url: "/assets/MidRightBs.png", alt: "Builder Sunday Image 4" },
+    { url: "/assets/LastLeftBs.png", alt: "Builder Sunday Image 5" },
+    { url: "/assets/LastRightBs.png", alt: "Builder Sunday Image 6" },
   ],
 }: BuilderSundayProps) {
   if (!renderState) return null;
@@ -54,64 +54,64 @@ export default function BuilderSunday({
       </div>
       {/* Image Grid Section */}
       <div className="flex w-full justify-center">
-        <div className="w-4/5 rounded p-3">
+        <div className="w-4/5 rounded-2xl bg-black p-3">
           <div className="mx-auto">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
               {/* Row 1: Square + Rect */}
-              <div className="flex h-72 gap-4">
-                <div className="relative w-2/5">
+              <div className="flex h-[460px] gap-4">
+                <div className="relative h-full w-[42%]">
                   <Image
-                    src={images[0]?.url || ""}
+                    src={images[0]?.url || "/assets/TopLeftBs.png"}
                     alt={images[0]?.alt || "Event image"}
                     fill
-                    className="rounded object-cover"
+                    className="rounded-2xl object-cover"
                     priority
                   />
                 </div>
-                <div className="relative w-3/5">
+                <div className="relative h-full w-[58%]">
                   <Image
-                    src={images[1]?.url || ""}
+                    src={images[1]?.url || "/assets/TopRigthBs.png"}
                     alt={images[1]?.alt || "Event image"}
                     fill
-                    className="rounded object-cover"
+                    className="rounded-2xl object-cover"
                   />
                 </div>
               </div>
               {/* Row 2: Rect + Square */}
-              <div className="flex h-72 gap-4">
-                <div className="relative w-3/5">
+              <div className="flex h-[460px] gap-4">
+                <div className="relative h-full w-[58%]">
                   <Image
-                    src={images[2]?.url || ""}
+                    src={images[2]?.url || "/assets/MidLeftBs.png"}
                     alt={images[2]?.alt || "Event image"}
                     fill
-                    className="rounded object-cover"
+                    className="rounded-2xl object-cover"
                   />
                 </div>
-                <div className="relative w-2/5">
+                <div className="relative h-full w-[42%]">
                   <Image
-                    src={images[3]?.url || ""}
+                    src={images[3]?.url || "/assets/MidRightBs.png"}
                     alt={images[3]?.alt || "Event image"}
                     fill
-                    className="rounded object-cover"
+                    className="rounded-2xl object-cover"
                   />
                 </div>
               </div>
               {/* Row 3: Square + Rect */}
-              <div className="flex h-72 gap-4">
-                <div className="relative w-2/5">
+              <div className="flex h-[460px] gap-4">
+                <div className="relative h-full w-[42%]">
                   <Image
-                    src={images[4]?.url || ""}
+                    src={images[4]?.url || "/assets/LastLeftBs.png"}
                     alt={images[4]?.alt || "Event image"}
                     fill
-                    className="rounded object-cover"
+                    className="rounded-2xl object-cover"
                   />
                 </div>
-                <div className="relative w-3/5">
+                <div className="relative h-full w-[58%]">
                   <Image
-                    src={images[5]?.url || ""}
+                    src={images[5]?.url || "/assets/LastRightBs.png"}
                     alt={images[5]?.alt || "Event image"}
                     fill
-                    className="rounded object-cover"
+                    className="rounded-2xl object-cover"
                   />
                 </div>
               </div>
