@@ -104,21 +104,21 @@ function Navbar({ currentPage }: { currentPage: string }) {
             <li
               className={`text-lg transition-colors hover:text-[#169D53] ${currentPage === "aboutus" ? "font-bold text-[#169D53]" : "text-black"}`}
             >
-              <Link href="/desktop1" onClick={toggleMenu}>
+              <Link href="/about" onClick={toggleMenu}>
                 About Us
               </Link>
             </li>
             <li
               className={`text-lg transition-colors hover:text-[#169D53] ${currentPage === "portfolio" ? "font-bold text-[#169D53]" : "text-black"}`}
             >
-              <Link href="/desktop2" onClick={toggleMenu}>
+              <Link href="/portfolio" onClick={toggleMenu}>
                 Portfolio
               </Link>
             </li>
             <li
               className={`text-lg transition-colors hover:text-[#169D53] ${currentPage === "programs" ? "font-bold text-[#169D53]" : "text-black"}`}
             >
-              <Link href="/desktop3" onClick={toggleMenu}>
+              <Link href="/programs/preincubation" onClick={toggleMenu}>
                 Programs
               </Link>
             </li>
