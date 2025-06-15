@@ -96,7 +96,9 @@ const programsData: Record<ProgramSlug, ProgramData> = {
         {
           url: "/assets/LeadsBanner.jpg",
           alt: "Speaker and audience at event"
-        }
+        },
+        {url: "/assets/LeadsBanner.jpg", alt: "Speaker and audience at event"
+        },
       ]
     }
   },
@@ -268,11 +270,11 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       title: "Innovation meets Instruction",
       images: [
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/TopLeftBs.png",
           alt: "Group of founders cutting ribbon"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/TopRigthBs.png",
           alt: "Audience at business event"
         },
         {
@@ -306,25 +308,52 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       title: "",
       images: [
         {
-          url: "/assests ",
-          alt: "Group of founders cutting ribbon"
+          url: "/assets/FoundersFridayLeft1.png",
+          alt: "/assets/FoundersFridayLeft1.png"
         },
         {
-          url: "/assests",
+          url: "/assets/topFf.png",
           alt: "Audience at business event"
         },
         {
-          url: "/assests",
+          url: "/assets/MiddleFf.png",
           alt: "Speaker presenting at event"
         },
         {
-          url: "/assests",
+          url: "/assets/bottomFf.png",
           alt: "Celebration cake with HURON logo"
         },
         {
-          url: "/assets",
-          alt: "Speaker and audience at event"
-        }
+          url: "/assets/RightFf.png",
+          alt: "topone."
+        },
+        {
+          url: " /assets/Box1Ff.png",
+          alt: "5"
+        },
+        {
+          url: "/assets/Box1Ff.png",
+          alt: "6"
+        },
+        {
+          url: "/assets/Box2Ff.png",
+          alt: "7"
+        },
+        {
+          url: "/assets/Box3Ff.png",
+          alt: "8"
+        },
+        {
+          url: "/assets/Box4Ff.png  ",
+          alt: "9"
+        },
+        {
+          url: "/assets/Box5Ff.png",
+          alt: "10"
+        },
+        {
+          url: "/assets/Box6Ff.png",
+          alt: "11"}
       ]
     }
   },
