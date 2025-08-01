@@ -91,8 +91,7 @@ function CompleteProgramPage({ slug }: { slug: string }) {
             title={programData.gallery.title}
             images={programData.gallery.images}
             renderState={
-              slug === "edtalk" || slug === "foundersfriday" ? true : false
-            }
+              slug === "edtalk"? true : false}
           />
           <GreenRocket
             title={programData.gallery.title}
