@@ -81,89 +81,86 @@ const teamXMembers = [
 
 function Teamx() {
     return (
-        <section className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 px-4 py-16">
-            <div className="mx-auto max-w-6xl">
-                {/* Hero Section */}
-                <div className="mb-16 text-center">
-                    <h1 className={`mb-6 text-[clamp(2.5rem,5vw,6rem)] font-black uppercase leading-tight text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text ${BlackMangoRegular.className}`}>
-                        Team X
-                    </h1>
-                    <p className="mx-auto max-w-3xl text-lg font-medium leading-relaxed text-gray-700">
-                        The extraordinary minds behind the scenes. Our Team X members are the creative catalysts, 
-                        the innovation drivers, and the dream enablers who make the impossible possible.
-                    </p>
+      <section className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 px-4 py-16">
+        <div className="mx-auto max-w-6xl">
+          {/* Hero Section */}
+          <div className="mb-16 text-center">
+            <h1 className={`mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-[clamp(2.5rem,5vw,6rem)] font-black uppercase leading-tight text-transparent ${BlackMangoRegular.className}`}>
+              Team X
+            </h1>
+            <p className="mx-auto max-w-3xl text-lg font-medium leading-relaxed text-gray-700">
+              The extraordinary minds behind the scenes. Our Team X members are the creative catalysts, 
+              the innovation drivers, and the dream enablers who make the impossible possible.
+            </p>
+          </div>
+          {/* Cool Grid Layout */}
+          <div className="space-y-12">
+            {/* First Row - 3 members with large cards */}
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              {teamXMembers.slice(0, 3).map((member, index) => (
+                <div key={index} className="group relative">
+                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
+                  <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
+                    <div className="relative mb-6 h-72 w-full overflow-hidden rounded-2xl">
+                      <Image
+                                            src={member.image}
+                                            alt={member.name}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    </div>
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">{member.name}</h3>
+                    <p className="text-gray-600">{member.role}</p>
+                  </div>
                 </div>
-
-                {/* Cool Grid Layout */}
-                <div className="space-y-12">
-                    {/* First Row - 3 members with large cards */}
-                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-                        {teamXMembers.slice(0, 3).map((member, index) => (
-                            <div key={index} className="group relative">
-                                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
-                                <div className="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm p-6 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300">
-                                    <div className="relative mb-6 h-72 w-full overflow-hidden rounded-2xl">
-                                        <Image
-                                            src={member.image}
-                                            alt={member.name}
-                                            fill
-                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                                    </div>
-                                    <h3 className="mb-2 text-xl font-bold text-gray-900">{member.name}</h3>
-                                    <p className="text-gray-600">{member.role}</p>
-                                </div>
-                            </div>
                         ))}
-                    </div>
-
-                    {/* Second Row - 6 members in a compact grid */}
-                    <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
-                        {teamXMembers.slice(3, 9).map((member, index) => (
-                            <div key={index} className="group relative">
-                                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${member.color} opacity-10 blur-lg transition-all duration-500 group-hover:opacity-30`}></div>
-                                <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm p-4 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300">
-                                    <div className="relative mb-4 h-40 w-full overflow-hidden rounded-xl">
-                                        <Image
-                                            src={member.image}
-                                            alt={member.name}
-                                            fill
-                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                                    </div>
-                                    <h3 className="mb-1 text-sm font-bold text-gray-900">{member.name}</h3>
-                                    <p className="text-xs text-gray-600">{member.role}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Third Row - 3 members with different styling */}
-                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-                        {teamXMembers.slice(9, 12).map((member, index) => (
-                            <div key={index} className="group relative">
-                                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
-                                <div className="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm p-6 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300">
-                                    <div className="relative mb-6 h-72 w-full overflow-hidden rounded-2xl">
-                                        <Image
-                                            src={member.image}
-                                            alt={member.name}
-                                            fill
-                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                                    </div>
-                                    <h3 className="mb-2 text-xl font-bold text-gray-900">{member.name}</h3>
-                                    <p className="text-gray-600">{member.role}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </div>
-        </section>
+            {/* Second Row - 6 members in a compact grid */}
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+              {teamXMembers.slice(3, 9).map((member, index) => (
+                <div key={index} className="group relative">
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${member.color} opacity-10 blur-lg transition-all duration-500 group-hover:opacity-30`}></div>
+                  <div className="relative overflow-hidden rounded-2xl border border-white/50 bg-white/80 p-4 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
+                    <div className="relative mb-4 h-40 w-full overflow-hidden rounded-xl">
+                      <Image
+                                            src={member.image}
+                                            alt={member.name}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    </div>
+                    <h3 className="mb-1 text-sm font-bold text-gray-900">{member.name}</h3>
+                    <p className="text-xs text-gray-600">{member.role}</p>
+                  </div>
+                </div>
+                        ))}
+            </div>
+            {/* Third Row - 3 members with different styling */}
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              {teamXMembers.slice(9, 12).map((member, index) => (
+                <div key={index} className="group relative">
+                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
+                  <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
+                    <div className="relative mb-6 h-72 w-full overflow-hidden rounded-2xl">
+                      <Image
+                                            src={member.image}
+                                            alt={member.name}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    </div>
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">{member.name}</h3>
+                    <p className="text-gray-600">{member.role}</p>
+                  </div>
+                </div>
+                        ))}
+            </div>
+          </div>
+        </div>
+      </section>
     )
 }
 

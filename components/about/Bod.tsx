@@ -45,16 +45,14 @@ function Bod() {
             to guide EdVenture Park towards excellence and innovation.
           </p>
         </div>
-        
         {/* BOD Grid */}
         <div className="grid grid-cols-1 gap-20 md:grid-cols-2">
           {boardMembers.map((member, index) => (
             <div key={index} className="group relative">
               {/* Gradient Background */}
               <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
-              
               {/* Card */}
-              <div className="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm p-12 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-12 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
                 {/* Image Container - Square */}
                 <div className="relative mb-10 aspect-square w-full overflow-hidden rounded-2xl">
                   <Image
@@ -66,7 +64,6 @@ function Bod() {
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                
                 {/* Content */}
                 <div className="text-center">
                   <h3 className="mb-4 text-3xl font-bold text-gray-900">{member.name}</h3>

@@ -51,7 +51,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     );
 
     let activeTarget: Element | null = null;
-    let currentTargetMove: ((ev: Event) => void) | null = null;
+    let currentTargetMove: ((_ev: Event) => void) | null = null;
     let currentLeaveHandler: (() => void) | null = null;
     let isAnimatingToTarget = false;
     let resumeTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -234,10 +234,10 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       }, 1);
 
       let moveThrottle: number | null = null;
-      const targetMove = (ev: Event) => {
+      const targetMove = (_ev: Event) => {
         if (moveThrottle || isAnimatingToTarget) return;
         moveThrottle = requestAnimationFrame(() => {
-          const mouseEvent = ev as MouseEvent;
+          const mouseEvent = _ev as MouseEvent;
           updateCorners(mouseEvent.clientX, mouseEvent.clientY);
           moveThrottle = null;
         });
@@ -339,27 +339,27 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
   return (
     <div 
       ref={cursorRef} 
-      className="fixed top-0 left-0 w-0 h-0 pointer-events-none z-[9999] mix-blend-difference transform -translate-x-1/2 -translate-y-1/2"
+      className="pointer-events-none fixed left-0 top-0 z-[9999] size-0 -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
       style={{ willChange: 'transform' }}
     >
       <div ref={dotRef}
-        className="absolute left-1/2 top-1/2 w-1 h-1 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2" 
+        className="absolute left-1/2 top-1/2 size-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" 
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 w-3 h-3 border-[3px] border-white transform -translate-x-[150%] -translate-y-[150%] border-r-0 border-b-0" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 translate-x-[150%] translate-y-[150%] border-[3px] border-b-0 border-r-0 border-white" 
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 w-3 h-3 border-[3px] border-white transform translate-x-1/2 -translate-y-[150%] border-l-0 border-b-0" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-x-1/2 translate-y-[150%] border-[3px] border-b-0 border-l-0 border-white" 
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 w-3 h-3 border-[3px] border-white transform translate-x-1/2 translate-y-1/2 border-l-0 border-t-0" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 border-[3px] border-l-0 border-t-0 border-white" 
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 w-3 h-3 border-[3px] border-white transform -translate-x-[150%] translate-y-1/2 border-r-0 border-t-0" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-y-1/2 translate-x-[150%] border-[3px] border-r-0 border-t-0 border-white" 
         style={{ willChange: 'transform' }}
       />
     </div>

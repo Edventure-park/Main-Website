@@ -43,11 +43,10 @@ function Team1() {
       <div className="mx-auto max-w-6xl">
         {/* Hero Section */}
         <div className="mb-16 text-center">
-          <h1 className={`mb-6 text-[clamp(3rem,6vw,8rem)] font-black uppercase leading-tight text-transparent bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text ${BlackMangoRegular.className}`}>
+          <h1 className={`mb-6 bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-[clamp(3rem,6vw,8rem)] font-black uppercase leading-tight text-transparent ${BlackMangoRegular.className}`}>
             Raising Unicorns
           </h1>
         </div>
-
         {/* Header */}
         <div className="mb-12 text-center">
           <h2 className={`mb-6 text-3xl tracking-tight md:text-4xl lg:text-5xl ${BlackMangoRegular.className}`}>
@@ -60,7 +59,6 @@ function Team1() {
             executing our pre-incubation program.
           </p>
         </div>
-
         {/* Team Grid */}
         <div className="space-y-8">
           {/* Top Row - 3 members */}
@@ -69,9 +67,8 @@ function Team1() {
               <div key={index} className="group relative">
                 {/* Gradient Background */}
                 <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
-                
                 {/* Card */}
-                <div className="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm p-6 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
                   {/* Image Container */}
                   <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
                     <Image
@@ -79,12 +76,11 @@ function Team1() {
                       height={500}
                       src={member.image}
                       alt={member.name}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   </div>
-                  
                   {/* Content */}
                   <div className="text-center">
                     <h3 className="mb-2 text-xl font-bold text-gray-900">{member.name}</h3>
@@ -94,17 +90,15 @@ function Team1() {
               </div>
             ))}
           </div>
-
           {/* Middle Row - 2 members centered */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 max-w-2xl">
+            <div className="grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2">
               {coreTeamMembers.slice(3, 5).map((member, index) => (
                 <div key={index + 3} className="group relative">
                   {/* Gradient Background */}
                   <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
-                  
                   {/* Card */}
-                  <div className="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm p-6 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
                     {/* Image Container */}
                     <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
                       <Image
@@ -112,12 +106,11 @@ function Team1() {
                         height={500}
                         src={member.image}
                         alt={member.name}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     </div>
-                    
                     {/* Content */}
                     <div className="text-center">
                       <h3 className="mb-2 text-xl font-bold text-gray-900">{member.name}</h3>

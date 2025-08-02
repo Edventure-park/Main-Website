@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import localFont from "next/font/local";
 
 function Ceo() {
   return (
@@ -9,7 +8,7 @@ function Ceo() {
         <h2 className="mb-6 text-3xl font-[Black_Mango] tracking-tight md:text-3xl lg:text-4xl xl:text-5xl">
           The Man Behind It All – Our CEO
         </h2>
-        <div className="relative mb-8 mx-auto h-[500px] w-full rounded-[40px] bg-green-600 p-4 md:w-[900px]">
+        <div className="relative mx-auto mb-8 h-[500px] w-full rounded-[40px] bg-green-600 p-4 md:w-[900px]">
           <div className="flex flex-col items-center md:flex-row">
             <div className="mb-4 w-full md:mb-0 md:mr-4">
               <div className="relative">
