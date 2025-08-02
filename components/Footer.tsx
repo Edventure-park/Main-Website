@@ -44,10 +44,10 @@ export default function Footer() {
                   About Us
                 </Link>
               </li>
-
-              <li><Link href="/portfolio" className="hover:underline">
-                Our companies
-              </Link>
+              <li>
+                <Link href="/portfolio" className="hover:underline">
+                  Our companies
+                </Link>
               </li>
               {/* <li>Job openings</li>
               <li>Internships</li>
@@ -59,28 +59,26 @@ export default function Footer() {
               <li>Events-</li>
               <li>
       
-              <a
+                <Link
             href="  https://foundersfriday.in/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="text-white hover:text-green-500 transition-transform hover:scale-125 duration-300"
+            className="text-white transition-transform duration-300 hover:scale-125 hover:text-green-500"
           >Founders' Friday
-          </a>
-
+                </Link>
               </li>
               <li>
-              <a
+                <Link
             href="https://www.instagram.com/founders.fest/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="text-white hover:text-green-500 transition-transform hover:scale-125 duration-300"
+            className="text-white transition-transform duration-300 hover:scale-125 hover:text-green-500"
           >Founders' Fest
-          </a>
+                </Link>
 
               </li>
-
               <li>Edtalk</li>
               {/* <li>IMF</li> */}
             </ul>
@@ -114,40 +112,37 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="text-white hover:text-pink-500 transition-transform hover:scale-125 duration-300"
+            className="text-white transition-transform duration-300 hover:scale-125 hover:text-pink-500"
           >
             <FaInstagram className="size-6" />
           </a>
-
-          <a
+          <Link
             href="https://m.facebook.com/EdVenP"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="text-white hover:text-blue-600 transition-transform hover:scale-125 duration-300"
+            className="text-white transition-transform duration-300 hover:scale-125 hover:text-blue-600"
           >
             <FaFacebookF className="size-6" />
-          </a>
-
-          <a
+          </Link>
+          <Link
             href="https://twitter.com/EdventurePark"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
-            className="text-white hover:text-sky-400 transition-transform hover:scale-125 duration-300"
+            className="text-white transition-transform duration-300 hover:scale-125 hover:text-sky-400"
           >
             <FaTwitter className="size-6" />
-          </a>
-
-          <a
+          </Link>
+          <Link
             href="https://m.youtube.com/channel/UCJE19g3yFV5aKsf8n4pTz3Q/featured"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
-            className="text-white hover:text-red-600 transition-transform hover:scale-125 duration-300"
+            className="text-white transition-transform duration-300 hover:scale-125 hover:text-red-600"
           >
             <FaYoutube className="size-6" />
-          </a>
+          </Link>
         </div>
 
       </div>
