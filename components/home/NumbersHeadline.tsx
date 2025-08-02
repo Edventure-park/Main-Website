@@ -124,16 +124,22 @@ function NumbersHeadline() {
         {/* Data visualization element */}
         <div className="absolute inset-x-0 bottom-0 h-16">
           <div className="flex h-full justify-around">
-            {Array.from({ length: 20 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-full w-1 bg-emerald-400 opacity-20"
-                style={{
-                  height: `${20 + Math.random() * 80}%`,
-                  opacity: 0.1 + Math.random() * 0.2
-                }}
-              ></div>
-            ))}
+            {Array.from({ length: 20 }).map((_, i) => {
+              // Use deterministic values based on index to avoid hydration mismatch
+              const heightPercent = 20 + ((i * 17) % 80); // Deterministic height between 20-100%
+              const opacityValue = 0.1 + ((i * 13) % 20) / 100; // Deterministic opacity between 0.1-0.3
+              
+              return (
+                <div
+                  key={i}
+                  className="h-full w-1 bg-emerald-400 opacity-20"
+                  style={{
+                    height: `${heightPercent}%`,
+                    opacity: opacityValue
+                  }}
+                ></div>
+              );
+            })}
           </div>
         </div>
       </div>
