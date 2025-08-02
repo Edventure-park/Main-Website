@@ -1,12 +1,11 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 
 interface CardData {
   id: number;
   title: string;
   logoPath: string;
-  count?: number;
 }
 
 const DynamicRing = () => {
@@ -14,20 +13,172 @@ const DynamicRing = () => {
   const [activeCard, setActiveCard] = useState<CardData | null>(null);
   const [rotation, setRotation] = useState(0);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-  const [autoRotateSpeed, setAutoRotateSpeed] = useState(0.2); // degrees per frame
-  const [userInteracting, setUserInteracting] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [autoRotateSpeed] = useState(0.05);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  
   const ringRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const lastScrollY = useRef(0);
-  const lastWheelEvent = useRef<number>(Date.now());
-  const interactionTimeout = useRef<NodeJS.Timeout | null>(null);
-  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const isAnimating = useRef(false);
-  const autoRotateTimeoutRef = useRef<number | null>(null);
-  const lastFrameTime = useRef<number>(Date.now());
+  const animationRef = useRef<number | null>(null);
+  const interactionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isAnimatingToCard = useRef(false);
 
-  // Update window size on resize and track mouse position
+  // Initialize cards data
+  useEffect(() => {
+    const companyLogos: CardData[] = [
+      { id: 1, title: 'Active C', logoPath: '/assets/logos/activec.png' },
+      { id: 2, title: 'Adorababy', logoPath: '/assets/logos/adorababy.png' },
+      { id: 3, title: 'Adwised', logoPath: '/assets/logos/adwised.png' },
+      { id: 4, title: 'AgriTech Consultancy', logoPath: '/assets/logos/agritechconsultancy.png' },
+      { id: 5, title: 'A.I.E.L', logoPath: '/assets/logos/aiel.png' },
+      { id: 6, title: 'Alpha Ed', logoPath: '/assets/logos/alphaed.png' },
+      { id: 7, title: 'Alsi.me', logoPath: '/assets/logos/alsime.png' },
+      { id: 8, title: 'AppaRent', logoPath: '/assets/logos/apparent.png' },
+      { id: 9, title: 'App Insider', logoPath: '/assets/logos/appinsider.png' },
+      { id: 10, title: 'Arde', logoPath: '/assets/logos/arde.png' },
+      { id: 11, title: 'Auryn', logoPath: '/assets/logos/aurynin.png' },
+      { id: 12, title: 'Back to Earth', logoPath: '/assets/logos/backtoearth.png' },
+      { id: 13, title: 'Bare Elements', logoPath: '/assets/logos/bareelements.png' },
+      { id: 14, title: 'Bike Becho', logoPath: '/assets/logos/bikebecho.png' },
+      { id: 15, title: 'Biofy', logoPath: '/assets/logos/biofy.png' },
+      { id: 16, title: 'BioReform', logoPath: '/assets/logos/bioreform.png' },
+      { id: 17, title: 'BookMyLawyer', logoPath: '/assets/logos/bookmylawyer.png' },
+      { id: 18, title: 'Bootcamps', logoPath: '/assets/logos/bootcamps.png' },
+      { id: 19, title: 'BoxLab', logoPath: '/assets/logos/boxlab.png' },
+      { id: 20, title: 'Builzy', logoPath: '/assets/logos/builzy.png' },
+      { id: 21, title: 'Carde', logoPath: '/assets/logos/carde.png' },
+      { id: 22, title: 'ChipIt', logoPath: '/assets/logos/chipit.png' },
+      { id: 23, title: 'Cipher Bootcamp', logoPath: '/assets/logos/cipherbootcamp.png' },
+      { id: 24, title: 'CleanX', logoPath: '/assets/logos/cleanx.png' },
+      { id: 25, title: 'CMO.ae', logoPath: '/assets/logos/cmo.ae.png' },
+      { id: 26, title: 'CMO Ltd', logoPath: '/assets/logos/cmoltd.png' },
+      { id: 27, title: 'Craprofo', logoPath: '/assets/logos/craprofo.png' },
+      { id: 28, title: 'Cupping', logoPath: '/assets/logos/cupping.png' },
+      { id: 29, title: 'Curefy', logoPath: '/assets/logos/curefy.png' },
+      { id: 30, title: 'D-Chat', logoPath: '/assets/logos/D-chat.png' },
+      { id: 31, title: 'Dear Food', logoPath: '/assets/logos/dearfood.png' },
+      { id: 32, title: 'Delizia', logoPath: '/assets/logos/delizia.png' },
+      { id: 33, title: 'Delta Charge', logoPath: '/assets/logos/deltacharge.png' },
+      { id: 34, title: 'Design Mafia', logoPath: '/assets/logos/Designmafia.png' },
+      { id: 35, title: 'Diabeat', logoPath: '/assets/logos/diabeat.png' },
+      { id: 36, title: 'Doctera', logoPath: '/assets/logos/doctera.png' },
+      { id: 37, title: 'Dovely', logoPath: '/assets/logos/dovely.png' },
+      { id: 38, title: 'Draft Room', logoPath: '/assets/logos/draftroom.png' },
+      { id: 39, title: 'Eco Friendly Trash Bins', logoPath: '/assets/logos/ecofriendlytrashbins.png' },
+      { id: 40, title: 'EduHub', logoPath: '/assets/logos/eduhub.png' },
+      { id: 41, title: 'Edventia', logoPath: '/assets/logos/edventia.png' },
+      { id: 42, title: 'Elaago', logoPath: '/assets/logos/elaago.png' },
+      { id: 43, title: 'Elysian Life', logoPath: '/assets/logos/elysianlife.png' },
+      { id: 44, title: 'Enwrite', logoPath: '/assets/logos/enwrite.png' },
+      { id: 45, title: 'ERA', logoPath: '/assets/logos/era.png' },
+      { id: 46, title: 'Exa Tech', logoPath: '/assets/logos/exatech.png' },
+      { id: 47, title: 'Farm in the Box', logoPath: '/assets/logos/farminthebox.png' },
+      { id: 48, title: 'FEVL', logoPath: '/assets/logos/fevl.png' },
+      { id: 49, title: 'Fight to Last', logoPath: '/assets/logos/fighttolast.png' },
+      { id: 50, title: 'Firabulous', logoPath: '/assets/logos/firabulous.png' },
+      { id: 51, title: 'Flowerly', logoPath: '/assets/logos/flowerly.png' },
+      { id: 52, title: 'Forever Cookie', logoPath: '/assets/logos/forevercookie.png' },
+      { id: 53, title: 'Founders Friday', logoPath: '/assets/logos/foundersfriday.png' },
+      { id: 54, title: 'Freedle', logoPath: '/assets/logos/freedle.png' },
+      { id: 55, title: 'Fun Finance', logoPath: '/assets/logos/funfinance.png' },
+      { id: 56, title: 'Fun Finder', logoPath: '/assets/logos/funfinder.png' },
+      { id: 57, title: 'Good Job', logoPath: '/assets/logos/goodjob.png' },
+      { id: 58, title: 'Good Mind', logoPath: '/assets/logos/goodmind.png' },
+      { id: 59, title: 'Grassify', logoPath: '/assets/logos/grassify.png' },
+      { id: 60, title: 'Green Build', logoPath: '/assets/logos/greenbuild.png' },
+      { id: 61, title: 'Guardian Jacket', logoPath: '/assets/logos/guardianjacket.png' },
+      { id: 62, title: 'Highlancer', logoPath: '/assets/logos/highlancer.png' },
+      { id: 63, title: 'Housepital', logoPath: '/assets/logos/housepital.png' },
+      { id: 64, title: 'Hunar Hunt', logoPath: '/assets/logos/hunarhunt.png' },
+      { id: 65, title: 'IAQ', logoPath: '/assets/logos/iaq.png' },
+      { id: 66, title: 'Idejavu', logoPath: '/assets/logos/idejavu.png' },
+      { id: 67, title: 'Immersi', logoPath: '/assets/logos/immersi.png' },
+      { id: 68, title: 'Indefinite', logoPath: '/assets/logos/indefinite.png' },
+      { id: 69, title: 'Infinite Loop', logoPath: '/assets/logos/infiniteloop.png' },
+      { id: 70, title: 'Insight Services', logoPath: '/assets/logos/insightservices.png' },
+      { id: 71, title: 'iTuned', logoPath: '/assets/logos/ituned.png' },
+      { id: 72, title: 'iWater', logoPath: '/assets/logos/iwater.png' },
+      { id: 73, title: 'Jasmine', logoPath: '/assets/logos/jasmine.png' },
+      { id: 74, title: 'Kagitam', logoPath: '/assets/logos/kagitam.png' },
+      { id: 75, title: 'Kiddie Wink School', logoPath: '/assets/logos/kiddiewinkschool.png' },
+      { id: 76, title: 'Magic Build', logoPath: '/assets/logos/magicbuild.png' },
+      { id: 77, title: 'Magic Number', logoPath: '/assets/logos/Magiknumber.png' },
+      { id: 78, title: 'Majdoor', logoPath: '/assets/logos/majdoor.png' },
+      { id: 79, title: 'Mama Food', logoPath: '/assets/logos/mamafood.png' },
+      { id: 80, title: 'Masira', logoPath: '/assets/logos/masira.png' },
+      { id: 81, title: 'Meraki Snacks', logoPath: '/assets/logos/merakisnacks.png' },
+      { id: 82, title: 'Metalingo', logoPath: '/assets/logos/metalingo.png' },
+      { id: 83, title: 'Meta Man', logoPath: '/assets/logos/metaman.png' },
+      { id: 84, title: 'Meta Volt', logoPath: '/assets/logos/metavolt.png' },
+      { id: 85, title: 'Microbots', logoPath: '/assets/logos/microbots.png' },
+      { id: 86, title: 'Microbots Co', logoPath: '/assets/logos/microbotsco.png' },
+      { id: 87, title: 'MUA 101', logoPath: '/assets/logos/mua101.png' },
+      { id: 88, title: 'My Lecture Pro', logoPath: '/assets/logos/mylecturepro.png' },
+      { id: 89, title: 'My Mestri', logoPath: '/assets/logos/mymestri.png' },
+      { id: 90, title: 'MyPing', logoPath: '/assets/logos/myping.png' },
+      { id: 91, title: 'My Unicorn', logoPath: '/assets/logos/myunicorn.png' },
+      { id: 92, title: 'My Wave Chat', logoPath: '/assets/logos/mywavechat.png' },
+      { id: 93, title: 'Nannyma', logoPath: '/assets/logos/nannyma.png' },
+      { id: 94, title: 'Neve', logoPath: '/assets/logos/neve.png' },
+      { id: 95, title: 'Newtonize', logoPath: '/assets/logos/newtonize.png' },
+      { id: 96, title: 'Nisa Wallet', logoPath: '/assets/logos/nisawallet.png' },
+      { id: 97, title: 'Nurel Ice Cream', logoPath: '/assets/logos/nurelcecream.png' },
+      { id: 98, title: 'Nutrish', logoPath: '/assets/logos/nutrish.png' },
+      { id: 99, title: 'OFAS', logoPath: '/assets/logos/ofas.png' },
+      { id: 100, title: 'Partzo', logoPath: '/assets/logos/partzo.png' },
+      { id: 101, title: 'Pets Cart', logoPath: '/assets/logos/petscart.png' },
+      { id: 102, title: 'Pets et Go', logoPath: '/assets/logos/petsetgo.png' },
+      { id: 103, title: 'Pharmaverse', logoPath: '/assets/logos/pharmaverse.png' },
+      { id: 104, title: 'PI Diamonds', logoPath: '/assets/logos/pidiamonds.png' },
+      { id: 105, title: 'Pima Kallion', logoPath: '/assets/logos/pimakallion.png' },
+      { id: 106, title: 'Plastocons', logoPath: '/assets/logos/plastocons.png' },
+      { id: 107, title: 'Plus Love', logoPath: '/assets/logos/pluslove.png' },
+      { id: 108, title: 'Pods Auto', logoPath: '/assets/logos/podsauto.png' },
+      { id: 109, title: 'Polymath Academy', logoPath: '/assets/logos/polymathacademy.png' },
+      { id: 110, title: 'PowerFi', logoPath: '/assets/logos/powerfi.png' },
+      { id: 111, title: 'Precast Reusable Roads', logoPath: '/assets/logos/precastresusableroads.png' },
+      { id: 112, title: 'Pro Sound', logoPath: '/assets/logos/prosound.png' },
+      { id: 113, title: 'Pro Tech', logoPath: '/assets/logos/Protech.png' },
+      { id: 114, title: 'Pureo', logoPath: '/assets/logos/pureo.png' },
+      { id: 115, title: 'Quiz Excel', logoPath: '/assets/logos/quizexcel.png' },
+      { id: 116, title: 'R3 Designs', logoPath: '/assets/logos/r3designs.png' },
+      { id: 117, title: 'Rebate', logoPath: '/assets/logos/rebate.png' },
+      { id: 118, title: 'Reward X', logoPath: '/assets/logos/rewardX.png' },
+      { id: 119, title: 'Rolstoel', logoPath: '/assets/logos/rolstoel.png' },
+      { id: 120, title: 'Scrap Man', logoPath: '/assets/logos/scrapman.png' },
+      { id: 121, title: 'SF EdTech', logoPath: '/assets/logos/sfedtech.png' },
+      { id: 122, title: 'Shop Kart', logoPath: '/assets/logos/shopkart.png' },
+      { id: 123, title: 'Skillancer', logoPath: '/assets/logos/skillancer.png' },
+      { id: 124, title: 'Skill Up', logoPath: '/assets/logos/skillup.png' },
+      { id: 125, title: 'Smartia', logoPath: '/assets/logos/smartia.png' },
+      { id: 126, title: 'Smart Shelf', logoPath: '/assets/logos/smartshelf.png' },
+      { id: 127, title: 'Smart Shelf 1', logoPath: '/assets/logos/smartshelf1.png' },
+      { id: 128, title: 'Spadit', logoPath: '/assets/logos/spadit.png' },
+      { id: 129, title: 'Sportsta', logoPath: '/assets/logos/sportsta.png' },
+      { id: 130, title: 'SpyQ', logoPath: '/assets/logos/spyq.png' },
+      { id: 131, title: 'Super Maids', logoPath: '/assets/logos/supermaids.png' },
+      { id: 132, title: 'The Good Pharmacy', logoPath: '/assets/logos/thegoodpharmacy.png' },
+      { id: 133, title: 'The Real Bionics', logoPath: '/assets/logos/therealbionics.png' },
+      { id: 134, title: 'Thrill Simulator', logoPath: '/assets/logos/Thrillsimulator.png' },
+      { id: 135, title: 'Todly', logoPath: '/assets/logos/todly.png' },
+      { id: 136, title: 'Torq Electric', logoPath: '/assets/logos/torqelectric.png' },
+      { id: 137, title: 'Track It', logoPath: '/assets/logos/trackit.png' },
+      { id: 138, title: 'Track My Bus', logoPath: '/assets/logos/trackmybus.png' },
+      { id: 139, title: 'Trafflow', logoPath: '/assets/logos/trafflow.png' },
+      { id: 140, title: 'Transformify', logoPath: '/assets/logos/transformify.png' },
+      { id: 141, title: 'True Scrubs', logoPath: '/assets/logos/truescrubs.png' },
+      { id: 142, title: 'T Trainer', logoPath: '/assets/logos/ttrainer.png' },
+      { id: 143, title: 'Ubuntu', logoPath: '/assets/logos/ubuntu.png' },
+      { id: 144, title: 'Vectofy', logoPath: '/assets/logos/vectofy.png' },
+      { id: 145, title: 'Vivify', logoPath: '/assets/logos/vivify.png' },
+      { id: 146, title: 'Zedle Play', logoPath: '/assets/logos/zedleplay.png' },
+    ];
+
+    setCards(companyLogos);
+    setActiveCard(companyLogos[0]);
+  }, []);
+
+  // Handle window resize
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({
@@ -36,480 +187,260 @@ const DynamicRing = () => {
       });
     };
 
-    const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        
-        // Calculate normalized position relative to center (-1 to 1)
-        const normalizedX = (e.clientX - centerX) / (rect.width / 2);
-        const normalizedY = (e.clientY - centerY) / (rect.height / 2);
-        
-        setMousePosition({ x: normalizedX, y: normalizedY });
-      }
-    };
-
-    // Set initial size
     handleResize();
-
     window.addEventListener('resize', handleResize);
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Generate cards data from available logos
+  // Auto-rotation logic - simplified and always active
   useEffect(() => {
-    const categories: CardData[] = [
-      { id: 1, title: 'Progressive Thinkers', logoPath: '/assets/logos/1.png', count: 25 },
-      { id: 2, title: 'Category Creators', logoPath: '/assets/logos/11.png', count: 11 },
-      { id: 3, title: 'Risk Takers', logoPath: '/assets/logos/21.png', count: 21 },
-      { id: 4, title: 'Change Makers', logoPath: '/assets/logos/86.png', count: 86 },
-      { id: 5, title: 'Innovation Leaders', logoPath: '/assets/logos/17.png', count: 17 },
-      { id: 6, title: 'Tech Pioneers', logoPath: '/assets/logos/32.png', count: 32 },
-      { id: 7, title: 'Design Experts', logoPath: '/assets/logos/42.png', count: 42 },
-      { id: 8, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 9, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 10, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 11, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 12, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 13, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 14, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 15, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 16, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 17, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 18, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 19, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 20, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 21, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 22, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 23, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 25, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 26, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 27, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 28, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 29, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 30, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 31, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 32, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 33, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 34, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 35, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 36, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 37, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 38, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 39, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 40, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 41, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 42, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 43, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 44, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 45, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 46, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 47, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 48, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 49, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 50, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 51, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 52, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 53, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 54, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 55, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 56, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 57, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 58, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 59, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 60, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 61, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 62, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 63, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 64, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 65, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 66, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      // { id: 67, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 68, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 69, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 70, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 71, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 72, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 73, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 74, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 75, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 76, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 77, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 },
-      { id: 24, title: 'Market Disruptors', logoPath: '/assets/logos/53.png', count: 53 }
-    ];
-    
-    setCards(categories);
-    setActiveCard(categories[0]);
-    cardRefs.current = categories.map(() => null);
-  }, []);
+    if (isUserInteracting || isAnimatingToCard.current) {
+      return;
+    }
 
-  // Auto-rotation effect with smooth animation frame timing
-  useEffect(() => {
-    if (!ringRef.current) return;
-    
-    const handleAutoRotate = (_timestamp: number) => {
-      if (!ringRef.current) return;
-      
-      const currentTime = Date.now();
-      const deltaTime = currentTime - lastFrameTime.current;
-      lastFrameTime.current = currentTime;
-      
-      // Calculate rotation speed based on user interaction
-      // When user is interacting, rotation slows down but doesn't stop completely
-      const speedMultiplier = userInteracting ? 0.1 : 1; // Reduce speed more during interaction
-      
-      // Use a consistent time step for smoother animation
-      // This helps prevent jerky movements when the frame rate fluctuates
-      const targetFps = 60;
-      const normalizedDeltaTime = Math.min(deltaTime, 100); // Cap delta time to prevent jumps after pauses
-      const rotationAmount = (autoRotateSpeed * normalizedDeltaTime / (1000 / targetFps)) * speedMultiplier;
-      
-      // Update rotation state with smoother increments
-      setRotation(prevRotation => prevRotation + rotationAmount);
-      if (!userInteracting) {
-        const cardAngle = 360 / cards.length;
-        const normalizedRotation = ((rotation % 360) + 360) % 360;
-        const activeIndex = Math.round(normalizedRotation / cardAngle) % cards.length;
-        
-        if (activeCard?.id !== cards[activeIndex]?.id) {
-          setActiveCard(cards[activeIndex]);
-        }
-      }
-      
-      // Continue the animation loop
-      autoRotateTimeoutRef.current = window.requestAnimationFrame(handleAutoRotate);
-    };
-    
-    // Start the animation loop
-    lastFrameTime.current = Date.now();
-    autoRotateTimeoutRef.current = window.requestAnimationFrame(handleAutoRotate);
-    
-    // Track user interaction to adjust rotation speed, but never fully stop
-    const handleUserInteraction = () => {
-      setUserInteracting(true);
-      
-      // Reset interaction timeout
-      if (interactionTimeout.current) {
-        clearTimeout(interactionTimeout.current);
-      }
-      
-      // After a period of inactivity, return to normal rotation speed
-      interactionTimeout.current = setTimeout(() => {
-        setUserInteracting(false);
-      }, 3000); // Return to normal speed after 3 seconds of inactivity
-    };
-    
-    // Add event listeners for user interaction
-    window.addEventListener('wheel', handleUserInteraction);
-    window.addEventListener('mousemove', handleUserInteraction);
-    window.addEventListener('touchmove', handleUserInteraction);
-    window.addEventListener('click', handleUserInteraction);
-    
-    return () => {
-      if (autoRotateTimeoutRef.current !== null) {
-        window.cancelAnimationFrame(autoRotateTimeoutRef.current);
-      }
-      if (interactionTimeout.current) {
-        clearTimeout(interactionTimeout.current);
-      }
-      window.removeEventListener('wheel', handleUserInteraction);
-      window.removeEventListener('mousemove', handleUserInteraction);
-      window.removeEventListener('touchmove', handleUserInteraction);
-      window.removeEventListener('click', handleUserInteraction);
-    };
-  }, [autoRotateSpeed, cards, rotation, activeCard, userInteracting]);
-
-  // Handle scroll to rotate the ring with proper direction mapping
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!ringRef.current || isAnimating.current) return;
-      
-      const currentScrollY = window.scrollY;
-      const scrollDiff = currentScrollY - lastScrollY.current;
-      
-      // Map scroll direction to rotation direction
-      // Scrolling down (positive scrollDiff) should rotate clockwise (positive rotation)
-      // Scrolling up (negative scrollDiff) should rotate counter-clockwise (negative rotation)
-      // Adjust the divisor to control rotation speed
-      const newRotation = rotation + (scrollDiff / 15);
-      
-      setRotation(newRotation);
-      lastScrollY.current = currentScrollY;
-      
-      // Clear existing timeout
-      if (interactionTimeout.current) {
-        clearTimeout(interactionTimeout.current);
-      }
-      
-      // Set a timeout to check which card is at the top after scrolling stops
-      interactionTimeout.current = setTimeout(() => {
-        updateActiveCardFromPosition();
-      }, 150);
+    const animate = () => {
+      setRotation(prev => prev + autoRotateSpeed);
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    // Find which card is at the top position and set it as active
-    const updateActiveCardFromPosition = () => {
-      if (!ringRef.current || cards.length === 0) return;
-      
-      // Calculate which card should be active based on current rotation
-      const cardAngle = 360 / cards.length;
-      const normalizedRotation = ((rotation % 360) + 360) % 360;
-      const activeIndex = Math.round(normalizedRotation / cardAngle) % cards.length;
-      
-      setActiveCard(cards[activeIndex]);
-    };
-
-    window.addEventListener('scroll', handleScroll);
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (interactionTimeout.current) {
-        clearTimeout(interactionTimeout.current);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [rotation, cards]);
+  }, [autoRotateSpeed, isUserInteracting]);
 
-  // Handle manual rotation with mouse wheel - now just adds user input to the continuous rotation
-  const handleWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
-    
-    // Throttle wheel events to prevent too rapid rotation
-    const now = Date.now();
-    if (now - lastWheelEvent.current < 20) return; // Limit to 50fps
-    lastWheelEvent.current = now;
-    
-    // Map scroll direction to rotation direction
-    // Scrolling down (positive deltaY) should rotate clockwise (positive rotation)
-    // Scrolling up (negative deltaY) should rotate counter-clockwise (negative rotation)
-    const delta = e.deltaY;
-    const rotationDelta = delta / 10; // Adjust sensitivity
-    
-    // Add user input to the rotation but don't stop auto-rotation
-    setRotation(prev => prev + rotationDelta);
-    
-    // Update active card based on current rotation
+  // Update active card based on rotation
+  useEffect(() => {
+    if (cards.length === 0) return;
+
     const cardAngle = 360 / cards.length;
     const normalizedRotation = ((rotation % 360) + 360) % 360;
     const activeIndex = Math.round(normalizedRotation / cardAngle) % cards.length;
-    setActiveCard(cards[activeIndex]);
-  };
+    
+    if (activeCard?.id !== cards[activeIndex]?.id) {
+      setActiveCard(cards[activeIndex]);
+    }
+  }, [rotation, cards, activeCard]);
 
-  // Calculate position for each card in the ring - completely refactored to match the second image exactly
-  const getCardStyle = (index: number) => {
+  // Handle user interaction
+  const handleUserInteraction = useCallback(() => {
+    setIsUserInteracting(true);
+    
+    if (interactionTimeoutRef.current) {
+      clearTimeout(interactionTimeoutRef.current);
+    }
+    
+    interactionTimeoutRef.current = setTimeout(() => {
+      setIsUserInteracting(false);
+    }, 2000);
+  }, []);
+
+  // Handle wheel events
+  const handleWheel = useCallback((e: React.WheelEvent) => {
+    e.preventDefault();
+    handleUserInteraction();
+    
+    const delta = e.deltaY * 0.5;
+    setRotation(prev => prev + delta);
+  }, [handleUserInteraction]);
+
+  // Calculate card position with improved dynamics
+  const getCardStyle = useCallback((index: number) => {
     const totalCards = cards.length;
     if (totalCards === 0) return {};
-    
-    // Calculate angle and radian for positioning
+
     const angle = (360 / totalCards) * index + rotation;
     const radian = (angle * Math.PI) / 180;
-    
-    // Create a perfect oval shape with a wider horizontal span
-    const baseRadiusX = Math.min(windowSize.width, windowSize.height) * 0.65;
-    const baseRadiusY = Math.min(windowSize.width, windowSize.height) * 0.2;
-    const mobileAdjustment = windowSize.width < 640 ? 0.7 : 1;
-    
-    const radiusX = baseRadiusX * mobileAdjustment;
-    const radiusY = baseRadiusY * mobileAdjustment;
-    
-    // Calculate position on the ellipse
+
+    // Increased ring size for better spacing with larger center logo
+    const baseSize = Math.min(windowSize.width, windowSize.height) * 0.45;
+    const radiusX = baseSize * 1.6;
+    const radiusY = baseSize * 0.6;
+
     const x = radiusX * Math.cos(radian);
     const y = radiusY * Math.sin(radian);
-    
-    // Calculate z-index based on position
+
+    // Front-facing cards with minimal rotation - all cards face forward
+    const cardRotationY = 0; // Keep cards front-facing
+    const cardRotationZ = 0; // No Z rotation for cleaner look
+    const scale = 0.7 + Math.abs(Math.cos(radian)) * 0.4; // Slightly larger base scale
     const zIndex = Math.round(1000 + 500 * Math.sin(radian));
+
+    // Dynamic effects without blur for better visibility
+    const distanceFromFront = Math.abs(Math.sin(radian));
+    const brightness = 0.9 + (1 - distanceFromFront) * 0.1; // Minimal brightness variation
+
+    // Enhanced hover effects with smooth transitions
+    const isHovered = hoveredCard === index;
+    const hoverScale = isHovered ? 1.3 : 1;
+    const hoverY = isHovered ? -15 : 0;
+    const hoverRotation = 0; // Keep front-facing even on hover
     
-    // Calculate rotation angles to create the fan effect as in the second image
-    // The key is to have cards rotate around their vertical axis based on position
-    const cardRotationY = 85 * Math.cos(radian); // Rotation around Y axis (vertical)
-    
-    // Position affects card appearance - no need to track sides explicitly
-    
-    // Apply slight X rotation based on position
-    const cardRotationX = 0; // No X rotation needed for this effect
-    
-    // Z rotation keeps cards vertical and aligned with the ellipse
-    const cardRotationZ = angle + 90;
-    
-    // Adjust scale based on position - cards at the sides appear slightly larger
-    const scale = 0.85;
-    
-    // Full opacity for all cards
-    const opacity = 1;
-    
-    // Calculate the Z position to create depth
-    // Cards at the sides should come forward
-    const z = 0; // No Z translation needed for this effect
-    
-    // Apply a slight offset to prevent cards from perfectly overlapping
-    const offsetX = 0;
-    const offsetY = 0;
-    
+    // Add glow effect on hover without blur
+    const glowIntensity = isHovered ? 20 : 0;
+
     return {
-      transform: `translate3d(${x + offsetX}px, ${y + offsetY}px, ${z}px) rotateX(${cardRotationX}deg) rotateY(${cardRotationY}deg) rotateZ(${cardRotationZ}deg) scale(${scale})`,
-      zIndex,
-      opacity
+      transform: `translate3d(${x}px, ${y + hoverY}px, 0px) rotateY(${cardRotationY}deg) rotateZ(${cardRotationZ + hoverRotation}deg) scale(${scale * hoverScale})`,
+      zIndex: isHovered ? 2000 : zIndex,
+      opacity: 1, // Full opacity for all cards
+      filter: `brightness(${brightness}) drop-shadow(0 0 ${glowIntensity}px rgba(59, 130, 246, 0.6))`,
+      transition: isHovered ? 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)' : 'all 0.3s ease-out',
     };
-  };
+  }, [cards.length, rotation, windowSize, hoveredCard]);
 
-  // Handle card hover
-  const handleCardHover = (card: CardData) => {
-    setActiveCard(card);
-  };
-
-  // Animate to a specific card - now works with continuous rotation
-  const animateToCard = (card: CardData) => {
-    if (isAnimating.current) return;
-    isAnimating.current = true;
+  // Animate to specific card with enhanced easing
+  const animateToCard = useCallback((targetCard: CardData) => {
+    if (isAnimatingToCard.current) return;
     
-    const targetIndex = cards.findIndex(c => c.id === card.id);
+    isAnimatingToCard.current = true;
+    setIsUserInteracting(true);
+    
+    const targetIndex = cards.findIndex(c => c.id === targetCard.id);
     if (targetIndex === -1) {
-      isAnimating.current = false;
+      isAnimatingToCard.current = false;
 
       return;
     }
-    
+
     const cardAngle = 360 / cards.length;
     const targetRotation = cardAngle * targetIndex;
     const currentRotation = rotation % 360;
     
-    // Calculate the shortest path to the target rotation
     let rotationDiff = targetRotation - currentRotation;
     
-    // Ensure we take the shortest path around the circle
     if (Math.abs(rotationDiff) > 180) {
       rotationDiff = rotationDiff > 0 ? rotationDiff - 360 : rotationDiff + 360;
     }
-    
-    // Animate rotation
+
+    const startRotation = rotation;
+    const duration = 1200; // Slightly longer for smoother animation
     let startTime: number | null = null;
-    const duration = 500; // ms
-    const startRotation = rotation; // Capture the starting rotation including all previous rotations
-    
+
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1);
       
-      // Easing function for smooth animation
-      const easeProgress = 0.5 - 0.5 * Math.cos(progress * Math.PI);
+      // Enhanced easing with bounce effect
+      const easeProgress = progress < 0.5 
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
       
-      // Apply the rotation difference to the starting rotation
       setRotation(startRotation + rotationDiff * easeProgress);
       
       if (progress < 1) {
         requestAnimationFrame(animate);
       } else {
-        setActiveCard(card);
-        isAnimating.current = false;
+        isAnimatingToCard.current = false;
+        setTimeout(() => setIsUserInteracting(false), 500);
       }
     };
     
     requestAnimationFrame(animate);
-  };
-
-  // Get main logo image based on active card
-  const getMainLogoPath = () => {
-    if (!activeCard) return '/assets/logos/1.png';
-
-    return activeCard.logoPath;
-  };
+  }, [cards, rotation]);
 
   return (
     <div 
       ref={containerRef}
-      className="relative flex h-screen w-full items-center justify-center overflow-hidden pt-0" 
+      className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100"
       onWheel={handleWheel}
     >
-      {/* Center content */}
-      <div className="pointer-events-none absolute top-[5%] z-50 flex flex-col items-center justify-center sm:top-[10%] md:top-[15%] lg:static">
-        {/* Main logo */}
-        <div className="relative mb-2 size-24 transition-all duration-500 ease-in-out sm:mb-3 sm:size-28 md:mb-4 md:size-32 lg:size-40">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute left-1/4 top-1/4 size-32 animate-pulse rounded-full bg-blue-400/20 blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 size-40 animate-pulse rounded-full bg-purple-400/20 blur-3xl delay-1000"></div>
+        <div className="absolute bottom-1/3 left-1/3 size-24 animate-pulse rounded-full bg-green-400/20 blur-3xl delay-500"></div>
+      </div>
+      {/* Center content with enhanced animations */}
+      <div className="pointer-events-none absolute z-50 flex flex-col items-center justify-center">
+        {/* Main logo with increased size */}
+        <div className="relative mb-6 size-48 transition-all duration-700 ease-out lg:size-56">
           {activeCard && (
-            <Image
-              src={getMainLogoPath()}
-              alt={activeCard.title || 'Logo'}
-              fill
-              className="object-contain transition-opacity duration-300"
-              priority
-            />
+            <div className="relative size-full">
+              <Image
+                src={activeCard.logoPath}
+                alt={activeCard.title}
+                fill
+                className="object-contain transition-all duration-500 hover:scale-105"
+                priority
+              />
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl"></div>
+            </div>
           )}
         </div>
-        {/* Active card title */}
+        {/* Active card title with typing effect */}
         {activeCard && (
-          <div className="text-center transition-all duration-300">
-            <h2 className="text-base font-medium sm:text-lg md:text-xl lg:text-2xl">{activeCard.title}</h2>
-            {activeCard.count !== undefined && (
-              <span className="ml-1 inline-block text-xs text-gray-400 sm:text-sm md:text-base">({activeCard.count})</span>
-            )}
+          <div className="text-center transition-all duration-500">
+            <h2 className="animate-bounce bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-xl font-medium text-transparent lg:text-3xl">
+              {activeCard.title}
+            </h2>
+            <div className="mx-auto mt-3 h-1 w-24 animate-pulse rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
           </div>
         )}
       </div>
       {/* Ring of cards */}
       <div 
         ref={ringRef} 
-        className="absolute left-0 top-0 size-full"
+        className="absolute inset-0"
         style={{ 
-          perspective: '1500px',
+          perspective: '1000px',
           transformStyle: 'preserve-3d',
-          transform: `rotateX(${mousePosition.y * 5}deg) rotateY(${mousePosition.x * -5}deg)`,
-          transition: 'transform 1s ease-out'
         }}
       >
         {cards.map((card, index) => (
           <div
             key={card.id}
-            ref={(el: HTMLDivElement | null) => { cardRefs.current[index] = el }}
-            className={`absolute left-1/2 top-1/2 flex h-14 w-10 -translate-x-1/2 -translate-y-1/2 cursor-pointer
-                      flex-col items-center justify-center bg-white p-0.5 shadow transition-all duration-500
-                      sm:h-16 sm:w-12 md:h-20 md:w-14 lg:h-24 lg:w-16
-                      ${activeCard?.id === card.id ? 'shadow-md' : ''}`}
+            className={`absolute left-1/2 top-1/2 flex h-24 w-20 -translate-x-1/2 -translate-y-1/2 cursor-pointer
+                      flex-col items-center justify-center rounded-lg bg-white p-2 shadow-xl transition-all duration-300
+                      hover:bg-gradient-to-br hover:from-white hover:to-blue-50 hover:shadow-2xl lg:h-28 lg:w-24
+                      ${activeCard?.id === card.id ? 'shadow-blue-500/50 ring-2 ring-blue-500' : ''}
+                      ${hoveredCard === index ? 'shadow-blue-400/50 ring-2 ring-blue-400' : ''}`}
             style={getCardStyle(index)}
-            onMouseEnter={() => handleCardHover(card)}
             onClick={() => animateToCard(card)}
+            onMouseEnter={() => setHoveredCard(index)}
+            onMouseLeave={() => setHoveredCard(null)}
           >
-            <div className="relative mb-0.5 size-5 sm:mb-0.5 sm:size-6 md:mb-1 md:size-8 lg:size-10">
+            <div className="relative mb-2 size-10 lg:size-12">
               <Image
                 src={card.logoPath}
                 alt={card.title}
                 fill
-                className="object-contain"
-                sizes="(max-width: 640px) 20px, (max-width: 768px) 24px, (max-width: 1024px) 32px, 40px"
-                priority={index < 10}
+                className={`object-contain transition-all duration-300 ${
+                  hoveredCard === index ? 'scale-125 brightness-110' : 'hover:scale-110'
+                }`}
+                sizes="(max-width: 1024px) 40px, 48px"
+                priority={index < 8}
               />
+              {/* Animated border on hover without blur */}
+              {hoveredCard === index && (
+                <div className="absolute inset-0 animate-pulse rounded-lg bg-gradient-to-r from-blue-400/20 to-purple-400/20"></div>
+              )}
             </div>
-            <h3 className="text-center text-[5px] font-medium text-gray-800 sm:text-[6px] md:text-[7px] lg:text-[8px]">{card.title}</h3>
-            {card.count !== undefined && (
-              <span className="text-[4px] text-gray-500 sm:text-[5px] md:text-[6px] lg:text-[7px]">({card.count})</span>
+            <h3 className={`text-center text-[8px] font-medium transition-all duration-300 lg:text-[10px] ${
+              hoveredCard === index 
+                ? 'scale-110 font-semibold text-blue-600' 
+                : 'text-gray-800'
+            }`}>
+              {card.title}
+            </h3>
+            {/* Hover tooltip - clear and crisp */}
+            {hoveredCard === index && (
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-black/90 px-3 py-1 text-[10px] font-medium text-white shadow-lg">
+                {card.title}
+              </div>
             )}
           </div>
         ))}
       </div>
-      {/* Instructions */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-center text-[10px] text-gray-400 sm:bottom-3 sm:text-xs md:bottom-4 md:text-sm">
-        <p className="hidden sm:block">Scroll to rotate the ring • Hover over cards to view details • Click to select</p>
-        <p className="block sm:hidden">Swipe to rotate • Tap to select</p>
-        <div className="mt-1 flex items-center justify-center space-x-2 sm:mt-2 sm:space-x-4">
-          <div className="pointer-events-auto flex items-center space-x-1 sm:space-x-2">
-            <button 
-              onClick={() => setAutoRotateSpeed(Math.max(0.05, autoRotateSpeed - 0.05))} 
-              className="flex size-5 items-center justify-center rounded bg-white/10 transition-colors hover:bg-white/20 sm:size-6"
-            >
-              -
-            </button>
-            <span className="text-[10px] sm:text-xs">Speed</span>
-            <button 
-              onClick={() => setAutoRotateSpeed(Math.min(0.5, autoRotateSpeed + 0.05))} 
-              className="flex size-5 items-center justify-center rounded bg-white/10 transition-colors hover:bg-white/20 sm:size-6"
-            >
-              +
-            </button>
-          </div>
+      {/* Enhanced instructions */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center">
+        <div className="text-xs text-gray-400">
+          <p className="animate-pulse">Scroll to rotate • Click cards to select • <span className="font-medium text-blue-500">Hover for enhanced effects</span></p>
         </div>
       </div>
     </div>
