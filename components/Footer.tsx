@@ -15,10 +15,10 @@ export default function Footer() {
         <div className='flex flex-col items-center font-[Poppins] md:flex-row'>
           <div className='flex items-center rounded-full border border-gray-600 bg-black p-2'>
             <FaUser className="size-4" />
-            <input 
-              type="text" 
+            <input
+              type="text"
               className="w-full rounded-full bg-black px-2 text-white focus:outline-none"
-              placeholder='Enter your email' 
+              placeholder='Enter your email'
             />
           </div>
           <button className='ml-2 mt-2 rounded-full bg-[#169D53] px-4 py-2 text-white md:mt-0'>Connect</button>
@@ -39,19 +39,50 @@ export default function Footer() {
         <div className='flex flex-wrap justify-center space-x-4 font-[Poppins] md:col-span-8 md:space-x-8'>
           <div className='p-4'>
             <ul className='space-y-2'>
-              <li>About Us</li>
-              <li>Our companies</li>
-              <li>Job openings</li>
+              <li>
+                <Link href="/about" className="hover:underline">
+                  About Us
+                </Link>
+              </li>
+
+              <li><Link href="/portfolio" className="hover:underline">
+                Our companies
+              </Link>
+              </li>
+              {/* <li>Job openings</li>
               <li>Internships</li>
-              <li>News</li>
+              <li>News</li> */}
             </ul>
           </div>
           <div className='p-4'>
             <ul className='space-y-2'>
-              <li>Events</li>
-              <li>Founders' Friday</li>
-              <li>Builders' Sunday</li>
-              <li>IMF</li>
+              <li>Events-</li>
+              <li>
+      
+              <a
+            href="  https://foundersfriday.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-white hover:text-green-500 transition-transform hover:scale-125 duration-300"
+          >Founders' Friday
+          </a>
+
+              </li>
+              <li>
+              <a
+            href="https://www.instagram.com/founders.fest/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-white hover:text-green-500 transition-transform hover:scale-125 duration-300"
+          >Founders' Fest
+          </a>
+
+              </li>
+
+              <li>Edtalk</li>
+              {/* <li>IMF</li> */}
             </ul>
           </div>
           <div className='p-4'>
@@ -78,19 +109,47 @@ export default function Footer() {
         </div>
         {/* Social Icons */}
         <div className='order-3 flex justify-center space-x-4 md:justify-end'>
-          <Link href="https://www.instagram.com/edventurepark/" aria-label="Instagram">
+          <a
+            href="https://www.instagram.com/edventurepark/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-white hover:text-pink-500 transition-transform hover:scale-125 duration-300"
+          >
             <FaInstagram className="size-6" />
-          </Link>
-          <Link href="https://m.facebook.com/EdVenP" aria-label="Facebook">
+          </a>
+
+          <a
+            href="https://m.facebook.com/EdVenP"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="text-white hover:text-blue-600 transition-transform hover:scale-125 duration-300"
+          >
             <FaFacebookF className="size-6" />
-          </Link>
-          <Link href="https://twitter.com/EdventurePark" aria-label="Twitter">
+          </a>
+
+          <a
+            href="https://twitter.com/EdventurePark"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="text-white hover:text-sky-400 transition-transform hover:scale-125 duration-300"
+          >
             <FaTwitter className="size-6" />
-          </Link>
-          <Link href="https://m.youtube.com/channel/UCJE19g3yFV5aKsf8n4pTz3Q/featured" aria-label="YouTube">
+          </a>
+
+          <a
+            href="https://m.youtube.com/channel/UCJE19g3yFV5aKsf8n4pTz3Q/featured"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="text-white hover:text-red-600 transition-transform hover:scale-125 duration-300"
+          >
             <FaYoutube className="size-6" />
-          </Link>
+          </a>
         </div>
+
       </div>
     </div>
   );
