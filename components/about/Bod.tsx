@@ -1,73 +1,83 @@
 import Image from "next/image";
 import React from "react";
+import localFont from "next/font/local";
+
+const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
+
+const boardMembers = [
+  {
+    name: "Latif",
+    image: "/assets/BoD/BoD1.png",
+    role: "Chairman",
+    color: "from-emerald-400 to-teal-500"
+  },
+  {
+    name: "Nuzhat Sufi", 
+    image: "/assets/BoD/BoD2.png",
+    role: "Vice Chairman",
+    color: "from-blue-400 to-indigo-500"
+  },
+  {
+    name: "Feroz",
+    image: "/assets/BoD/BoD3.png", 
+    role: "Director",
+    color: "from-purple-400 to-violet-500"
+  },
+  {
+    name: "Muneer",
+    image: "/assets/BoD/BoD4.png",
+    role: "Director",
+    color: "from-pink-400 to-rose-500"
+  }
+];
 
 function Bod() {
   return (
-    <div className="mx-4 mb-8 md:mx-10 lg:mx-20">
-      <h2 className="mb-6 text-3xl font-[Black_Mango] tracking-tight md:text-3xl lg:text-4xl xl:text-5xl">
-        Board of Directors
-      </h2>
-      <div className="mx-4 mb-8 md:mx-10 lg:mx-20">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
-          {/* Member 1 */}
-          <div className="flex flex-col items-center">
-            <div className="relative h-[450px] w-full">
-              <Image
-                src="/assets/BoD/BoD1.png"
-                alt="Team Member 1"
-                fill
-                className="rounded-[20px] object-cover"
-              />
-              src="/assests/BoD/BoD1.png"
+    <section className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 px-4 py-24">
+      <div className="mx-auto max-w-7xl">
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <h2 className={`mb-8 text-4xl tracking-tight md:text-5xl lg:text-6xl ${BlackMangoRegular.className}`}>
+            Board of Directors
+          </h2>
+          <p className="mx-auto max-w-5xl text-xl leading-relaxed text-gray-700">
+            Our distinguished board members bring decades of experience and strategic vision 
+            to guide EdVenture Park towards excellence and innovation.
+          </p>
+        </div>
+        
+        {/* BOD Grid */}
+        <div className="grid grid-cols-1 gap-20 md:grid-cols-2">
+          {boardMembers.map((member, index) => (
+            <div key={index} className="group relative">
+              {/* Gradient Background */}
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
+              
+              {/* Card */}
+              <div className="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm p-12 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300">
+                {/* Image Container - Square */}
+                <div className="relative mb-10 aspect-square w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                
+                {/* Content */}
+                <div className="text-center">
+                  <h3 className="mb-4 text-3xl font-bold text-gray-900">{member.name}</h3>
+                  <p className="text-xl font-medium text-gray-600">{member.role}</p>
+                </div>
+              </div>
             </div>
-            <p className="z-10 mt-[-50px] rounded-[20px] bg-white px-12 py-6 text-center text-xl font-medium text-black shadow-xl">
-              TEST
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="relative h-[450px] w-full">
-              <Image
-                src="/assets/BoD/BoD2.png"
-                alt="Team Member 2"
-                fill
-                className="rounded-[20px] object-cover"
-              />
-            </div>
-            <p className="z-10 mt-[-50px] rounded-[20px] bg-white px-12 py-6 text-center text-xl font-medium text-black shadow-xl">
-              Member 2
-            </p>
-          </div>
-          {/* Member 3 */}
-          <div className="flex flex-col items-center">
-            <div className="relative h-[450px] w-full">
-              <Image
-                src="/assets/BoD/BoD3.png"
-                alt="Team Member 3"
-                fill
-                className="rounded-[20px] object-cover"
-              />
-            </div>
-            <p className="z-10 mt-[-50px] rounded-[20px] bg-white px-12 py-6 text-center text-xl font-medium text-black shadow-xl">
-              Member 3
-            </p>
-          </div>
-          {/* Member 4 */}
-          <div className="flex flex-col items-center">
-            <div className="relative h-[450px] w-full">
-              <Image
-                src="/assets/BoD/BoD4.png"
-                alt="Team Member 4"
-                fill
-                className="rounded-[20px] object-cover"
-              />
-            </div>
-            <p className="z-10 mt-[-50px] rounded-[20px] bg-white px-12 py-6 text-center text-xl font-medium text-black shadow-xl">
-              Member 4
-            </p>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
