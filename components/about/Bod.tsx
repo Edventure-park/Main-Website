@@ -6,7 +6,7 @@ const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackM
 
 const boardMembers = [
   {
-    name: "Latif",
+    name: "Mohammed Lateef khan",
     image: "/assets/BoD/BoD1.png",
     role: "Chairman",
     color: "from-emerald-400 to-teal-500"
@@ -18,7 +18,7 @@ const boardMembers = [
     color: "from-blue-400 to-indigo-500"
   },
   {
-    name: "Feroz",
+    name: "Feroz baig",
     image: "/assets/BoD/BoD3.png", 
     role: "Director",
     color: "from-purple-400 to-violet-500"
