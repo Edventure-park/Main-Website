@@ -1,129 +1,194 @@
 "use client";
-import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
 
-const rocket = '/assets/rocket-bg-removed.png'
+import Image from 'next/image';
+import React, { useEffect, useRef, useCallback } from 'react';
 
-function Apply_Process() {
+// Constants
+const ROCKET_IMAGE_PATH = '/assets/rocket-bg-removed.png';
+const INTERSECTION_THRESHOLD = 0.2;
+const ANIMATION_DELAY = 1800;
+
+// Types
+interface StepCardProps {
+  stepNumber: number;
+  title: string;
+  delay?: number;
+}
+
+// Step data
+const STEPS = [
+  { id: 1, title: 'Fill online application' },
+  { id: 2, title: 'Interview rounds' },
+  { id: 3, title: 'Selection' }
+] as const;
+
+// StepCard Component
+const StepCard: React.FC<StepCardProps> = ({ stepNumber, title, delay = 0 }) => (
+  <div 
+    className="step-card group"
+    style={{ animationDelay: `${delay}ms` }}
+  >
+    <div className="flex size-full flex-col items-center justify-center gap-3 rounded-xl border-2 border-emerald-400 bg-white/90 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/25 dark:border-emerald-500 dark:bg-gray-800/90">
+      <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+        Step {stepNumber}
+      </span>
+      <p className="text-center text-base font-medium text-gray-700 sm:text-lg dark:text-gray-200">
+        {title}
+      </p>
+    </div>
+  </div>
+);
+
+// Main Component
+const ApplyProcess: React.FC = () => {
   const rocketRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && rocketRef.current) {
+        const rocket = rocketRef.current;
+        
+        // Trigger entrance animation
+        rocket.style.transition = 'transform 1.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease-out';
+        rocket.style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+        rocket.style.opacity = '1';
+        
+        // Add floating animation after entrance
+        setTimeout(() => {
+          rocket.classList.add('rocket-float');
+        }, ANIMATION_DELAY);
+        
+        // Cleanup observer
+        observerRef.current?.disconnect();
+      }
+    });
+  }, []);
+
   useEffect(() => {
     const rocketElement = rocketRef.current;
     const containerElement = containerRef.current;
+    
     if (!rocketElement || !containerElement) return;
     
-    // Reset initial position
-    rocketElement.style.transform = 'translateX(-100vw) translateY(50vh) rotate(-25deg)';
+    // Initialize rocket position
+    rocketElement.style.transform = 'translateX(-100vw) translateY(20vh) rotate(-15deg)';
     rocketElement.style.opacity = '0';
     
     // Create intersection observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Trigger entrance animation
-          rocketElement.style.transition = 'transform 1.8s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.6s ease-in';
-          rocketElement.style.transform = 'translateX(0) translateY(0) rotate(0)';
-          rocketElement.style.opacity = '1';
-          
-          // Add hover animation after entrance is complete
-          setTimeout(() => {
-            rocketElement.classList.add('hover-animation');
-          }, 2000);
-          
-          // Disconnect observer after animation is triggered
-          observer.disconnect();
-        }
-      });
-    }, {
-      threshold: 0.2 // Trigger when 20% of the element is visible
+    observerRef.current = new IntersectionObserver(handleIntersection, {
+      threshold: INTERSECTION_THRESHOLD,
+      rootMargin: '0px 0px -10% 0px'
     });
     
-    // Start observing the container
-    observer.observe(containerElement);
+    observerRef.current.observe(containerElement);
     
-    // Cleanup
+    // Cleanup function
     return () => {
-      observer.disconnect();
+      observerRef.current?.disconnect();
     };
-  }, []);
-  
+  }, [handleIntersection]);
+
   return (
-    <div className="relative overflow-hidden bg-white px-4 py-16 dark:bg-gray-900">
-      <style jsx global>{`
-        @keyframes glowPulse {
-          0% { box-shadow: 0 0 5px 2px rgba(16, 185, 129, 0.3); }
-          50% { box-shadow: 0 0 15px 5px rgba(16, 185, 129, 0.6); }
-          100% { box-shadow: 0 0 5px 2px rgba(16, 185, 129, 0.3); }
-        }
-        
-        @keyframes floatAnimation {
-          0% { transform: translateY(0); }
-          50% { transform: translateY(-15px); }
-          100% { transform: translateY(0); }
-        }
-        
+    <>
+      {/* Scoped styles */}
+      <style jsx>{`
         .step-card {
-          transition: all 0.3s ease;
-          animation: glowPulse 3s infinite;
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeInUp 0.6s ease-out forwards;
         }
         
-        .step-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 0 20px 8px rgba(16, 185, 129, 0.7);
+        .rocket-float {
+          animation: gentleFloat 6s ease-in-out infinite;
         }
         
-        .hover-animation {
-          animation: floatAnimation 4s ease-in-out infinite;
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes gentleFloat {
+          0%, 100% { 
+            transform: translateY(0px) rotate(0deg); 
+          }
+          33% { 
+            transform: translateY(-8px) rotate(1deg); 
+          }
+          66% { 
+            transform: translateY(-4px) rotate(-1deg); 
+          }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+          .step-card,
+          .rocket-float {
+            animation: none !important;
+          }
         }
       `}</style>
-      {/* Content */}
-      <div className="relative z-10">
-        <div className="flex justify-center">
-          <h2 className="text-center text-4xl font-semibold text-black sm:text-6xl md:text-8xl dark:text-white">
-            How to apply
-          </h2>
+      <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 lg:py-20 dark:from-gray-900 dark:to-gray-800">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.05),transparent_50%)]" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-white">
+              How to Apply
+            </h2>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+              Follow these simple steps to join our team
+            </p>
+          </div>
+          {/* Steps Grid */}
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            {STEPS.map((step, index) => (
+              <StepCard
+                key={step.id}
+                stepNumber={step.id}
+                title={step.title}
+                delay={index * 200}
+              />
+            ))}
+          </div>
+          {/* Rocket Section */}
+          <div ref={containerRef} className="relative mt-16 flex justify-center lg:mt-20">
+            {/* Subtle background glow */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="size-32 rounded-full bg-emerald-500/10 blur-2xl sm:size-48" />
+            </div>
+            {/* Rocket Container */}
+            <div 
+              ref={rocketRef}
+              className="relative z-10 flex items-center justify-center"
+              style={{ 
+                willChange: 'transform',
+                transformOrigin: 'center center'
+              }}
+            >
+              <div className="relative">
+                <Image
+                  src={ROCKET_IMAGE_PATH}
+                  alt="Rocket launching representing career growth"
+                  width={400}
+                  height={400}
+                  className="h-32 w-auto drop-shadow-xl sm:h-40 md:h-48 lg:h-56"
+                  priority
+                  sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
+                />
+                {/* Rocket trail effect */}
+                <div className="absolute -bottom-2 left-1/2 h-8 w-1 -translate-x-1/2 bg-gradient-to-t from-orange-400 to-transparent opacity-60 blur-sm sm:h-12" />
+                <div className="absolute -bottom-1 left-1/2 h-6 w-0.5 -translate-x-1/2 bg-gradient-to-t from-yellow-400 to-transparent opacity-80 sm:h-8" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-8">
-          <div className="step-card flex w-full max-w-xs flex-col items-center justify-center rounded-lg border-4 border-emerald-500 bg-white p-6 sm:w-80 dark:bg-gray-800">
-            <strong className="text-2xl text-black sm:text-3xl md:text-4xl dark:text-white">Step 1</strong>
-            <p className="mt-2 text-center text-lg text-black sm:text-xl md:text-2xl dark:text-white">Fill online application</p>
-          </div>
-          <div className="step-card flex w-full max-w-xs flex-col items-center justify-center rounded-lg border-4 border-emerald-500 bg-white p-6 sm:w-80 dark:bg-gray-800">
-            <strong className="text-2xl text-black sm:text-3xl md:text-4xl dark:text-white">Step 2</strong>
-            <p className="mt-2 text-center text-lg text-black sm:text-xl md:text-2xl dark:text-white">Interview rounds</p>
-          </div>
-          <div className="step-card flex w-full max-w-xs flex-col items-center justify-center rounded-lg border-4 border-emerald-500 bg-white p-6 sm:w-80 dark:bg-gray-800">
-            <strong className="text-2xl text-black sm:text-3xl md:text-4xl dark:text-white">Step 3</strong>
-            <p className="mt-2 text-center text-lg text-black sm:text-xl md:text-2xl dark:text-white">Selection</p>
-          </div>
-        </div>
-        <div ref={containerRef} className="relative mt-20 flex justify-center">
-          {/* Subtle gradient circle behind rocket */}
-          <div className="absolute left-1/2 top-1/2 h-64 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b from-emerald-50 to-transparent opacity-60 blur-lg dark:from-emerald-900/10 dark:to-transparent"></div>
-          {/* Rocket container with animation */}
-          <div 
-            ref={rocketRef} 
-            className="relative z-10"
-            style={{ 
-              willChange: 'transform',
-              transformOrigin: 'center center'
-            }}
-          >
-            {/* Rocket image */}
-            <Image
-              width={800}
-              height={800}
-              src={rocket}
-              alt="Rocket"
-              className="w-48 drop-shadow-lg sm:w-72 md:w-[600px] lg:w-[800px]"
-              priority
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+      </section>
+    </>
+  );
+};
 
-export default Apply_Process;
+export default ApplyProcess;
