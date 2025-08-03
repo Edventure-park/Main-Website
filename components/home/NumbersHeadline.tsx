@@ -89,7 +89,7 @@ function NumbersHeadline() {
                 <p className="mt-2 text-lg text-emerald-100">Turning ideas into ventures</p>
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="inline-block rounded-md bg-white bg-opacity-10 px-3 py-1 text-sm font-medium text-white">25+ Colleges</span>
+                <span className="inline-block rounded-md bg-white bg-opacity-10 px-3 py-1 text-sm font-medium text-white">75+ Colleges</span>
                 <span className="inline-block rounded-md bg-white bg-opacity-10 px-3 py-1 text-sm font-medium text-white">12+ Cities</span>
               </div>
             </div>
