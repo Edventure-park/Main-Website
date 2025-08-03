@@ -1,6 +1,44 @@
+"use client";
 import Link from 'next/link';
 import React from 'react';
 import { FaInstagram, FaFacebookF, FaTwitter, FaYoutube } from 'react-icons/fa';
+
+// import { AnimatedTooltip } from '../ui/animated-tooltip';
+import { AnimatedTooltip } from './ui/animated-tooltip';
+
+// Team members data for EdVenture Park
+const teamMembers = [
+  {
+    id: 1,
+    name: "Rajesh Kumar",
+    designation: "CEO & Founder",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+  },
+  {
+    id: 3,
+    name: "Arjun Reddy",
+    designation: "Technology Lead",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+  },
+  {
+    id: 4,
+    name: "Sneha Patel",
+    designation: "Community Manager",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  },
+  {
+    id: 5,
+    name: "Vikram Singh",
+    designation: "Operations Head",
+    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+  },
+  {
+    id: 6,
+    name: "Kavya Nair",
+    designation: "Design Lead",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+  },
+];
 
 export default function Footer() {
   return (
@@ -29,11 +67,11 @@ export default function Footer() {
         <div className="w-full md:w-1/3">
           <h3 className="mb-3 text-xl font-semibold">Company</h3>
           <ul className="space-y-2 text-lg text-gray-700">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/programs/preincubation">Programs</Link></li>
-            <li><Link href="/portfolio">Portfolio</Link></li>
-            <li><Link href="/events">Events</Link></li>
+            <li><Link href="/" className="transition-colors hover:text-[#169D53]">Home</Link></li>
+            <li><Link href="/about" className="transition-colors hover:text-[#169D53]">About Us</Link></li>
+            <li><Link href="/programs/preincubation" className="transition-colors hover:text-[#169D53]">Programs</Link></li>
+            <li><Link href="/portfolio" className="transition-colors hover:text-[#169D53]">Portfolio</Link></li>
+            <li><Link href="/events" className="transition-colors hover:text-[#169D53]">Events</Link></li>
           </ul>
         </div>
         {/* Newsletter */}
@@ -59,14 +97,20 @@ export default function Footer() {
       {/* Divider */}
       <div className="my-6 border-t border-gray-200" />
       {/* Bottom Section */}
-      <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
-        {/* Left Side: Copyright + Designed By */}
-        <div className="order-2 text-center md:order-1 md:text-left">
+      <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+        {/* Left Side: Copyright + Team Tooltips */}
+        <div className="order-2 flex flex-col items-center space-y-4 text-center md:order-1 md:items-start md:text-left">
           <p className="text-lg">© EdVenture Park. All Rights Reserved</p>
-          <p className="text-base text-gray-600">Designed by Team Edventure Park</p>
+          {/* Team Members with Animated Tooltips */}
+          <div className="flex flex-col items-center space-y-2 md:items-start">
+            <p className="text-base text-gray-600">Designed by our amazing team:</p>
+            <div className="flex items-center justify-center md:justify-start">
+              <AnimatedTooltip items={teamMembers} />
+            </div>
+          </div>
         </div>
         {/* Right Side: Social Links */}
-        <div className="order-3 flex space-x-5 text-gray-700">
+        <div className="order-1 flex space-x-5 text-gray-700 md:order-3">
           <Link href="https://www.instagram.com/edventurepark/" target="_blank" rel="noopener noreferrer">
             <FaInstagram className="text-3xl transition hover:text-pink-500" />
           </Link>
