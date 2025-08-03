@@ -86,7 +86,7 @@ export default function Footer() {
           <p className="text-lg">© EdVenture Park. All Rights Reserved</p>
           {/* Team Members with Animated Tooltips */}
           <div className="flex flex-col items-center space-y-2 md:items-start">
-            <p className="text-base text-gray-600">Designed by our amazing team:</p>
+            <p className="text-base text-gray-600">Developed by our amazing team:</p>
             <div className="flex items-center justify-center md:justify-start">
               <AnimatedTooltip items={teamMembers} />
             </div>
