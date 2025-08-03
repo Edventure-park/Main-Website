@@ -10,9 +10,9 @@ import { AnimatedTooltip } from './ui/animated-tooltip';
 const teamMembers = [
   {
     id: 1,
-    name: "Rajesh Kumar",
-    designation: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+    name: "Syed Adnan Ali",
+    designation: "Project Lead",
+    image: "/AdnanIm-1.jpg",
   },
   {
     id: 3,
