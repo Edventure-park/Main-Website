@@ -6,7 +6,7 @@ function Ceo() {
     <section className="w-full bg-white px-4 py-8 md:px-8 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-6 text-center text-2xl font-[Black_Mango] tracking-tight md:text-3xl lg:text-4xl xl:text-5xl">
-          The Man Behind It All – Our CEO
+          The Man Behind It All – Our Founder
         </h2>
         {/* CEO Card Container */}
         <div className="relative mx-auto mb-8 w-full rounded-[20px] bg-green-600 p-6 md:h-[500px] md:w-[900px] md:rounded-[40px] md:p-4">
