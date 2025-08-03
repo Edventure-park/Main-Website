@@ -6,9 +6,9 @@ const partners = [
   { id: 1, name: 'Company 1', logo: '/assets/partners/CodeForIndia.png' },
   { id: 2, name: 'Company 2', logo: '/assets/partners/We-Hub.png' },
   { id: 3, name: 'Company 3', logo: '/assets/partners/T-Hub.png' },
-  { id: 4, name: 'Company 4', logo: '/assets/partners/T-Hub.png' },
-  { id: 5, name: 'Company 5', logo: '/assets/partners/T-Hub.png' },
-  { id: 6, name: 'Company 6', logo: '/assets/partners/T-Hub.png' },
+  { id: 4, name: 'Company 4', logo: '/assets/partners/thsLogo.png' },
+  { id: 5, name: 'Company 5', logo: '/assets/partners/Tgic.png' },
+
 ];
 
 const Partners: React.FC = () => {

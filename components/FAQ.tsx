@@ -257,7 +257,7 @@ return matchesSearch && matchesCategory;
           <Image
             width={240}
             height={240}
-            src="/assets/EVP_logo.png"
+            src="/assets/evpNewLogo.png"
             alt="EdVenture Park Logo"
             className="mx-auto h-auto w-44 md:w-52"
           />
