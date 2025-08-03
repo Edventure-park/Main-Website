@@ -8,7 +8,7 @@ const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackM
 const boardMembers = [
   {
     name: "Meeraj Faheem",
-    image: "/assets/BoD/BoD5.png",
+    image: "/assets/BoD/meeraj.png",
     role: "Founder",
     color: "from-emerald-400 to-teal-500",
     note: `"4 years, 273 Startups and 550+ founders later, I can't help but notice the thousands of students who were part of our journey now making us proud both at national and international level. This reinforces the objective, purpose and vision with which we started with a tiny but mighty team. The sense of purpose is much more stronger now with shared responsibility. We are just getting started and I am fortunate for the opportunity and the team. This is once in a generation team working on a once in a lifetime mission. My sincere gratitude to the Campus Leads, X Team, Core Team, Investors, Partners, Stakeholders, Parents, Colleges and the Board of EdVenture Park for making this happen!" ~Meraj Faheem`
@@ -22,7 +22,7 @@ const boardMembers = [
   },
   {
     name: "Illyas Shah Khan",
-    image: "/assets/BoD/BoD6.png",
+    image: "/assets/BoD/ilyas.png",
     role: "Incubation Head",
     color: "from-emerald-400 to-teal-500",
     note: "Experienced in guiding early-stage startups and fostering entrepreneurial ecosystems."
