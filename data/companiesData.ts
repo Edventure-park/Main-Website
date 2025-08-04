@@ -14,7 +14,7 @@ const mockCompanies: Company[] = [
     description: 'A forward-thinking company revolutionizing its industry with innovative solutions.',
     cohort: 'A22',
     industry: ['FoodTech', 'E-commerce'],
-    logoUrl: '/assets/forevercookie.png',
+    logoUrl: '/assets/logos/forevercookie.png',
   },
   {
     id: '2',
@@ -22,7 +22,7 @@ const mockCompanies: Company[] = [
     description: 'Delivering delightful experiences to customers worldwide.',
     cohort: 'A22',
     industry: ['Food & Beverage', 'Consumer'],
-    logoUrl: '/assets/delizia.png',
+    logoUrl: '/assets/logos/delizia.png',
   },
   {
     id: '3',
@@ -30,7 +30,7 @@ const mockCompanies: Company[] = [
     description: 'Connecting skilled professionals with those who need them, seamlessly and efficiently.',
     cohort: 'A22',
     industry: ['Services', 'Marketplace'],
-    logoUrl: '/assets/mymestri.png',
+    logoUrl: '/assets/logos/mymestri.png',
   },
   {
     id: '4',
@@ -38,7 +38,7 @@ const mockCompanies: Company[] = [
     description: 'Pioneering the future of education with cutting-edge learning technologies.',
     cohort: 'A22',
     industry: ['EdTech', 'Education'],
-    logoUrl: '/assets/alphaed.png',
+    logoUrl: '/assets/logos/alphaed.png',
   },
   {
     id: '5',
@@ -46,7 +46,7 @@ const mockCompanies: Company[] = [
     description: 'Innovating mobility solutions to enhance accessibility for everyone.',
     cohort: 'A22',
     industry: ['Healthcare', 'Mobility'],
-    logoUrl: '/assets/rolstoel.png',
+    logoUrl: '/assets/logos/rolstoel.png',
   },
   {
     id: '6',
@@ -54,7 +54,7 @@ const mockCompanies: Company[] = [
     description: 'A lifestyle brand focused on sustainable and ethically sourced products.',
     cohort: 'A22',
     industry: ['Consumer', 'Sustainability'],
-    logoUrl: '/assets/neve.png',
+    logoUrl: '/assets/logos/neve.png',
   },
   {
     id: '7',
@@ -62,7 +62,7 @@ const mockCompanies: Company[] = [
     description: 'Simplifying complex processes with magical, easy-to-use software.',
     cohort: 'A22',
     industry: ['Construction', 'SaaS'],
-    logoUrl: '/assets/magicbuild.png',
+    logoUrl: '/assets/logos/magicbuild.png',
   },
   {
     id: '8',
@@ -70,7 +70,7 @@ const mockCompanies: Company[] = [
     description: 'Creating immersive and engaging gaming experiences for all ages.',
     cohort: 'A22',
     industry: ['Gaming', 'Entertainment'],
-    logoUrl: '/assets/zedleplay.png',
+    logoUrl: '/assets/logos/zedleplay.png',
   },
   {
     id: '9',
@@ -78,7 +78,7 @@ const mockCompanies: Company[] = [
     description: 'A healthcare platform connecting patients with doctors for better medical outcomes.',
     cohort: 'A22',
     industry: ['HealthTech', 'Telemedicine'],
-    logoUrl: '/assets/doctera.png',
+    logoUrl: '/assets/logos/doctera.png',
   },
   {
     id: '10',
@@ -86,7 +86,7 @@ const mockCompanies: Company[] = [
     description: 'Unlocking financial freedom through innovative fintech solutions.',
     cohort: 'A22',
     industry: ['FinTech', 'Finance'],
-    logoUrl: '/assets/freedle.png',
+    logoUrl: '/assets/logos/freedle.png',
   },
   {
     id: '11',
@@ -94,7 +94,7 @@ const mockCompanies: Company[] = [
     description: 'Harnessing biotechnology to create a more sustainable future.',
     cohort: 'A22',
     industry: ['Biotechnology', 'Sustainability'],
-    logoUrl: '/assets/bioreform.png',
+    logoUrl: '/assets/logos/bioreform.png',
   },
   {
     id: '12',
@@ -102,7 +102,7 @@ const mockCompanies: Company[] = [
     description: 'Empowering businesses to transform their operations for the digital age.',
     cohort: 'A22',
     industry: ['B2B', 'SaaS'],
-    logoUrl: '/assets/transformify.png',
+    logoUrl: '/assets/logos/transformify.png',
   },
   {
     id: '13',
@@ -110,7 +110,7 @@ const mockCompanies: Company[] = [
     description: 'A brand focused on creating products that bring peace and harmony to your home.',
     cohort: 'A22',
     industry: ['Consumer Goods', 'Lifestyle'],
-    logoUrl: '/assets/dovely.png',
+    logoUrl: '/assets/logos/dovely.png',
   },
   {
     id: '14',
@@ -118,7 +118,7 @@ const mockCompanies: Company[] = [
     description: 'Modernizing traditional wellness practices for a new generation.',
     cohort: 'A22',
     industry: ['Wellness', 'Health'],
-    logoUrl: '/assets/cupping.png',
+    logoUrl: '/assets/logos/cupping.png',
   },
   {
     id: '15',
@@ -126,7 +126,7 @@ const mockCompanies: Company[] = [
     description: 'Intensive training programs for the next generation of cybersecurity experts.',
     cohort: 'A22',
     industry: ['Education', 'Cybersecurity'],
-    logoUrl: '/assets/cipherbootcamp.png',
+    logoUrl: '/assets/logos/cipherbootcamp.png',
   },
   {
     id: '16',
@@ -134,7 +134,7 @@ const mockCompanies: Company[] = [
     description: 'Elegant and sophisticated solutions for modern living.',
     cohort: 'A22',
     industry: ['Lifestyle', 'Consumer'],
-    logoUrl: '/assets/jasmine.png',
+    logoUrl: '/assets/logos/jasmine.png',
   },
   {
     id: '17',
@@ -142,7 +142,7 @@ const mockCompanies: Company[] = [
     description: 'Powering the future with high-performance electric vehicle technology.',
     cohort: 'A22',
     industry: ['Automotive', 'EV'],
-    logoUrl: '/assets/torqelectric.png',
+    logoUrl: '/assets/logos/torqelectric.png',
   },
   {
     id: '18',
@@ -150,7 +150,7 @@ const mockCompanies: Company[] = [
     description: 'Smart apparel designed for safety and protection in any environment.',
     cohort: 'A22',
     industry: ['Apparel', 'Safety Tech'],
-    logoUrl: '/assets/guardianjacket.png',
+    logoUrl: '/assets/logos/guardianjacket.png',
   },
   {
     id: '19',
@@ -158,7 +158,7 @@ const mockCompanies: Company[] = [
     description: 'Innovative waste management solutions for a cleaner planet.',
     cohort: 'A22',
     industry: ['Sustainability', 'Hardware'],
-    logoUrl: '/assets/ecofriendlytrashbins.png',
+    logoUrl: '/assets/logos/ecofriendlytrashbins.png',
   },
   {
     id: '20',
@@ -166,7 +166,7 @@ const mockCompanies: Company[] = [
     description: 'Data-driven advertising strategies to help businesses grow.',
     cohort: 'A22',
     industry: ['AdTech', 'Marketing'],
-    logoUrl: '/assets/adwised.png',
+    logoUrl: '/assets/logos/adwised.png',
   },
   {
     id: '21',
@@ -174,7 +174,7 @@ const mockCompanies: Company[] = [
     description: 'Your on-demand Chief Marketing Officer for strategic growth.',
     cohort: 'A22',
     industry: ['Marketing', 'Consulting'],
-    logoUrl: '/assets/cmo.ae.png',
+    logoUrl: '/assets/logos/cmo.ae.png',
   },
   {
     id: '22',
@@ -182,7 +182,7 @@ const mockCompanies: Company[] = [
     description: 'Smart water management systems for residential and commercial use.',
     cohort: 'A22',
     industry: ['IoT', 'Sustainability'],
-    logoUrl: '/assets/iwater.png',
+    logoUrl: '/assets/logos/iwater.png',
   },
   {
     id: '23',
@@ -190,7 +190,7 @@ const mockCompanies: Company[] = [
     description: 'A mental wellness app to help you find balance and clarity.',
     cohort: 'A22',
     industry: ['HealthTech', 'Wellness'],
-    logoUrl: '/assets/goodmind.png',
+    logoUrl: '/assets/logos/goodmind.png',
   },
   {
     id: '24',
@@ -198,7 +198,7 @@ const mockCompanies: Company[] = [
     description: 'Reliable and professional cleaning services for a super clean home.',
     cohort: 'A22',
     industry: ['Services', 'Home'],
-    logoUrl: '/assets/supermaids.png',
+    logoUrl: '/assets/logos/supermaids.png',
   },
   {
     id: '25',
@@ -206,7 +206,7 @@ const mockCompanies: Company[] = [
     description: 'An educational platform for aspiring makeup artists.',
     cohort: 'A22',
     industry: ['Beauty', 'Education'],
-    logoUrl: '/assets/mua101.png',
+    logoUrl: '/assets/logos/mua101.png',
   },
   {
     id: '26',
@@ -214,7 +214,7 @@ const mockCompanies: Company[] = [
     description: 'Creating construction materials from recycled plastics.',
     cohort: 'A22',
     industry: ['Industrials', 'Sustainability'],
-    logoUrl: '/assets/plastocons.png',
+    logoUrl: '/assets/logos/plastocons.png',
   },
   {
     id: '27',
@@ -222,7 +222,7 @@ const mockCompanies: Company[] = [
     description: 'A fun and interactive learning environment for young children.',
     cohort: 'A22',
     industry: ['Education', 'Children'],
-    logoUrl: '/assets/kiddiewinkschool.png',
+    logoUrl: '/assets/logos/kiddiewinkschool.png',
   },
   {
     id: '28',
@@ -230,7 +230,7 @@ const mockCompanies: Company[] = [
     description: 'Affordable and accessible pharmacy services for your community.',
     cohort: 'A22',
     industry: ['Healthcare', 'Retail'],
-    logoUrl: '/assets/thegoodpharmacy.png',
+    logoUrl: '/assets/logos/thegoodpharmacy.png',
   },
   {
     id: '29',
@@ -238,7 +238,7 @@ const mockCompanies: Company[] = [
     description: 'A platform for academics and professionals to share their knowledge.',
     cohort: 'A22',
     industry: ['EdTech', 'Professional Development'],
-    logoUrl: '/assets/mylecturepro.png',
+    logoUrl: '/assets/logos/mylecturepro.png',
   },
   {
     id: '30',
@@ -246,7 +246,7 @@ const mockCompanies: Company[] = [
     description: 'On-demand spa and wellness services delivered to your door.',
     cohort: 'A22',
     industry: ['Wellness', 'On-Demand'],
-    logoUrl: '/assets/spadit.png',
+    logoUrl: '/assets/logos/spadit.png',
   },
   {
     id: '31',
@@ -254,7 +254,7 @@ const mockCompanies: Company[] = [
     description: 'Everything your pet needs, from food to fun, all in one place.',
     cohort: 'A22',
     industry: ['Pets', 'E-commerce'],
-    logoUrl: '/assets/petsetgo.png',
+    logoUrl: '/assets/logos/petsetgo.png',
   },
   {
     id: '32',
@@ -262,7 +262,7 @@ const mockCompanies: Company[] = [
     description: 'Bringing new life to spaces with innovative interior design solutions.',
     cohort: 'A22',
     industry: ['Design', 'Real Estate'],
-    logoUrl: '/assets/vivify.png',
+    logoUrl: '/assets/logos/vivify.png',
   },
   {
     id: '33',
@@ -270,7 +270,7 @@ const mockCompanies: Company[] = [
     description: 'Making parenting easier with smart tools and a supportive community.',
     cohort: 'A22',
     industry: ['FamilyTech', 'Community'],
-    logoUrl: '/assets/apparent.png',
+    logoUrl: '/assets/logos/apparent.png',
   },
   {
     id: '34',
@@ -278,7 +278,7 @@ const mockCompanies: Company[] = [
     description: 'AI-powered writing assistant to help you create better content, faster.',
     cohort: 'A22',
     industry: ['AI', 'SaaS'],
-    logoUrl: '/assets/enwrite.png',
+    logoUrl: '/assets/logos/enwrite.png',
   },
   {
     id: '35',
@@ -286,7 +286,7 @@ const mockCompanies: Company[] = [
     description: 'Intensive, skill-based training programs to accelerate your career.',
     cohort: 'A22',
     industry: ['Education', 'Career'],
-    logoUrl: '/assets/bootcamps.png',
+    logoUrl: '/assets/logos/bootcamps.png',
   },
   {
     id: '36',
@@ -294,7 +294,7 @@ const mockCompanies: Company[] = [
     description: 'IoT-enabled shelving for intelligent inventory management in retail.',
     cohort: 'A22',
     industry: ['RetailTech', 'IoT'],
-    logoUrl: '/assets/smartshelf.png',
+    logoUrl: '/assets/logos/smartshelf.png',
   },
   {
     id: '37',
@@ -302,7 +302,7 @@ const mockCompanies: Company[] = [
     description: 'A communication tool that ensures your important messages are never missed.',
     cohort: 'A22',
     industry: ['Communication', 'SaaS'],
-    logoUrl: '/assets/myping.png',
+    logoUrl: '/assets/logos/myping.png',
   },
   {
     id: '38',
@@ -310,7 +310,7 @@ const mockCompanies: Company[] = [
     description: 'Interdisciplinary learning for the modern polymath.',
     cohort: 'A22',
     industry: ['EdTech', 'Education'],
-    logoUrl: '/assets/polymathacademy.png',
+    logoUrl: '/assets/logos/polymathacademy.png',
   },
   {
     id: '39',
@@ -318,7 +318,7 @@ const mockCompanies: Company[] = [
     description: 'Providing data-driven insights to help businesses make smarter decisions.',
     cohort: 'A22',
     industry: ['Data Analytics', 'B2B'],
-    logoUrl: '/assets/insightservices.png',
+    logoUrl: '/assets/logos/insightservices.png',
   },
   {
     id: '40',
@@ -326,7 +326,7 @@ const mockCompanies: Company[] = [
     description: 'Next-generation charging solutions for all your electronic devices.',
     cohort: 'A22',
     industry: ['Hardware', 'Electronics'],
-    logoUrl: '/assets/deltacharge.png',
+    logoUrl: '/assets/logos/deltacharge.png',
   },
   {
     id: '41',
@@ -334,7 +334,7 @@ const mockCompanies: Company[] = [
     description: 'A new wave of communication, making conversations more natural and intuitive.',
     cohort: 'A22',
     industry: ['Social', 'Communication'],
-    logoUrl: '/assets/mywavechat.png',
+    logoUrl: '/assets/logos/mywavechat.png',
   },
   {
     id: '42',
@@ -342,7 +342,7 @@ const mockCompanies: Company[] = [
     description: 'Get the inside scoop on the latest and greatest mobile apps.',
     cohort: 'A22',
     industry: ['Mobile', 'Media'],
-    logoUrl: '/assets/appinsider.png',
+    logoUrl: '/assets/logos/appinsider.png',
   },
   {
     id: '43',
@@ -350,7 +350,7 @@ const mockCompanies: Company[] = [
     description: 'Sustainable construction practices and materials for a greener world.',
     cohort: 'A22',
     industry: ['Construction', 'Sustainability'],
-    logoUrl: '/assets/greenbuild.png',
+    logoUrl: '/assets/logos/greenbuild.png',
   },
   {
     id: '44',
@@ -358,7 +358,7 @@ const mockCompanies: Company[] = [
     description: 'A premium freelance marketplace for top-tier creative and technical talent.',
     cohort: 'A22',
     industry: ['Freelance', 'Marketplace'],
-    logoUrl: '/assets/highlancer.png',
+    logoUrl: '/assets/logos/highlancer.png',
   },
   {
     id: '45',
@@ -366,7 +366,7 @@ const mockCompanies: Company[] = [
     description: 'Delicious and healthy ice cream made from all-natural ingredients.',
     cohort: 'A22',
     industry: ['Food & Beverage', 'Health'],
-    logoUrl: '/assets/nurelcecream.png',
+    logoUrl: '/assets/logos/nurelcecream.png',
   },
   {
     id: '46',
@@ -374,7 +374,7 @@ const mockCompanies: Company[] = [
     description: 'Promoting a connection with nature through organic and sustainable products.',
     cohort: 'A22',
     industry: ['E-commerce', 'Sustainability'],
-    logoUrl: '/assets/backtoearth.png',
+    logoUrl: '/assets/logos/backtoearth.png',
   },
   {
     id: '47',
@@ -382,7 +382,7 @@ const mockCompanies: Company[] = [
     description: 'Intelligent traffic management solutions to reduce congestion.',
     cohort: 'A22',
     industry: ['Smart City', 'IoT'],
-    logoUrl: '/assets/trafflow.png',
+    logoUrl: '/assets/logos/trafflow.png',
   },
   {
     id: '48',
@@ -390,7 +390,7 @@ const mockCompanies: Company[] = [
     description: 'Connecting talented individuals with meaningful career opportunities.',
     cohort: 'A22',
     industry: ['HR Tech', 'Recruitment'],
-    logoUrl: '/assets/goodjob.png',
+    logoUrl: '/assets/logos/goodjob.png',
   },
   {
     id: '49',
@@ -398,7 +398,7 @@ const mockCompanies: Company[] = [
     description: 'AI-powered solutions for complex problem-solving.',
     cohort: 'A22',
     industry: ['AI', 'B2B'],
-    logoUrl: '/assets/alsime.png',
+    logoUrl: '/assets/logos/alsime.png',
   },
   {
     id: '50',
@@ -406,7 +406,7 @@ const mockCompanies: Company[] = [
     description: 'Building the foundational tools for the metaverse.',
     cohort: 'A22',
     industry: ['Metaverse', 'Web3'],
-    logoUrl: '/assets/metaman.png',
+    logoUrl: '/assets/logos/metaman.png',
   },
   {
     id: '51',
@@ -414,7 +414,7 @@ const mockCompanies: Company[] = [
     description: 'Creative solutions for branding and digital presence.',
     cohort: 'A22',
     industry: ['Design', 'Marketing'],
-    logoUrl: '/assets/aurynin.png',
+    logoUrl: '/assets/logos/aurynin.png',
   },
   {
     id: '52',
@@ -422,7 +422,7 @@ const mockCompanies: Company[] = [
     description: 'Professional audio equipment and solutions for creators.',
     cohort: 'A22',
     industry: ['Audio', 'Hardware'],
-    logoUrl: '/assets/prosound.png',
+    logoUrl: '/assets/logos/prosound.png',
   },
   {
     id: '53',
@@ -430,7 +430,7 @@ const mockCompanies: Company[] = [
     description: 'Cybersecurity solutions to protect your digital assets.',
     cohort: 'A22',
     industry: ['Cybersecurity', 'SaaS'],
-    logoUrl: '/assets/spyq.png',
+    logoUrl: '/assets/logos/spyq.png',
   },
   {
     id: '54',
@@ -438,7 +438,7 @@ const mockCompanies: Company[] = [
     description: 'Real-time tracking and logistics management platform.',
     cohort: 'A22',
     industry: ['Logistics', 'SaaS'],
-    logoUrl: '/assets/trackit.png',
+    logoUrl: '/assets/logos/trackit.png',
   },
   {
     id: '55',
@@ -446,7 +446,7 @@ const mockCompanies: Company[] = [
     description: 'Indoor Air Quality monitoring and improvement systems.',
     cohort: 'A22',
     industry: ['HealthTech', 'IoT'],
-    logoUrl: '/assets/iaq.png',
+    logoUrl: '/assets/logos/iaq.png',
   },
   {
     id: '56',
@@ -454,7 +454,7 @@ const mockCompanies: Company[] = [
     description: 'Durable and reliable gear for extreme sports and adventures.',
     cohort: 'A22',
     industry: ['Sports', 'Apparel'],
-    logoUrl: '/assets/fighttolast.png',
+    logoUrl: '/assets/logos/fighttolast.png',
   },
   {
     id: '57',
@@ -462,7 +462,7 @@ const mockCompanies: Company[] = [
     description: 'Subscription box for fresh, organic produce delivered from local farms.',
     cohort: 'A22',
     industry: ['AgriTech', 'Subscription'],
-    logoUrl: '/assets/farminthebox.png',
+    logoUrl: '/assets/logos/farminthebox.png',
   },
   {
     id: '58',
@@ -470,7 +470,7 @@ const mockCompanies: Company[] = [
     description: 'A comprehensive platform for diabetes management and support.',
     cohort: 'A22',
     industry: ['HealthTech', 'Wellness'],
-    logoUrl: '/assets/diabeat.png',
+    logoUrl: '/assets/logos/diabeat.png',
   },
   {
     id: '59',
@@ -478,7 +478,7 @@ const mockCompanies: Company[] = [
     description: 'Creating biodegradable alternatives to everyday products.',
     cohort: 'A22',
     industry: ['Biotechnology', 'Sustainability'],
-    logoUrl: '/assets/biofy.png',
+    logoUrl: '/assets/logos/biofy.png',
   },
   {
     id: '60',
@@ -486,7 +486,7 @@ const mockCompanies: Company[] = [
     description: 'A connected universe of pharmaceutical data and services.',
     cohort: 'A22',
     industry: ['Healthcare', 'Data'],
-    logoUrl: '/assets/pharmaverse.png',
+    logoUrl: '/assets/logos/pharmaverse.png',
   },
   {
     id: '61',
@@ -494,7 +494,7 @@ const mockCompanies: Company[] = [
     description: 'Advanced cleaning solutions for industrial and commercial use.',
     cohort: 'A22',
     industry: ['Industrials', 'Services'],
-    logoUrl: '/assets/cleanx.png',
+    logoUrl: '/assets/logos/cleanx.png',
   },
   {
     id: '62',
@@ -502,7 +502,7 @@ const mockCompanies: Company[] = [
     description: 'AI-driven insights for smarter business decisions.',
     cohort: 'A22',
     industry: ['AI', 'B2B'],
-    logoUrl: '/assets/smartia.png',
+    logoUrl: '/assets/logos/smartia.png',
   },
   {
     id: '63',
@@ -510,7 +510,7 @@ const mockCompanies: Company[] = [
     description: 'A platform for finding and claiming rebates and rewards effortlessly.',
     cohort: 'A22',
     industry: ['FinTech', 'Consumer'],
-    logoUrl: '/assets/rebate.png',
+    logoUrl: '/assets/logos/rebate.png',
   },
   {
     id: '64',
@@ -518,7 +518,7 @@ const mockCompanies: Company[] = [
     description: 'Connecting you with healthcare solutions that work.',
     cohort: 'A22',
     industry: ['HealthTech', 'Marketplace'],
-    logoUrl: '/assets/curefy.png',
+    logoUrl: '/assets/logos/curefy.png',
   },
   {
     id: '65',
@@ -526,7 +526,7 @@ const mockCompanies: Company[] = [
     description: 'Software development and consulting services that never stop improving.',
     cohort: 'A22',
     industry: ['Software', 'Consulting'],
-    logoUrl: '/assets/infiniteloop.png',
+    logoUrl: '/assets/logos/infiniteloop.png',
   },
   {
     id: '66',
@@ -534,7 +534,7 @@ const mockCompanies: Company[] = [
     description: 'Ethically sourced, lab-grown diamonds for the modern consumer.',
     cohort: 'A22',
     industry: ['Jewelry', 'Sustainability'],
-    logoUrl: '/assets/pidiamonds.png',
+    logoUrl: '/assets/logos/pidiamonds.png',
   },
   {
     id: '67',
@@ -542,7 +542,7 @@ const mockCompanies: Company[] = [
     description: 'A platform for creating and taking quizzes to excel in any subject.',
     cohort: 'A22',
     industry: ['EdTech', 'SaaS'],
-    logoUrl: '/assets/quizexcel.png',
+    logoUrl: '/assets/logos/quizexcel.png',
   },
   {
     id: '68',
@@ -550,7 +550,7 @@ const mockCompanies: Company[] = [
     description: 'Homemade meals, delivered to your doorstep with love.',
     cohort: 'A22',
     industry: ['Food Delivery', 'Marketplace'],
-    logoUrl: '/assets/mamafood.png',
+    logoUrl: '/assets/logos/mamafood.png',
   },
   {
     id: '69',
@@ -558,7 +558,7 @@ const mockCompanies: Company[] = [
     description: 'Personalized solutions to optimize your digital life.',
     cohort: 'A22',
     industry: ['Technology', 'Services'],
-    logoUrl: '/assets/ituned.png',
+    logoUrl: '/assets/logos/ituned.png',
   },
   {
     id: '70',
@@ -566,7 +566,7 @@ const mockCompanies: Company[] = [
     description: 'Developing next-generation prosthetic and bionic limbs.',
     cohort: 'A22',
     industry: ['HealthTech', 'Hardware'],
-    logoUrl: '/assets/therealbionics.png',
+    logoUrl: '/assets/logos/therealbionics.png',
   },
   {
     id: '71',
@@ -574,7 +574,7 @@ const mockCompanies: Company[] = [
     description: 'Microchip solutions for a variety of applications.',
     cohort: 'A22',
     industry: ['Hardware', 'Semiconductors'],
-    logoUrl: '/assets/chipit.png',
+    logoUrl: '/assets/logos/chipit.png',
   },
   {
     id: '72',
@@ -582,7 +582,7 @@ const mockCompanies: Company[] = [
     description: 'High-quality, comfortable, and stylish medical apparel.',
     cohort: 'A22',
     industry: ['Apparel', 'Healthcare'],
-    logoUrl: '/assets/truescrubs.png',
+    logoUrl: '/assets/logos/truescrubs.png',
   },
   {
     id: '73',
@@ -590,7 +590,7 @@ const mockCompanies: Company[] = [
     description: 'Unlocking insights from your data with a touch of magic.',
     cohort: 'A22',
     industry: ['Data Analytics', 'AI'],
-    logoUrl: '/assets/magiknumber.png',
+    logoUrl: '/assets/logos/magiknumber.png',
   },
   {
     id: '74',
@@ -598,7 +598,7 @@ const mockCompanies: Company[] = [
     description: 'Fabulous and functional activewear for everyone.',
     cohort: 'A22',
     industry: ['Apparel', 'Fitness'],
-    logoUrl: '/assets/firabulous.png',
+    logoUrl: '/assets/logos/firabulous.png',
   },
   {
     id: '75',
@@ -606,7 +606,7 @@ const mockCompanies: Company[] = [
     description: 'A universal loyalty and rewards platform.',
     cohort: 'A22',
     industry: ['FinTech', 'Loyalty'],
-    logoUrl: '/assets/rewardx.png',
+    logoUrl: '/assets/logos/rewardx.png',
   },
   {
     id: '76',
@@ -614,7 +614,7 @@ const mockCompanies: Company[] = [
     description: 'A collective of elite designers for hire.',
     cohort: 'A22',
     industry: ['Design', 'Marketplace'],
-    logoUrl: '/assets/designmafia.png',
+    logoUrl: '/assets/logos/designmafia.png',
   },
   {
     id: '77',
@@ -622,7 +622,7 @@ const mockCompanies: Company[] = [
     description: 'Customizable subscription boxes for every interest.',
     cohort: 'A22',
     industry: ['Subscription', 'E-commerce'],
-    logoUrl: '/assets/boxlab.png',
+    logoUrl: '/assets/logos/boxlab.png',
   },
   {
     id: '78',
@@ -630,7 +630,7 @@ const mockCompanies: Company[] = [
     description: 'Snacks made with soul, creativity, and love.',
     cohort: 'A22',
     industry: ['Food & Beverage', 'Consumer'],
-    logoUrl: '/assets/merakisnacks.png',
+    logoUrl: '/assets/logos/merakisnacks.png',
   },
   {
     id: '79',
@@ -638,7 +638,7 @@ const mockCompanies: Company[] = [
     description: 'Adventurous and experiential learning programs.',
     cohort: 'A22',
     industry: ['Education', 'Travel'],
-    logoUrl: '/assets/edventia.png',
+    logoUrl: '/assets/logos/edventia.png',
   },
   {
     id: '80',
@@ -646,7 +646,7 @@ const mockCompanies: Company[] = [
     description: 'Applying fundamental principles to solve modern problems.',
     cohort: 'A22',
     industry: ['Technology', 'R&D'],
-    logoUrl: '/assets/newtonize.png',
+    logoUrl: '/assets/logos/newtonize.png',
   },
   {
     id: '81',
@@ -654,7 +654,7 @@ const mockCompanies: Company[] = [
     description: 'Strategic marketing consulting for limited companies.',
     cohort: 'A22',
     industry: ['Marketing', 'Consulting'],
-    logoUrl: '/assets/cmoltd.png',
+    logoUrl: '/assets/logos/cmoltd.png',
   },
   {
     id: '82',
@@ -662,7 +662,7 @@ const mockCompanies: Company[] = [
     description: 'Your one-stop online shop for all pet supplies.',
     cohort: 'A22',
     industry: ['Pets', 'E-commerce'],
-    logoUrl: '/assets/petscart.png',
+    logoUrl: '/assets/logos/petscart.png',
   },
   {
     id: '83',
@@ -670,7 +670,7 @@ const mockCompanies: Company[] = [
     description: 'Eco-friendly lawn care and landscaping services.',
     cohort: 'A22',
     industry: ['Services', 'Sustainability'],
-    logoUrl: '/assets/grassify.png',
+    logoUrl: '/assets/logos/grassify.png',
   },
   {
     id: '84',
@@ -678,7 +678,7 @@ const mockCompanies: Company[] = [
     description: 'Decentralized energy solutions for a powerful future.',
     cohort: 'A22',
     industry: ['Energy', 'Web3'],
-    logoUrl: '/assets/powerfi.png',
+    logoUrl: '/assets/logos/powerfi.png',
   },
   {
     id: '85',
@@ -686,7 +686,7 @@ const mockCompanies: Company[] = [
     description: 'Language learning for the metaverse.',
     cohort: 'A22',
     industry: ['EdTech', 'Metaverse'],
-    logoUrl: '/assets/metalingo.png',
+    logoUrl: '/assets/logos/metalingo.png',
   },
   {
     id: '86',
@@ -694,7 +694,7 @@ const mockCompanies: Company[] = [
     description: 'Easy-to-use tools for building your online presence.',
     cohort: 'A22',
     industry: ['SaaS', 'Web Development'],
-    logoUrl: '/assets/builzy.png',
+    logoUrl: '/assets/logos/builzy.png',
   },
   {
     id: '87',
@@ -702,7 +702,7 @@ const mockCompanies: Company[] = [
     description: 'Creating deeply immersive virtual and augmented reality experiences.',
     cohort: 'A22',
     industry: ['VR', 'AR'],
-    logoUrl: '/assets/immersi.png',
+    logoUrl: '/assets/logos/immersi.png',
   },
   {
     id: '88',
@@ -710,7 +710,7 @@ const mockCompanies: Company[] = [
     description: 'An efficient and reliable scrap collection and recycling service.',
     cohort: 'A22',
     industry: ['Recycling', 'Services'],
-    logoUrl: '/assets/scrapman.png',
+    logoUrl: '/assets/logos/scrapman.png',
   },
   {
     id: '89',
@@ -718,7 +718,7 @@ const mockCompanies: Company[] = [
     description: 'Defining the new era of technology and innovation.',
     cohort: 'A22',
     industry: ['Technology', 'Venture Capital'],
-    logoUrl: '/assets/era.png',
+    logoUrl: '/assets/logos/era.png',
   },
   {
     id: '90',
@@ -726,7 +726,7 @@ const mockCompanies: Company[] = [
     description: 'That feeling you get when a great idea feels familiar.',
     cohort: 'A22',
     industry: ['Creative', 'Consulting'],
-    logoUrl: '/assets/idejavu.png',
+    logoUrl: '/assets/logos/idejavu.png',
   },
   {
     id: '91',
@@ -734,7 +734,7 @@ const mockCompanies: Company[] = [
     description: 'Real-time bus tracking for commuters and transport authorities.',
     cohort: 'A22',
     industry: ['Transportation', 'SaaS'],
-    logoUrl: '/assets/trackmybus.png',
+    logoUrl: '/assets/logos/trackmybus.png',
   },
   {
     id: '92',
@@ -742,7 +742,7 @@ const mockCompanies: Company[] = [
     description: 'A marketplace for buying and selling used bicycles.',
     cohort: 'A22',
     industry: ['Marketplace', 'Transportation'],
-    logoUrl: '/assets/bikebecho.png',
+    logoUrl: '/assets/logos/bikebecho.png',
   },
   {
     id: '93',
@@ -750,7 +750,7 @@ const mockCompanies: Company[] = [
     description: 'Energy solutions for the metaverse.',
     cohort: 'A22',
     industry: ['Metaverse', 'Energy'],
-    logoUrl: '/assets/metavolt.png',
+    logoUrl: '/assets/logos/metavolt.png',
   },
   {
     id: '94',
@@ -758,7 +758,7 @@ const mockCompanies: Company[] = [
     description: 'Decentralized, secure, and private chat application.',
     cohort: 'A22',
     industry: ['Communication', 'Web3'],
-    logoUrl: '/assets/d-chat.png',
+    logoUrl: '/assets/logos/d-chat.png',
   },
   {
     id: '95',
@@ -766,7 +766,7 @@ const mockCompanies: Company[] = [
     description: 'Rethink, Redesign, Recreate. Innovative design solutions.',
     cohort: 'A22',
     industry: ['Design', 'Creative'],
-    logoUrl: '/assets/r3designs.png',
+    logoUrl: '/assets/logos/r3designs.png',
   },
   {
     id: '96',
@@ -774,7 +774,7 @@ const mockCompanies: Company[] = [
     description: 'A platform for discovering and booking unique experiences.',
     cohort: 'A22',
     industry: ['Travel', 'Marketplace'],
-    logoUrl: '/assets/elaago.png',
+    logoUrl: '/assets/logos/elaago.png',
   },
   {
     id: '97',
@@ -782,7 +782,7 @@ const mockCompanies: Company[] = [
     description: 'Find fun activities and events happening near you.',
     cohort: 'A22',
     industry: ['Events', 'Local'],
-    logoUrl: '/assets/funfinder.png',
+    logoUrl: '/assets/logos/funfinder.png',
   },
   {
     id: '98',
@@ -790,7 +790,7 @@ const mockCompanies: Company[] = [
     description: 'Helping startups achieve their unicorn potential.',
     cohort: 'A22',
     industry: ['Venture Capital', 'Consulting'],
-    logoUrl: '/assets/myunicorn.png',
+    logoUrl: '/assets/logos/myunicorn.png',
   },
   {
     id: '99',
@@ -798,7 +798,7 @@ const mockCompanies: Company[] = [
     description: 'A new way to manage and share your digital business cards.',
     cohort: 'A22',
     industry: ['SaaS', 'Productivity'],
-    logoUrl: '/assets/carde.png',
+    logoUrl: '/assets/logos/carde.png',
   },
   {
     id: '100',
@@ -806,7 +806,7 @@ const mockCompanies: Company[] = [
     description: 'Developing micro-robots for industrial and medical applications.',
     cohort: 'A22',
     industry: ['Robotics', 'Hardware'],
-    logoUrl: '/assets/microbotsco.png',
+    logoUrl: '/assets/logos/microbotsco.png',
   },
   {
     id: '101',
@@ -814,7 +814,7 @@ const mockCompanies: Company[] = [
     description: 'Connect with personal trainers for virtual workout sessions.',
     cohort: 'A22',
     industry: ['Fitness', 'Marketplace'],
-    logoUrl: '/assets/ttrainer.png',
+    logoUrl: '/assets/logos/ttrainer.png',
   },
   {
     id: '102',
@@ -822,7 +822,7 @@ const mockCompanies: Company[] = [
     description: 'A dating and relationship platform for plus-size individuals.',
     cohort: 'A22',
     industry: ['Social', 'Dating'],
-    logoUrl: '/assets/pluslove.png',
+    logoUrl: '/assets/logos/pluslove.png',
   },
   {
     id: '103',
@@ -830,7 +830,7 @@ const mockCompanies: Company[] = [
     description: 'Artisanal paper products and stationery.',
     cohort: 'A22',
     industry: ['Consumer Goods', 'Arts & Crafts'],
-    logoUrl: '/assets/kagitam.png',
+    logoUrl: '/assets/logos/kagitam.png',
   },
   {
     id: '104',
@@ -838,7 +838,7 @@ const mockCompanies: Company[] = [
     description: 'A platform for food lovers to review and discover new dishes.',
     cohort: 'A22',
     industry: ['Food', 'Social'],
-    logoUrl: '/assets/dearfood.png',
+    logoUrl: '/assets/logos/dearfood.png',
   },
   {
     id: '105',
@@ -846,7 +846,7 @@ const mockCompanies: Company[] = [
     description: 'Innovative solutions for event management and ticketing.',
     cohort: 'A22',
     industry: ['Events', 'SaaS'],
-    logoUrl: '/assets/fevl.png',
+    logoUrl: '/assets/logos/fevl.png',
   },
   {
     id: '106',
@@ -854,7 +854,7 @@ const mockCompanies: Company[] = [
     description: 'Autonomous pods for urban transportation.',
     cohort: 'A22',
     industry: ['Automotive', 'Smart City'],
-    logoUrl: '/assets/podsauto.png',
+    logoUrl: '/assets/logos/podsauto.png',
   },
   {
     id: '107',
@@ -862,7 +862,7 @@ const mockCompanies: Company[] = [
     description: 'Solutions designed to last indefinitely.',
     cohort: 'A22',
     industry: ['Technology', 'Sustainability'],
-    logoUrl: '/assets/indefinite.png',
+    logoUrl: '/assets/logos/indefinite.png',
   },
   {
     id: '108',
@@ -870,7 +870,7 @@ const mockCompanies: Company[] = [
     description: 'A social network for sports enthusiasts.',
     cohort: 'A22',
     industry: ['Sports', 'Social'],
-    logoUrl: '/assets/sportsta.png',
+    logoUrl: '/assets/logos/sportsta.png',
   },
   {
     id: '109',
@@ -878,7 +878,7 @@ const mockCompanies: Company[] = [
     description: 'Educational toys and activities for toddlers.',
     cohort: 'A22',
     industry: ['Children', 'E-commerce'],
-    logoUrl: '/assets/todly.png',
+    logoUrl: '/assets/logos/todly.png',
   },
   {
     id: '110',
@@ -886,7 +886,7 @@ const mockCompanies: Company[] = [
     description: 'Curated products and experiences for a blissful life.',
     cohort: 'A22',
     industry: ['Lifestyle', 'E-commerce'],
-    logoUrl: '/assets/elysianlife.png',
+    logoUrl: '/assets/logos/elysianlife.png',
   },
   {
     id: '111',
@@ -894,7 +894,7 @@ const mockCompanies: Company[] = [
     description: 'On-demand flower delivery service.',
     cohort: 'A22',
     industry: ['Gifts', 'On-Demand'],
-    logoUrl: '/assets/flowerly.png',
+    logoUrl: '/assets/logos/flowerly.png',
   },
   {
     id: '112',
@@ -902,7 +902,7 @@ const mockCompanies: Company[] = [
     description: 'Minimalist skincare with essential, natural ingredients.',
     cohort: 'A22',
     industry: ['Beauty', 'Wellness'],
-    logoUrl: '/assets/bareelements.png',
+    logoUrl: '/assets/logos/bareelements.png',
   },
   {
     id: '113',
@@ -910,7 +910,7 @@ const mockCompanies: Company[] = [
     description: 'Passionate solutions for creative professionals.',
     cohort: 'A22',
     industry: ['Creative', 'SaaS'],
-    logoUrl: '/assets/arde.png',
+    logoUrl: '/assets/logos/arde.png',
   },
   {
     id: '114',
@@ -918,7 +918,7 @@ const mockCompanies: Company[] = [
     description: 'Adorable and practical products for babies and parents.',
     cohort: 'A22',
     industry: ['Children', 'E-commerce'],
-    logoUrl: '/assets/adorababy.png',
+    logoUrl: '/assets/logos/adorababy.png',
   },
   {
     id: '115',
@@ -926,7 +926,7 @@ const mockCompanies: Company[] = [
     description: 'A trusted platform to find and hire nannies and babysitters.',
     cohort: 'A22',
     industry: ['FamilyTech', 'Marketplace'],
-    logoUrl: '/assets/nannyma.png',
+    logoUrl: '/assets/logos/nannyma.png',
   },
   {
     id: '116',
@@ -934,7 +934,7 @@ const mockCompanies: Company[] = [
     description: 'Water purification systems for pure, healthy water.',
     cohort: 'A22',
     industry: ['Hardware', 'Health'],
-    logoUrl: '/assets/pureo.png',
+    logoUrl: '/assets/logos/pureo.png',
   },
   {
     id: '117',
@@ -942,7 +942,7 @@ const mockCompanies: Company[] = [
     description: 'A collaborative platform for writers and editors.',
     cohort: 'A22',
     industry: ['Publishing', 'SaaS'],
-    logoUrl: '/assets/draftroom.png',
+    logoUrl: '/assets/logos/draftroom.png',
   },
   {
     id: '118',
@@ -950,7 +950,7 @@ const mockCompanies: Company[] = [
     description: 'Convert images to vectors with the power of AI.',
     cohort: 'A22',
     industry: ['AI', 'Design'],
-    logoUrl: '/assets/vectofy.png',
+    logoUrl: '/assets/logos/vectofy.png',
   },
   {
     id: '119',
@@ -958,7 +958,7 @@ const mockCompanies: Company[] = [
     description: 'Making financial literacy fun and accessible for everyone.',
     cohort: 'A22',
     industry: ['FinTech', 'EdTech'],
-    logoUrl: '/assets/funfinance.png',
+    logoUrl: '/assets/logos/funfinance.png',
   },
   {
     id: '120',
@@ -966,7 +966,7 @@ const mockCompanies: Company[] = [
     description: 'Tiny robots solving big problems.',
     cohort: 'A22',
     industry: ['Robotics', 'Hardware'],
-    logoUrl: '/assets/microbots.png',
+    logoUrl: '/assets/logos/microbots.png',
   },
   {
     id: '121',
@@ -974,7 +974,7 @@ const mockCompanies: Company[] = [
     description: 'An all-in-one e-commerce platform for businesses of all sizes.',
     cohort: 'A22',
     industry: ['E-commerce', 'SaaS'],
-    logoUrl: '/assets/shopkart.png',
+    logoUrl: '/assets/logos/shopkart.png',
   },
   {
     id: '122',
@@ -982,7 +982,7 @@ const mockCompanies: Company[] = [
     description: 'High-fidelity simulators for thrilling experiences.',
     cohort: 'A22',
     industry: ['Entertainment', 'Hardware'],
-    logoUrl: '/assets/thrillsimulator.png',
+    logoUrl: '/assets/logos/thrillsimulator.png',
   },
   {
     id: '123',
@@ -990,7 +990,7 @@ const mockCompanies: Company[] = [
     description: 'A marketplace for skilled freelancers to find projects.',
     cohort: 'A22',
     industry: ['Freelance', 'Marketplace'],
-    logoUrl: '/assets/skillancer.png',
+    logoUrl: '/assets/logos/skillancer.png',
   },
   {
     id: '124',
@@ -998,7 +998,7 @@ const mockCompanies: Company[] = [
     description: 'Easily find and book consultations with lawyers near you.',
     cohort: 'A22',
     industry: ['LegalTech', 'Marketplace'],
-    logoUrl: '/assets/bookmylawyer.png',
+    logoUrl: '/assets/logos/bookmylawyer.png',
   },
   {
     id: '125',
@@ -1006,7 +1006,7 @@ const mockCompanies: Company[] = [
     description: 'A marketplace for auto parts and accessories.',
     cohort: 'A22',
     industry: ['Automotive', 'E-commerce'],
-    logoUrl: '/assets/partzo.png',
+    logoUrl: '/assets/logos/partzo.png',
   },
   {
     id: '126',
@@ -1014,7 +1014,7 @@ const mockCompanies: Company[] = [
     description: 'Vitamin C supplements for an active and healthy lifestyle.',
     cohort: 'A22',
     industry: ['Health', 'Consumer Goods'],
-    logoUrl: '/assets/activec.png',
+    logoUrl: '/assets/logos/activec.png',
   },
   {
     id: '127',
@@ -1022,7 +1022,7 @@ const mockCompanies: Company[] = [
     description: 'A central hub for educational resources and tools.',
     cohort: 'A22',
     industry: ['EdTech', 'Platform'],
-    logoUrl: '/assets/eduhub.png',
+    logoUrl: '/assets/logos/eduhub.png',
   },
   {
     id: '128',
@@ -1030,7 +1030,7 @@ const mockCompanies: Company[] = [
     description: 'Upskill and reskill with online courses and certifications.',
     cohort: 'A22',
     industry: ['EdTech', 'Career'],
-    logoUrl: '/assets/skillup.png',
+    logoUrl: '/assets/logos/skillup.png',
   },
   {
     id: '129',
@@ -1038,7 +1038,7 @@ const mockCompanies: Company[] = [
     description: 'Bringing hospital-level care to your home.',
     cohort: 'A22',
     industry: ['HealthTech', 'Services'],
-    logoUrl: '/assets/housepital.png',
+    logoUrl: '/assets/logos/housepital.png',
   },
   {
     id: '130',
@@ -1046,7 +1046,7 @@ const mockCompanies: Company[] = [
     description: 'Nutritious and delicious meal plans delivered to you.',
     cohort: 'A22',
     industry: ['Food Delivery', 'Health'],
-    logoUrl: '/assets/nutrish.png',
+    logoUrl: '/assets/logos/nutrish.png',
   },
   {
     id: '131',
@@ -1054,7 +1054,7 @@ const mockCompanies: Company[] = [
     description: 'Connecting laborers with daily wage employment opportunities.',
     cohort: 'A22',
     industry: ['HR Tech', 'Marketplace'],
-    logoUrl: '/assets/majdoor.png',
+    logoUrl: '/assets/logos/majdoor.png',
   },
   {
     id: '132',
@@ -1062,7 +1062,7 @@ const mockCompanies: Company[] = [
     description: 'Professional solutions for waste management and recycling.',
     cohort: 'A22',
     industry: ['Sustainability', 'Services'],
-    logoUrl: '/assets/craprofo.png',
+    logoUrl: '/assets/logos/craprofo.png',
   },
   {
     id: '133',
@@ -1070,7 +1070,7 @@ const mockCompanies: Company[] = [
     description: 'A platform to discover and showcase unique talents and skills.',
     cohort: 'A22',
     industry: ['Community', 'Marketplace'],
-    logoUrl: '/assets/hunarhunt.png',
+    logoUrl: '/assets/logos/hunarhunt.png',
   },
   {
     id: '134',
@@ -1078,7 +1078,7 @@ const mockCompanies: Company[] = [
     description: 'Expert consulting for the modern agricultural industry.',
     cohort: 'A22',
     industry: ['AgriTech', 'Consulting'],
-    logoUrl: '/assets/agritechconsultancy.png',
+    logoUrl: '/assets/logos/agritechconsultancy.png',
   },
   {
     id: '135',
@@ -1086,7 +1086,7 @@ const mockCompanies: Company[] = [
     description: 'AI-powered English learning platform.',
     cohort: 'A22',
     industry: ['AI', 'EdTech'],
-    logoUrl: '/assets/aiel.png',
+    logoUrl: '/assets/logos/aiel.png',
   },
   {
     id: '136',
@@ -1094,7 +1094,7 @@ const mockCompanies: Company[] = [
     description: 'Innovative, sustainable solutions for road construction.',
     cohort: 'A22',
     industry: ['Construction', 'Sustainability'],
-    logoUrl: '/assets/precastresusableroads.png',
+    logoUrl: '/assets/logos/precastresusableroads.png',
   },
   {
     id: '137',
@@ -1102,7 +1102,7 @@ const mockCompanies: Company[] = [
     description: 'Bespoke solutions for unique challenges.',
     cohort: 'A22',
     industry: ['Consulting', 'B2B'],
-    logoUrl: '/assets/pimakallion.png',
+    logoUrl: '/assets/logos/pimakallion.png',
   },
   {
     id: '138',
@@ -1110,7 +1110,7 @@ const mockCompanies: Company[] = [
     description: 'Specialized financial education technology.',
     cohort: 'A22',
     industry: ['FinTech', 'EdTech'],
-    logoUrl: '/assets/sfedtech.png',
+    logoUrl: '/assets/logos/sfedtech.png',
   },
   {
     id: '139',
@@ -1118,7 +1118,7 @@ const mockCompanies: Company[] = [
     description: 'Fostering community and collaboration through technology.',
     cohort: 'A22',
     industry: ['Community', 'Software'],
-    logoUrl: '/assets/ubuntu.png',
+    logoUrl: '/assets/logos/ubuntu.png',
   },
   {
     id: '140',
@@ -1126,7 +1126,7 @@ const mockCompanies: Company[] = [
     description: 'A journey towards better financial wellness.',
     cohort: 'A22',
     industry: ['FinTech', 'Wellness'],
-    logoUrl: '/assets/masira.png',
+    logoUrl: '/assets/logos/masira.png',
   },
   {
     id: '141',
@@ -1134,7 +1134,7 @@ const mockCompanies: Company[] = [
     description: 'A digital wallet designed for women.',
     cohort: 'A22',
     industry: ['FinTech', 'Social'],
-    logoUrl: '/assets/nisawallet.png',
+    logoUrl: '/assets/logos/nisawallet.png',
   },
   {
     id: '142',
@@ -1142,7 +1142,7 @@ const mockCompanies: Company[] = [
     description: 'Office automation systems for increased productivity.',
     cohort: 'A22',
     industry: ['SaaS', 'B2B'],
-    logoUrl: '/assets/ofas.png',
+    logoUrl: '/assets/logos/ofas.png',
   },
   {
     id: '143',
@@ -1150,7 +1150,7 @@ const mockCompanies: Company[] = [
     description: 'Cutting-edge technology solutions at an exascale.',
     cohort: 'A22',
     industry: ['Technology', 'Hardware'],
-    logoUrl: '/assets/exatech.png',
+    logoUrl: '/assets/logos/exatech.png',
   },
   {
     id: '144',
@@ -1158,7 +1158,7 @@ const mockCompanies: Company[] = [
     description: 'Protective gear and technology for various industries.',
     cohort: 'A22',
     industry: ['Hardware', 'Safety'],
-    logoUrl: '/assets/protech.png',
+    logoUrl: '/assets/logos/protech.png',
   },
   {
     id: '145',
@@ -1166,7 +1166,7 @@ const mockCompanies: Company[] = [
     description: 'Find and book appointments with tailors for custom clothing.',
     cohort: 'A22',
     industry: ['Fashion', 'Marketplace'],
-    logoUrl: '/assets/bookmytailor.png',
+    logoUrl: '/assets/logos/bookmytailor.png',
   },
   {
     id: '146',
@@ -1174,7 +1174,7 @@ const mockCompanies: Company[] = [
     description: 'A platform for verifying skills and identifying top talent.',
     cohort: 'A22',
     industry: ['HR Tech', 'SaaS'],
-    logoUrl: '/assets/talentid.png',
+    logoUrl: '/assets/logos/talentid.png',
   },
   {
     id: '147',
@@ -1182,7 +1182,7 @@ const mockCompanies: Company[] = [
     description: 'A fashion brand with a unique and personal touch.',
     cohort: 'A22',
     industry: ['Fashion', 'E-commerce'],
-    logoUrl: '/assets/sosuzan.png',
+    logoUrl: '/assets/logos/sosuzan.png',
   },
   {
     id: '148',
@@ -1190,7 +1190,7 @@ const mockCompanies: Company[] = [
     description: 'A marketplace for plants, gardening supplies, and decor.',
     cohort: 'A22',
     industry: ['Gardening', 'E-commerce'],
-    logoUrl: '/assets/showbageecha.png',
+    logoUrl: '/assets/logos/showbageecha.png',
   },
   {
     id: '149',
@@ -1198,7 +1198,7 @@ const mockCompanies: Company[] = [
     description: 'Making it easy to bring the beauty of nature indoors.',
     cohort: 'A22',
     industry: ['E-commerce', 'Lifestyle'],
-    logoUrl: '/assets/plantify.png',
+    logoUrl: '/assets/logos/plantify.png',
   },
   {
     id: '150',
@@ -1206,7 +1206,7 @@ const mockCompanies: Company[] = [
     description: 'Innovative solutions for packaging and fulfillment.',
     cohort: 'A22',
     industry: ['Logistics', 'B2B'],
-    logoUrl: '/assets/strofills.png',
+    logoUrl: '/assets/logos/strofills.png',
   },
   {
     id: '151',
@@ -1214,7 +1214,7 @@ const mockCompanies: Company[] = [
     description: 'Event planning and management for artistic and creative events.',
     cohort: 'A22',
     industry: ['Events', 'Creative'],
-    logoUrl: '/assets/artyaffairs.png',
+    logoUrl: '/assets/logos/artyaffairs.png',
   },
   {
     id: '152',
@@ -1222,7 +1222,7 @@ const mockCompanies: Company[] = [
     description: 'Precision measurement tools for industrial surfaces.',
     cohort: 'A22',
     industry: ['Industrials', 'Hardware'],
-    logoUrl: '/assets/surfacegauge.png',
+    logoUrl: '/assets/logos/surfacegauge.png',
   },
   {
     id: '153',
@@ -1230,7 +1230,7 @@ const mockCompanies: Company[] = [
     description: 'Investing solutions that aim for fruitful returns.',
     cohort: 'A22',
     industry: ['FinTech', 'Investing'],
-    logoUrl: '/assets/fruitful.png',
+    logoUrl: '/assets/logos/fruitful.png',
   },
   {
     id: '154',
@@ -1238,7 +1238,7 @@ const mockCompanies: Company[] = [
     description: 'Skincare that is true to your skin\'s needs.',
     cohort: 'A22',
     industry: ['Beauty', 'Wellness'],
-    logoUrl: '/assets/trueskin.png',
+    logoUrl: '/assets/logos/trueskin.png',
   },
   {
     id: '155',
@@ -1246,7 +1246,7 @@ const mockCompanies: Company[] = [
     description: 'Durable and comfortable waders for fishing and outdoor activities.',
     cohort: 'A22',
     industry: ['Outdoors', 'Apparel'],
-    logoUrl: '/assets/wader.png',
+    logoUrl: '/assets/logos/wader.png',
   },
   {
     id: '156',
@@ -1254,7 +1254,7 @@ const mockCompanies: Company[] = [
     description: 'Tools and resources to assist with Islamic prayers.',
     cohort: 'A22',
     industry: ['Lifestyle', 'App'],
-    logoUrl: '/assets/namaz.png',
+    logoUrl: '/assets/logos/namaz.png',
   },
   {
     id: '157',
@@ -1262,7 +1262,7 @@ const mockCompanies: Company[] = [
     description: 'A comprehensive platform for finding and booking local services.',
     cohort: 'A22',
     industry: ['Services', 'Marketplace'],
-    logoUrl: '/assets/servicesphere.png',
+    logoUrl: '/assets/logos/servicesphere.png',
   },
   {
     id: '158',
@@ -1270,7 +1270,7 @@ const mockCompanies: Company[] = [
     description: 'A competitive platform for building and battling bots.',
     cohort: 'A22',
     industry: ['Gaming', 'AI'],
-    logoUrl: '/assets/botarena.png',
+    logoUrl: '/assets/logos/botarena.png',
   },
   {
     id: '159',
@@ -1278,7 +1278,7 @@ const mockCompanies: Company[] = [
     description: 'Investment platform focused on Shariah-compliant equities.',
     cohort: 'A22',
     industry: ['FinTech', 'Investing'],
-    logoUrl: '/assets/shariahequities.png',
+    logoUrl: '/assets/logos/shariahequities.png',
   },
   {
     id: '160',
@@ -1286,7 +1286,7 @@ const mockCompanies: Company[] = [
     description: 'Super effective and eco-friendly cleaning products.',
     cohort: 'A22',
     industry: ['Consumer Goods', 'Sustainability'],
-    logoUrl: '/assets/supersaaf.png',
+    logoUrl: '/assets/logos/supersaaf.png',
   },
   {
     id: '161',
@@ -1294,7 +1294,7 @@ const mockCompanies: Company[] = [
     description: 'An online marketplace for buying and selling scrap materials.',
     cohort: 'A22',
     industry: ['Recycling', 'Marketplace'],
-    logoUrl: '/assets/scrapkart.png',
+    logoUrl: '/assets/logos/scrapkart.png',
   },
   {
     id: '162',
@@ -1302,7 +1302,7 @@ const mockCompanies: Company[] = [
     description: 'Orthopedic solutions for foot health and comfort.',
     cohort: 'A22',
     industry: ['Healthcare', 'Wellness'],
-    logoUrl: '/assets/feetreform.png',
+    logoUrl: '/assets/logos/feetreform.png',
   },
   {
     id: '163',
@@ -1310,7 +1310,7 @@ const mockCompanies: Company[] = [
     description: 'A safety app that connects you with your trusted contacts in emergencies.',
     cohort: 'A22',
     industry: ['Safety', 'App'],
-    logoUrl: '/assets/superbuddy.png',
+    logoUrl: '/assets/logos/superbuddy.png',
   },
   {
     id: '164',
@@ -1318,7 +1318,7 @@ const mockCompanies: Company[] = [
     description: 'A platform for booking function halls and event venues.',
     cohort: 'A22',
     industry: ['Events', 'Marketplace'],
-    logoUrl: '/assets/functionhall.png',
+    logoUrl: '/assets/logos/functionhall.png',
   },
   {
     id: '165',
@@ -1326,7 +1326,7 @@ const mockCompanies: Company[] = [
     description: 'A holistic approach to mental health and wellness.',
     cohort: 'A22',
     industry: ['HealthTech', 'Wellness'],
-    logoUrl: '/assets/mindwellness.png',
+    logoUrl: '/assets/logos/mindwellness.png',
   },
   {
     id: '166',
@@ -1334,7 +1334,7 @@ const mockCompanies: Company[] = [
     description: 'Intensive training for a successful career in finance.',
     cohort: 'A22',
     industry: ['EdTech', 'Finance'],
-    logoUrl: '/assets/thefinancebootcamp.png',
+    logoUrl: '/assets/logos/thefinancebootcamp.png',
   },
   {
     id: '167',
@@ -1342,7 +1342,7 @@ const mockCompanies: Company[] = [
     description: 'Decentralized energy solutions inspired by nature.',
     cohort: 'A22',
     industry: ['Energy', 'Sustainability'],
-    logoUrl: '/assets/leafgrid.png',
+    logoUrl: '/assets/logos/leafgrid.png',
   },
   {
     id: '168',
@@ -1350,7 +1350,7 @@ const mockCompanies: Company[] = [
     description: 'A smart parking solution to find and reserve parking spots quickly.',
     cohort: 'A22',
     industry: ['Smart City', 'App'],
-    logoUrl: '/assets/fastpark.png',
+    logoUrl: '/assets/logos/fastpark.png',
   },
   {
     id: '169',
@@ -1358,7 +1358,7 @@ const mockCompanies: Company[] = [
     description: 'A marketplace for handmade crafts and artisanal goods.',
     cohort: 'A22',
     industry: ['E-commerce', 'Arts & Crafts'],
-    logoUrl: '/assets/craftiella.png',
+    logoUrl: '/assets/logos/craftiella.png',
   },
   {
     id: '170',
@@ -1366,7 +1366,7 @@ const mockCompanies: Company[] = [
     description: 'Custom balloon decorations for all occasions.',
     cohort: 'A22',
     industry: ['Events', 'Services'],
-    logoUrl: '/assets/baloonmania.png',
+    logoUrl: '/assets/logos/baloonmania.png',
   },
   {
     id: '171',
@@ -1374,7 +1374,7 @@ const mockCompanies: Company[] = [
     description: 'A platform to share your stories and writings with the world.',
     cohort: 'A22',
     industry: ['Publishing', 'Community'],
-    logoUrl: '/assets/myword.png',
+    logoUrl: '/assets/logos/myword.png',
   },
   {
     id: '172',
@@ -1382,7 +1382,7 @@ const mockCompanies: Company[] = [
     description: 'Technology to help you understand and improve your sleep.',
     cohort: 'A22',
     industry: ['HealthTech', 'Wellness'],
-    logoUrl: '/assets/dreamon.png',
+    logoUrl: '/assets/logos/dreamon.png',
   },
   {
     id: '173',
@@ -1390,7 +1390,7 @@ const mockCompanies: Company[] = [
     description: 'Innovative drone solutions for commercial and industrial use.',
     cohort: 'A22',
     industry: ['Drones', 'Technology'],
-    logoUrl: '/assets/droic.png',
+    logoUrl: '/assets/logos/droic.png',
   },
 ];
 
