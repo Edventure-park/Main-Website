@@ -32,7 +32,14 @@ function Cl() {
           <p className="mx-auto max-w-2xl text-lg font-medium text-white/90 md:text-xl">
             Step up as a Campus Lead and unlock exclusive opportunities, resources, and a chance to shape the future of innovation at your university.
           </p>
-          <button className="mt-8 rounded-full bg-white px-8 py-4 text-lg font-bold text-emerald-700 shadow-lg transition hover:scale-105 hover:bg-emerald-700 hover:text-white">Apply Now</button>
+          <a 
+            href="https://edventurepark.com/campuslead" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mt-8 inline-block rounded-full bg-white px-8 py-4 text-lg font-bold text-emerald-700 shadow-lg transition hover:scale-105 hover:bg-emerald-700 hover:text-white"
+          >
+            Apply Now
+          </a>
         </div>
       </div>
     </section>
