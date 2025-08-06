@@ -6,33 +6,33 @@ const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackM
 
 const coreTeamMembers = [
   {
-    name: "ILYAS SHAH KHAN",
+    name: "Ilyas Shah Khan",
     role: "INCUBATION MANAGER",
-    image: "/assets/CoreTeam/CT1.png",
+    image: "/assets/ExecutiveTeam/ilyasC.jpeg",
     color: "from-emerald-400 to-teal-500"
   },
   {
-    name: "SHAIK AHMED",
+    name: "Habeeb Ali",
     role: "OPERATIONS MANAGER",
-    image: "/assets/CoreTeam/CT2.png",
+    image: "/assets/ExecutiveTeam/HabeebX.jpeg",
     color: "from-blue-400 to-indigo-500"
   },
   {
-    name: "ZUHA ANSARI",
+    name: "Aliya Noorain",
     role: "PROGRAM MANAGER",
-    image: "/assets/CoreTeam/CT3.png",
+    image: "/assets/ExecutiveTeam/AliyaX.jpeg",
     color: "from-purple-400 to-violet-500"
   },
   {
-    name: "SYED FAWAZ ALI",
+    name: "Siddiqua Begum",
     role: "PROGRAM MANAGER",
-    image: "/assets/CoreTeam/CT4.png",
+    image: "/assets/ExecutiveTeam/SadiqaB.jpeg",
     color: "from-pink-400 to-rose-500"
   },
   {
-    name: "OSAID SHARIF",
-    role: "PROGRAM MANAGER - HARDWARE",
-    image: "/assets/CoreTeam/CT5.png",
+    name: "Meraj",
+    role: "FOUNDER & CEO",
+    image: "/assets/BoD/meeraj.png",
     color: "from-orange-400 to-red-500"
   }
 ];
@@ -68,7 +68,9 @@ function Team1() {
                 {/* Gradient Background */}
                 <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
                 {/* Card */}
-                <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
+                <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl group-hover:-translate-y-2 group-hover:shadow-purple-200/60">
+                  {/* Soft gradient glow inside card */}
+                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} pointer-events-none opacity-10 blur-2xl`}></div>
                   {/* Image Container */}
                   <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
                     <Image
@@ -98,7 +100,9 @@ function Team1() {
                   {/* Gradient Background */}
                   <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
                   {/* Card */}
-                  <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
+                  <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl group-hover:-translate-y-2 group-hover:shadow-purple-200/60">
+                    {/* Soft gradient glow inside card */}
+                    <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} pointer-events-none opacity-10 blur-2xl`}></div>
                     {/* Image Container */}
                     <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
                       <Image

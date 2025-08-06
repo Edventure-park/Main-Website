@@ -1,16 +1,29 @@
 import Image from "next/image";
 import React from "react";
+import localFont from "next/font/local";
+
+const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
 
 function Ceo() {
   return (
-    <section className="w-full bg-white px-4 py-8 md:px-8 lg:px-16">
-      <div className="mx-auto max-w-6xl">
-        <h2 className="mb-6 text-center text-2xl font-[Black_Mango] tracking-tight md:text-3xl lg:text-4xl xl:text-5xl">
+    <section className="relative w-full overflow-hidden bg-white px-4 py-8 md:px-8 lg:px-16">
+      {/* Animated gradient background */}
+      <div className="animate-gradient-x pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-emerald-100 via-green-100 to-emerald-200 opacity-60 blur-2xl"></div>
+      {/* Floating dots for extra flair */}
+      <div className="pointer-events-none absolute left-10 top-10 z-10 size-4 animate-pulse rounded-full bg-emerald-400 opacity-40"></div>
+      <div className="pointer-events-none absolute right-20 top-24 z-10 size-3 animate-bounce rounded-full bg-green-400 opacity-40"></div>
+      <div className="pointer-events-none absolute bottom-20 left-16 z-10 size-2 animate-pulse rounded-full bg-emerald-300 opacity-40"></div>
+      <div className="pointer-events-none absolute bottom-24 right-12 z-10 size-3 animate-bounce rounded-full bg-green-300 opacity-40"></div>
+      <div className="pointer-events-none absolute left-1/4 top-1/2 z-10 size-2 animate-ping rounded-full bg-emerald-500 opacity-30"></div>
+      <div className="pointer-events-none absolute bottom-1/3 right-1/3 z-10 size-3 animate-spin rounded-full bg-green-500 opacity-20"></div>
+      <div className="relative z-20 mx-auto max-w-6xl">
+        <h2 className={`mb-6 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-center text-2xl tracking-tight text-transparent drop-shadow-sm md:text-3xl lg:text-4xl xl:text-5xl ${BlackMangoRegular.className}`}>
           The Man Behind It All – Our Founder
         </h2>
         {/* CEO Card Container */}
-        <div className="relative mx-auto mb-8 w-full rounded-[20px] bg-green-600 p-6 md:h-[500px] md:w-[900px] md:rounded-[40px] md:p-4">
-          
+        <div className="group relative mx-auto mb-8 w-full overflow-visible rounded-[20px] bg-green-600 p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/20 md:h-[500px] md:w-[900px] md:rounded-[40px] md:p-4">
+          {/* Glassy glow around the green box */}
+          <div className="pointer-events-none absolute -inset-4 z-0 rounded-[28px] bg-gradient-to-br from-emerald-400/30 via-green-400/20 to-emerald-200/30 opacity-60 blur-2xl transition-opacity duration-500 group-hover:opacity-80 md:rounded-[48px]"></div>
           {/* Mobile Layout */}
           <div className="block md:hidden">
             {/* CEO Image - Centered on Mobile */}
@@ -21,16 +34,18 @@ function Ceo() {
                   height={300}
                   src="/assets/placeholder.jpg"
                   alt="CEO Portrait"
-                  className="size-[200px] rounded-[15px] object-cover md:size-[250px]"
+                  className="size-[200px] rounded-[15px] object-cover drop-shadow-lg transition-transform duration-500 hover:scale-105 md:size-[250px]"
                 />
+                {/* Subtle pulse effect */}
+                <div className="absolute inset-0 animate-pulse rounded-[15px] bg-emerald-400/20"></div>
               </div>
             </div>
             {/* CEO Quote - Mobile */}
             <div className="text-center text-white">
-              <p className="mb-4 text-lg font-bold italic md:text-xl lg:text-2xl">
+              <p className="mb-4 text-lg font-bold italic drop-shadow-lg md:text-xl lg:text-2xl">
                 "YOUR TIME HAS COME, AND THE SHOW IS ON!"
               </p>
-              <p className="text-sm md:text-base">
+              <p className="text-sm drop-shadow-md md:text-base">
                 - Meraj Faheem, Founder & CEO,
                 <br />
                 EdVenture Park, The Hacking School,
@@ -49,16 +64,18 @@ function Ceo() {
                     height={500}
                     src="/assets/placeholder.jpg"
                     alt="CEO Portrait"
-                    className="absolute bottom-0 left-0 size-[400px] translate-x-[-30%] translate-y-[110%] rounded-[20px] object-cover"
+                    className="absolute bottom-0 left-0 size-[400px] translate-x-[-30%] translate-y-[110%] rounded-[20px] object-cover drop-shadow-xl transition-transform duration-500 hover:scale-105"
                   />
+                  {/* Subtle pulse effect */}
+                  <div className="absolute bottom-0 left-0 size-[400px] translate-x-[-30%] translate-y-[110%] animate-pulse rounded-[20px] bg-emerald-400/20"></div>
                 </div>
               </div>
             </div>
             <div className="mt-[160px] text-white md:ml-[350px]">
-              <p className="mb-4 text-2xl font-bold italic md:text-3xl lg:text-4xl">
+              <p className="mb-4 text-2xl font-bold italic drop-shadow-lg md:text-3xl lg:text-4xl">
                 "YOUR TIME HAS COME, AND THE SHOW IS ON!"
               </p>
-              <p className="text-center text-base">
+              <p className="text-center text-base drop-shadow-md">
                 - Meraj Faheem, Founder & CEO,
                 <br />
                 EdVenture Park, The Hacking School,

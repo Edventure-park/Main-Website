@@ -7,25 +7,11 @@ const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackM
 
 const boardMembers = [
   {
-    name: "Meeraj Faheem",
-    image: "/assets/BoD/meeraj.png",
-    role: "Founder",
-    color: "from-emerald-400 to-teal-500",
-    note: `"4 years, 273 Startups and 550+ founders later, I can't help but notice the thousands of students who were part of our journey now making us proud both at national and international level. This reinforces the objective, purpose and vision with which we started with a tiny but mighty team. The sense of purpose is much more stronger now with shared responsibility. We are just getting started and I am fortunate for the opportunity and the team. This is once in a generation team working on a once in a lifetime mission. My sincere gratitude to the Campus Leads, X Team, Core Team, Investors, Partners, Stakeholders, Parents, Colleges and the Board of EdVenture Park for making this happen!" ~Meraj Faheem`
-  },
-  {
     name: "Mohammed Lateef khan",
     image: "/assets/BoD/BoD1.png",
     role: "Chairman",
     color: "from-emerald-400 to-teal-500",
     note: `EdVenture Park was initiated to create a community of like minded young and enterprising people, who would come together to solve problems for the society, give their ideas a shape, and add value. The results from the first cohort are not just encouraging, but also inspiring in many ways. With 50% of our population under 25, India needs many more EdVenture Parks and we are always happy and willing to contribute and collaborate with the Government and other partners to build this strong ecosystem.`
-  },
-  {
-    name: "Illyas Shah Khan",
-    image: "/assets/BoD/ilyas.png",
-    role: "Incubation Head",
-    color: "from-emerald-400 to-teal-500",
-    note: "Experienced in guiding early-stage startups and fostering entrepreneurial ecosystems."
   },
   {
     name: "Nuzhat Sufi", 
@@ -35,10 +21,11 @@ const boardMembers = [
     note: "Strategic leader with deep insights into business development and organizational growth."
   },
   {
-    name: "Feroz baig",
-    image: "/assets/BoD/BoD3.png", 
+    name: "Feroz Baig",
+    image: "/assets/BoD/BoD3.png",
     role: "Director",
-    color: "from-purple-400 to-violet-500"
+    color: "from-emerald-400 to-teal-500",
+    note: "Experienced in guiding early-stage startups and fostering entrepreneurial ecosystems."
   },
   {
     name: "Muneer",
@@ -46,6 +33,20 @@ const boardMembers = [
     role: "Director",
     color: "from-pink-400 to-rose-500",
     note: "Technology enthusiast and business strategist with focus on digital transformation."
+  },
+  {
+    name: "Meraj Faheem",
+    image: "/assets/BoD/meeraj.png",
+    role: "Founder",
+    color: "from-emerald-400 to-teal-500",
+    note: `"4 years, 273 Startups and 550+ founders later, I can't help but notice the thousands of students who were part of our journey now making us proud both at national and international level. This reinforces the objective, purpose and vision with which we started with a tiny but mighty team. The sense of purpose is much more stronger now with shared responsibility. We are just getting started and I am fortunate for the opportunity and the team. This is once in a generation team working on a once in a lifetime mission. My sincere gratitude to the Campus Leads, X Team, Core Team, Investors, Partners, Stakeholders, Parents, Colleges and the Board of EdVenture Park for making this happen!" ~Meraj Faheem`
+  },
+  {
+    name: "Ilyas Shah Khan",
+    image: "/assets/BoD/ilyas.png",
+    role: "Incubation Head",
+    color: "from-emerald-400 to-teal-500",
+    note: "Experienced in guiding early-stage startups and fostering entrepreneurial ecosystems."
   }
 ];
 
