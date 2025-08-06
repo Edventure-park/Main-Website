@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import localFont from "next/font/local";
+
+const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
 
 const AboutUS = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,318 +12,79 @@ const AboutUS = () => {
     setIsVisible(true);
   }, []);
 
-  // Sample images - you can replace these with actual images
-  const teamImages = [
-    "/assets/BoD/BoD1.png",
-    "/assets/BoD/BoD2.png",
-    "/assets/BoD/BoD3.png",
-    "/assets/BoD/BoD4.png",
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=200&fit=crop"
-  ];
-
   return (
-    <div className="min-h-screen w-full overflow-hidden bg-gray-50">
-      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-purple-100">
+      <div className="animate-gradient-x pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-emerald-100 via-blue-100 to-purple-200 opacity-60 blur-2xl" />
+      <div className="relative z-10 mx-auto max-w-6xl px-2 py-10 sm:px-4 sm:py-16 lg:px-8">
         {/* Header Section */}
-        <div className={`mb-20 text-left transition-all duration-1000 ${
+        <div className={`mb-10 text-left transition-all duration-1000 sm:mb-20 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
+          <h1 className={`xs:text-4xl mb-2 bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-3xl font-black text-transparent drop-shadow-xl sm:mb-4 sm:text-5xl md:text-6xl lg:text-7xl ${BlackMangoRegular.className}`}>
             About Us
           </h1>
-          <h2 className="mb-8 text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl">
+          <h2 className="xs:text-2xl mb-4 flex items-center gap-2 text-xl font-bold leading-tight text-gray-900 sm:mb-8 sm:text-3xl md:text-4xl lg:text-5xl">
             Incubating India - for the World!
           </h2>
-          <p className="max-w-4xl text-lg leading-relaxed text-gray-600 md:text-xl">
+          <p className="xs:text-lg max-w-full text-base leading-relaxed text-gray-600 sm:max-w-4xl sm:text-lg md:text-xl">
             EdVenture Park is a student-focused idea stage startup incubator which aims to empower student-led startups through an intensive 4-month pre incubation program.
           </p>
         </div>
-        {/* Logo-inspired Oval Shapes Section - Large and Responsive */}
-        <div className="relative mb-32 flex flex-wrap items-end justify-center gap-4 md:gap-6 lg:gap-8 xl:gap-10">
-          {/* First Green Oval - Semicircle at top */}
-          <div className={`duration-1200 relative transition-all delay-300 ${
-            isVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-          }`}>
-            <div 
-              className="relative overflow-hidden bg-gradient-to-br from-emerald-400 to-emerald-500 shadow-xl"
-              style={{
-                width: '120px',
-                height: '120px',
-                borderRadius: '60px',
-              }}
-            >
-              {/* Full circle image */}
-              <Image
-                width={400}
-                height={400}
-                src={teamImages[0]} 
-                alt="Team member" 
-                className="size-full object-cover"
-                style={{
-                  borderRadius: '60px',
-                }}
-              />
-            </div>
-          </div>
-          {/* Yellow/Brown Oval - Full oval image */}
-          <div className={`duration-1200 relative transition-all delay-500 ${
-            isVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-          }`}>
-            <div 
-              className="relative overflow-hidden bg-gradient-to-br from-amber-600 to-amber-700 shadow-xl"
-              style={{
-                width: '140px',
-                height: '240px',
-                borderRadius: '70px',
-              }}
-            >
-              {/* Full oval image */}
-              <Image 
-                width={400}
-                height={400}
-                src={teamImages[1]} 
-                alt="Team member" 
-                className="size-full object-cover"
-                style={{
-                  borderRadius: '70px',
-                }}
-              />
-            </div>
-          </div>
-          {/* Large Green Oval - Small circle at top, large image at bottom */}
-          <div className={`duration-1200 relative transition-all delay-700 ${
-            isVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-          }`}>
-            <div 
-              className="relative overflow-hidden bg-gradient-to-br from-emerald-400 to-emerald-500 shadow-xl"
-              style={{
-                width: '160px',
-                height: '280px',
-                borderRadius: '80px 80px 0 0',
-              }}
-            >
-              {/* Top circle image - Positioned to match oval curvature */}
-              <div 
-                className="border-3 absolute left-1/2 -translate-x-1/2 overflow-hidden rounded-full border-white shadow-lg"
-                style={{
-                  width: '180px',
-                  height: '180px',
-                  top: '-25px',
-                }}
-              >
-                <Image
-                  width={400}
-                  height={400} 
-                  src={teamImages[2]} 
-                  alt="Team member" 
-                  className="size-full object-cover"
-                />
-              </div>
-              {/* Bottom semicircle image - Flat surface aligned with frame bottom */}
-              <div 
-                className="border-3 absolute inset-x-0 bottom-0 overflow-hidden border-white shadow-lg"
-                style={{
-                  height: '120px',
-                  borderRadius: '0 0 80px 80px',
-                  bottom: '0px',
-                }}
-              >
-                <div 
-                  className="absolute inset-0 overflow-hidden"
-                  style={{
-                    borderRadius: '0 0 80px 80px',
-                  }}
-                >
-                  <Image
-                    width={400}
-                    height={400} 
-                    src={teamImages[3]} 
-                    alt="Team member" 
-                    className="size-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Blue Oval - Multiple circles positioned as in image */}
-          <div className={`duration-1200 delay-900 relative transition-all ${
-            isVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-          }`}>
-            <div 
-              className="relative overflow-hidden bg-gradient-to-br from-blue-400 to-blue-500 shadow-xl"
-              style={{
-                width: '180px',
-                height: '320px',
-                borderRadius: '90px',
-              }}
-            >
-              {/* Top circle image - Touching top border */}
-              <div 
-                className="border-3 absolute left-1/2 top-0 size-36 -translate-x-1/2 overflow-hidden rounded-full border-white shadow-lg"
-                style={{
-                  width: '160px',
-                  height: '160px',
-                }}
-              >
-                <Image
-                  width={400}
-                  height={400} 
-                  src={teamImages[4]} 
-                  alt="Team member" 
-                  className="size-full object-cover"
-                />
-              </div>
-              {/* Bottom circle image - Touching bottom border */}
-              <div 
-                className="border-3 absolute bottom-0 left-1/2 -translate-x-1/2 overflow-hidden rounded-full border-white shadow-lg"
-                style={{
-                  width: '160px',
-                  height: '160px',
-                }}
-              >
-                <Image
-                  width={400} 
-                  height={400}
-                  src={teamImages[5]} 
-                  alt="Team member" 
-                  className="size-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-        </div>
-        {/* Responsive Media Queries for Mobile */}
-        <style jsx>{`
-          @media (max-width: 768px) {
-            .relative.mb-32 {
-              gap: 1rem !important;
-              flex-wrap: nowrap !important;
-              justify-content: center !important;
-            }
-            .relative.mb-32 > div:nth-child(1) > div {
-              width: 60px !important;
-              height: 60px !important;
-              border-radius: 30px !important;
-            }
-            .relative.mb-32 > div:nth-child(1) > div > img {
-              border-radius: 30px !important;
-            }
-            .relative.mb-32 > div:nth-child(2) > div {
-              width: 80px !important;
-              height: 140px !important;
-              border-radius: 40px !important;
-            }
-            .relative.mb-32 > div:nth-child(2) > div > img {
-              border-radius: 40px !important;
-            }
-            .relative.mb-32 > div:nth-child(3) > div {
-              width: 100px !important;
-              height: 180px !important;
-              border-radius: 50px 50px 0 0 !important;
-            }
-            .relative.mb-32 > div:nth-child(3) > div > div:first-child {
-              width: 120px !important;
-              height: 120px !important;
-              top: -15px !important;
-            }
-            .relative.mb-32 > div:nth-child(3) > div > div:last-child {
-              height: 60px !important;
-              border-radius: 0 0 50px 50px !important;
-            }
-            .relative.mb-32 > div:nth-child(3) > div > div:last-child > div {
-              border-radius: 0 0 50px 50px !important;
-            }
-            .relative.mb-32 > div:nth-child(4) > div {
-              width: 120px !important;
-              height: 220px !important;
-              border-radius: 60px !important;
-            }
-            .relative.mb-32 > div:nth-child(4) > div > div:first-child {
-              width: 140px !important;
-              height: 140px !important;
-              top: -25px !important;
-            }
-            .relative.mb-32 > div:nth-child(4) > div > div:last-child {
-              width: 140px !important;
-              height: 140px !important;
-              bottom: -25px !important;
-            }
-          }
-          @media (max-width: 480px) {
-            .relative.mb-32 {
-              gap: 0.5rem !important;
-            }
-            .relative.mb-32 > div:nth-child(1) > div {
-              width: 50px !important;
-              height: 50px !important;
-              border-radius: 25px !important;
-            }
-            .relative.mb-32 > div:nth-child(1) > div > img {
-              border-radius: 25px !important;
-            }
-            .relative.mb-32 > div:nth-child(2) > div {
-              width: 60px !important;
-              height: 100px !important;
-              border-radius: 30px !important;
-            }
-            .relative.mb-32 > div:nth-child(2) > div > img {
-              border-radius: 30px !important;
-            }
-            .relative.mb-32 > div:nth-child(3) > div {
-              width: 80px !important;
-              height: 140px !important;
-              border-radius: 40px 40px 0 0 !important;
-            }
-            .relative.mb-32 > div:nth-child(3) > div > div:first-child {
-              width: 100px !important;
-              height: 100px !important;
-              top: -10px !important;
-            }
-            .relative.mb-32 > div:nth-child(3) > div > div:last-child {
-              height: 50px !important;
-              border-radius: 0 0 40px 40px !important;
-            }
-            .relative.mb-32 > div:nth-child(3) > div > div:last-child > div {
-              border-radius: 0 0 40px 40px !important;
-            }
-            .relative.mb-32 > div:nth-child(4) > div {
-              width: 100px !important;
-              height: 180px !important;
-              border-radius: 50px !important;
-            }
-            .relative.mb-32 > div:nth-child(4) > div > div:first-child {
-              width: 120px !important;
-              height: 120px !important;
-              top: -20px !important;
-            }
-            .relative.mb-32 > div:nth-child(4) > div > div:last-child {
-              width: 120px !important;
-              height: 120px !important;
-              bottom: -20px !important;
-            }
-          }
-        `}</style>
-        {/* Description Section */}
-        <div className={`delay-1100 mx-auto max-w-4xl text-center transition-all duration-1000 ${
+        {/* Team Group Image */}
+        <div className={`mb-16 transition-all delay-300 duration-1000 sm:mb-32 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg md:p-10">
-            <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
+          <div className="group relative mx-auto w-full max-w-md overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-emerald-500/20 sm:max-w-2xl sm:rounded-3xl md:max-w-3xl lg:max-w-6xl">
+            {/* Enhanced gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/30 via-blue-400/20 to-purple-400/30 backdrop-blur-sm"></div>
+            {/* Floating border effect */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-white/20 bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-purple-500/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100 sm:rounded-3xl"></div>
+            {/* Main image with enhanced styling */}
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl">
+              <Image
+                src="/assets/WholeGroup.jpeg"
+                alt="EdVenture Park Team"
+                width={1200}
+                height={800}
+                className="xs:h-64 h-48 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-80 md:h-[400px] lg:h-[500px]"
+                priority
+              />
+              {/* Enhanced overlay gradients */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-transparent to-purple-500/10"></div>
+            </div>
+            {/* Floating elements for extra flair */}
+            <div className="absolute -left-2 -top-2 size-3 animate-pulse rounded-full bg-emerald-400 opacity-60 sm:size-4"></div>
+            <div className="absolute -bottom-2 -right-2 size-2 animate-bounce rounded-full bg-blue-400 opacity-60 sm:size-3"></div>
+            <div className="absolute -left-3 top-1/2 size-1.5 animate-pulse rounded-full bg-purple-400 opacity-50 sm:size-2"></div>
+            <div className="absolute -right-3 top-1/2 size-1.5 animate-bounce rounded-full bg-emerald-400 opacity-50 sm:size-2"></div>
+            {/* Subtle glow effect */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-400/20 via-blue-400/20 to-purple-400/20 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100 sm:rounded-3xl"></div>
+          </div>
+        </div>
+        {/* Description Section */}
+        <div className={`delay-1100 mx-auto w-full max-w-xl text-center transition-all duration-1000 sm:max-w-4xl ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}>
+          <div className="relative rounded-xl border border-white/30 bg-white/70 p-4 shadow-2xl backdrop-blur-lg sm:rounded-2xl sm:p-8 md:p-10">
+            <div className="absolute -left-2 -top-2 size-2 animate-pulse rounded-full bg-emerald-400 opacity-40 sm:size-4"></div>
+            <div className="absolute -bottom-2 -right-2 size-2 animate-bounce rounded-full bg-blue-400 opacity-40 sm:size-3"></div>
+            <div className="absolute -left-2 top-1/2 size-1 animate-pulse rounded-full bg-purple-400 opacity-30 sm:size-2"></div>
+            <div className="absolute -right-2 top-1/2 size-1 animate-bounce rounded-full bg-emerald-400 opacity-30 sm:size-2"></div>
+            <p className="text-base leading-relaxed text-gray-700 sm:text-lg md:text-xl">
               Welcome to <span className="font-semibold text-blue-600">EdVenture Park</span>, where student-driven innovation knows no limits and where we incubate India's brightest ideas for the world.
             </p>
-            <br />
-            <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
+            <br className="hidden sm:block" />
+            <p className="text-base leading-relaxed text-gray-700 sm:text-lg md:text-xl">
               Within our walls, students find the freedom to experiment, the courage to learn from failures, and the support they need to thrive. EdVenture Park isn't just an incubator; it's a <span className="font-semibold text-purple-600">launchpad</span> for the next generation of entrepreneurs.
             </p>
           </div>
         </div>
         {/* Subtle Floating Elements */}
-        <div className="absolute left-10 top-20 size-3 animate-pulse rounded-full bg-blue-300 opacity-40"></div>
-        <div className="absolute right-20 top-32 size-2 animate-bounce rounded-full bg-yellow-400 opacity-50"></div>
-        <div className="absolute bottom-32 left-16 size-4 animate-pulse rounded-full bg-emerald-300 opacity-40"></div>
-        <div className="absolute bottom-40 right-12 size-2 animate-bounce rounded-full bg-purple-300 opacity-50"></div>
+        <div className="pointer-events-none absolute left-4 top-10 z-20 size-2 animate-pulse rounded-full bg-blue-300 opacity-40 sm:left-10 sm:top-20 sm:size-3"></div>
+        <div className="pointer-events-none absolute right-8 top-16 z-20 size-1.5 animate-bounce rounded-full bg-yellow-400 opacity-50 sm:right-20 sm:top-32 sm:size-2"></div>
+        <div className="pointer-events-none absolute bottom-20 left-8 z-20 size-3 animate-pulse rounded-full bg-emerald-300 opacity-40 sm:bottom-32 sm:left-16 sm:size-4"></div>
+        <div className="pointer-events-none absolute bottom-24 right-6 z-20 size-1.5 animate-bounce rounded-full bg-purple-300 opacity-50 sm:bottom-40 sm:right-12 sm:size-2"></div>
       </div>
     </div>
   );

@@ -339,7 +339,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
   return (
     <div 
       ref={cursorRef} 
-      className="pointer-events-none fixed left-0 top-0 z-[9999] size-0 -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
+      className="pointer-events-none fixed left-0 top-0 z-[9999] hidden size-0 -translate-x-1/2 -translate-y-1/2 mix-blend-difference sm:block"
       style={{ willChange: 'transform' }}
     >
       <div ref={dotRef}
@@ -347,19 +347,19 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 translate-x-[150%] translate-y-[150%] border-[3px] border-b-0 border-r-0 border-white" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-x-[150%] -translate-y-[150%] border-[3px] border-b-0 border-r-0 border-white" 
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-x-1/2 translate-y-[150%] border-[3px] border-b-0 border-l-0 border-white" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-y-[150%] translate-x-1/2 border-[3px] border-b-0 border-l-0 border-white" 
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 border-[3px] border-l-0 border-t-0 border-white" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 translate-x-1/2 translate-y-1/2 border-[3px] border-l-0 border-t-0 border-white" 
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-y-1/2 translate-x-[150%] border-[3px] border-r-0 border-t-0 border-white" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-x-[150%] translate-y-1/2 border-[3px] border-r-0 border-t-0 border-white" 
         style={{ willChange: 'transform' }}
       />
     </div>
