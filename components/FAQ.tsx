@@ -253,13 +253,13 @@ return matchesSearch && matchesCategory;
       <div className={`mt-8 flex flex-col items-center transition-all duration-1000${
         showEndContent ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
-        <div className="max-w-md text-center">
+        <div className="mx-auto max-w-md px-4 text-center">
           <Image
-            width={240}
-            height={240}
+            width={640}
+            height={740}
             src="/assets/evpNewLogo.png"
             alt="EdVenture Park Logo"
-            className="mx-auto h-auto w-44 md:w-52"
+            className="mx-auto h-auto w-60 md:w-72 lg:w-80"
           />
           <p className="mt-4 text-xl font-semibold text-neutral-700">Fly with</p>
           <h2 className="mt-1 text-3xl font-extrabold text-neutral-900 md:text-4xl">
