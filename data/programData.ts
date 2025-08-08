@@ -320,15 +320,15 @@ const programsData: Record<ProgramSlug, ProgramData> = {
           alt: "/assets/FoundersFridayLeft1.png"
         },
         {
-          url: "/assets/topFf.png",
+          url: "/assets/programs/founders-friday/center-1.png",
           alt: "Audience at business event"
         },
         {
-          url: "/assets/MiddleFf.png",
+          url: "/assets/programs/founders-friday/center-2.png",
           alt: "Speaker presenting at event"
         },
         {
-          url: "/assets/bottomFf.png",
+          url: "/assets/programs/founders-friday/center-3.png",
           alt: "Celebration cake with HURON logo"
         },
         {
@@ -382,23 +382,27 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       title: "Founders' Fest Gallery",
       images: [
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/ffest/image-2.jpg",
           alt: "Group of founders cutting ribbon"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/ffest/image-1.jpg",
           alt: "Audience at business event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/ffest/image-1.jpg",
           alt: "Speaker presenting at event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/ffest/image-1.jpg",
           alt: "Celebration cake with HURON logo"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/ffest/image-1.jpg",
+          alt: "Speaker and audience at event"
+        },
+        {
+          url: "/assets/programs/ffest/image-2.jpg",
           alt: "Speaker and audience at event"
         }
       ]
