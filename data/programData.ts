@@ -34,7 +34,7 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       title: "India's First Student",
       subtitle: "Join our Pre-Incubation Program",
       cta: "Apply Now",
-      ctaLink: ""
+      ctaLink: "https://edventurepark.incubators.app/register"
     },
     gallery: {
       title: "Pre-Incubation Program Gallery",
@@ -408,7 +408,7 @@ export const defaultProgramData: ProgramData = {
     title: "Want to be a part of these Exclusive Discussions?",
     subtitle: "Join as a Campus Lead",
     cta: "Apply Now",
-    ctaLink: "#"
+    ctaLink: "https://edventurepark.incubators.app/register"
   },
   gallery: {
     title: "Program Gallery",

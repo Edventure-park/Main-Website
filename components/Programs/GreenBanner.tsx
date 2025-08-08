@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 function GreenBanner({ bannerInfo }: { 
@@ -16,12 +17,12 @@ function GreenBanner({ bannerInfo }: {
       <p className="mb-6 text-center text-xl text-black md:text-2xl">
         {bannerInfo.subtitle}
       </p>
-      <a 
+      <Link 
         href={bannerInfo.ctaLink}
         className="rounded bg-white px-6 py-2 text-black transition-colors hover:bg-gray-100"
       >
         {bannerInfo.cta}
-      </a>
+      </Link>
     </div>
   )
 }
