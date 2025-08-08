@@ -71,35 +71,35 @@ const programsData: Record<ProgramSlug, ProgramData> = {
     lists: ['Pre-Incubation Program', 'Incubation Program', 'Campus Leadership Program', 'Incubation Manager Fellowship', 'Edternships', 'Founders Friday', 'Founders Fest', 'EdTalk', 'Builders Sunday'],
     banner: {
       title: "Ready to scale your startup?",
-      subtitle: "Join our Incubation Program",
-      cta: "Submit Application",
-      ctaLink: "/apply/incubation",
+      subtitle: "",
+      cta: "Apply Now",
+      ctaLink: "https://edventurepark.incubators.app/register",
       renderState:true
     },
     gallery: {
       title: "Building Fundametally",
       images: [
         {
-          url: "/assets/.jpg",
+          url: "/assets/programs/incubation/incubation-1.jpg",
           alt: "Group of founders cutting ribbon"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/incubation/incubation-2.jpg",
           alt: "Audience at business event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/incubation/incubation-3.jpg",
           alt: "Speaker presenting at event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/incubation/incubation-4.jpg",
           alt: "Celebration cake with HURON logo"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/incubation/incubation-5.jpg",
           alt: "Speaker and audience at event"
         },
-        {url: "/assets/LeadsBanner.jpg", alt: "Speaker and audience at event"
+        {url: "/assets/programs/incubation/incubation-6.jpg", alt: "Speaker and audience at event"
         },
       ]
     }
