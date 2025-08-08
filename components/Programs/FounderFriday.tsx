@@ -22,10 +22,10 @@ export default function FounderFriday({
       <div className="w-full overflow-hidden px-4 py-10">
         {/* Title */}
         <div className="mx-auto max-w-screen-xl px-6 text-center">
-          <h2 className="whitespace-nowrap text-6xl font-[League_Gothic] font-bold uppercase leading-tight tracking-normal text-black sm:text-7xl md:text-8xl">
+          <h2 className="whitespace-nowrap text-6xl font-[League_Gothic] uppercase leading-tight tracking-normal text-black sm:text-7xl md:text-8xl">
             {title}
           </h2>
-          <p className="mt-4 text-lg font-[League_Gothic] font-bold uppercase italic tracking-wide text-black sm:text-xl">
+          <p className="mt-4 text-lg font-[League_Gothic] uppercase italic tracking-wide text-black sm:text-xl">
             A platform for founders to share their stories and insights
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function FounderFriday({
           <div className="relative col-span-1 flex h-[600px] w-[300px] flex-col items-center justify-start overflow-visible rounded-xl bg-[#189E59] px-2 pt-6">
             {/* Text at the top */}
             <div className="z-10 text-center">
-              <p className="text-xl font-[League_Gothic] font-bold leading-tight text-white sm:text-5xl">
+              <p className="text-xl font-[League_Gothic] leading-tight text-white sm:text-5xl">
                 FOUNDERS'
                 <br />
                 FRIDAY
