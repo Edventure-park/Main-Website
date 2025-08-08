@@ -308,8 +308,8 @@ const programsData: Record<ProgramSlug, ProgramData> = {
     banner: {
       title: "Network with founders and investors",
       subtitle: "Join our next Founders' Friday event",
-      cta: "RSVP",
-      ctaLink: "/events/founders-friday",
+      cta: "",
+      ctaLink: "https://foundersfriday.in",
       renderState:true
     },
     gallery: {
