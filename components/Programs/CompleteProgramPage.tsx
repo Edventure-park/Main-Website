@@ -19,6 +19,7 @@ import TrackSection from "./TrackSection";
 import Fundamentals from "./Fundamentals";
 import BuilderSunday from "./BuilderSunday";
 import FoundersFriday from "./FounderFriday";
+import ImageGrid from "./Dark-Image-Grid";
 
 function CompleteProgramPage({ slug }: { slug: string }) {
   const programSlug = slug as ProgramSlug;
@@ -114,6 +115,10 @@ function CompleteProgramPage({ slug }: { slug: string }) {
               slug === "preincubation" || slug === "incubation" ? true : false
             }
           />
+          <ImageGrid
+            renderState={slug === "foundersfest" ? true : false}
+            images={programData.gallery.images}
+            />
         </motion.div>
         <motion.div variants={fadeIn} custom={3}>
           <GreenBanner bannerInfo={programData.banner}

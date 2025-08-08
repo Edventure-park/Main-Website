@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
+import ImageGrid from "./Dark-Image-Grid";
+
 interface BuilderSundayProps {
   title: string;
   renderState: boolean;
@@ -28,7 +30,7 @@ export default function BuilderSunday({
         <div className="mx-auto max-w-screen-xl px-4 sm:px-10">
           <div className="flex flex-col items-center justify-between gap-8 sm:flex-row sm:gap-12">
             {/* Title */}
-            <h2 className="flex-1 text-center text-xl font-[League_Gothic] font-bold uppercase leading-tight tracking-normal text-black sm:text-left sm:text-5xl md:text-6xl lg:text-7xl">
+            <h2 className="flex-1 text-center text-xl font-[League_Gothic] uppercase leading-tight tracking-normal text-black sm:text-left sm:text-5xl md:text-6xl lg:text-7xl">
               {title}
             </h2>
             {/* Skull Image on Right */}
@@ -45,7 +47,7 @@ export default function BuilderSunday({
         </div>
         {/* Subtitle */}
         <div className="mx-auto max-w-screen-xl px-4 py-6 text-center sm:px-10">
-          <p className="text-left text-4xl font-[League_Gothic] font-bold leading-snug tracking-normal text-black">
+          <p className="text-left text-4xl font-[League_Gothic] leading-snug tracking-normal text-black">
             Here's some of our Hardware
             <span className="block">Creations</span>
           </p>
@@ -53,72 +55,8 @@ export default function BuilderSunday({
         </div>
       </div>
       {/* Image Grid Section */}
-      <div className="flex w-full justify-center">
-        <div className="w-4/5 rounded-2xl bg-black p-3">
-          <div className="mx-auto">
-            <div className="flex flex-col gap-5">
-              {/* Row 1: Square + Rect */}
-              <div className="flex h-[460px] gap-4">
-                <div className="relative h-full w-[42%]">
-                  <Image
-                    src={images[0]?.url || "/assets/TopLeftBs.png"}
-                    alt={images[0]?.alt || "Event image"}
-                    fill
-                    className="rounded-2xl object-cover"
-                    priority
-                  />
-                </div>
-                <div className="relative h-full w-[58%]">
-                  <Image
-                    src={images[1]?.url || "/assets/TopRigthBs.png"}
-                    alt={images[1]?.alt || "Event image"}
-                    fill
-                    className="rounded-2xl object-cover"
-                  />
-                </div>
-              </div>
-              {/* Row 2: Rect + Square */}
-              <div className="flex h-[460px] gap-4">
-                <div className="relative h-full w-[58%]">
-                  <Image
-                    src={images[2]?.url || "/assets/MidLeftBs.png"}
-                    alt={images[2]?.alt || "Event image"}
-                    fill
-                    className="rounded-2xl object-cover"
-                  />
-                </div>
-                <div className="relative h-full w-[42%]">
-                  <Image
-                    src={images[3]?.url || "/assets/MidRightBs.png"}
-                    alt={images[3]?.alt || "Event image"}
-                    fill
-                    className="rounded-2xl object-cover"
-                  />
-                </div>
-              </div>
-              {/* Row 3: Square + Rect */}
-              <div className="flex h-[460px] gap-4">
-                <div className="relative h-full w-[42%]">
-                  <Image
-                    src={images[4]?.url || "/assets/LastLeftBs.png"}
-                    alt={images[4]?.alt || "Event image"}
-                    fill
-                    className="rounded-2xl object-cover"
-                  />
-                </div>
-                <div className="relative h-full w-[58%]">
-                  <Image
-                    src={images[5]?.url || "/assets/LastRightBs.png"}
-                    alt={images[5]?.alt || "Event image"}
-                    fill
-                    className="rounded-2xl object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ImageGrid images={images} renderState={true} />
+      {/* Footer Text */}
       <div className="tracking-wider">
         <p className="font-regula mt-4 text-left text-lg text-gray-700">
           By providing complimentary access to an interactive and invigorating
