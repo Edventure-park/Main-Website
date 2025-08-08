@@ -238,23 +238,23 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       title: "Here' some of our EdTalk Snapshots",
       images: [
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/edtalk/edtalk-1.jpg",
           alt: "Group of founders cutting ribbon"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/edtalk/edtalk-5.jpg",
           alt: "Audience at business event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/edtalk/edtalk-4.jpg",
           alt: "Speaker presenting at event"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/edtalk/edtalk-3.jpg",
           alt: "Celebration cake with HURON logo"
         },
         {
-          url: "/assets/LeadsBanner.jpg",
+          url: "/assets/programs/edtalk/edtalk-2.jpg",
           alt: "Speaker and audience at event"
         }
       ]
