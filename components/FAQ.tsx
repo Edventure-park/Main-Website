@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, ChevronDown, ChevronUp } from 'lucide-react';
+import Link from 'next/link';
 
 interface FAQItem {
   id: number; // Making this required for all items
@@ -269,7 +270,9 @@ return matchesSearch && matchesCategory;
             Take your idea to the next level with our pre-incubation program and supportive community.
           </p>
           <button className="mt-6 rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700">
-            Apply Now
+            <Link href={"https://edventurepark.incubators.app/register"}>
+              Apply Now
+            </Link>
           </button>
         </div>
       </div>
