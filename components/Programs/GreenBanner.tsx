@@ -7,8 +7,13 @@ function GreenBanner({ bannerInfo }: {
     subtitle: string, 
     cta: string,
     ctaLink: string
+  renderState?: boolean; 
   }
-}) {
+})
+
+{
+  if (!bannerInfo.renderState) return null;
+  
   return (
     <div className="flex w-full flex-col items-center justify-center bg-green-500 px-4 py-8">
       <h1 className="mb-2 text-center text-2xl font-bold text-black md:text-3xl">

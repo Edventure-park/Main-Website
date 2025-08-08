@@ -116,7 +116,8 @@ function CompleteProgramPage({ slug }: { slug: string }) {
           />
         </motion.div>
         <motion.div variants={fadeIn} custom={3}>
-          <GreenBanner bannerInfo={programData.banner} />
+          <GreenBanner bannerInfo={programData.banner}
+           />
         </motion.div>
       </motion.div>
       <Footer />

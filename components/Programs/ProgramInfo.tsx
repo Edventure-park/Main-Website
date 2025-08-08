@@ -13,7 +13,7 @@ export default function ProgramInfo({ programData }: { programData: ProgramData 
     'Incubation Program': 'incubation',
     'Campus Leadership Program': 'campusleadership',
     'Incubation Manager Fellowship': 'fellowship',
-    'Internships': 'internships',
+    'Edternships': 'edternships',
     'Founders Friday': 'foundersfriday',
     'Founders Fest': 'foundersfest',
     'EdTalk': 'edtalk',
