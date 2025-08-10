@@ -19,7 +19,7 @@ const coreTeamMembers = [
   },
   {
     name: "Aliya Noorain",
-    role: "PROGRAM MANAGER",
+    role: "COMMUNITY AND SOCIAL MEDIA MANAGER",
     image: "/assets/ExecutiveTeam/AliyaX.jpeg",
     color: "from-purple-400 to-violet-500"
   },

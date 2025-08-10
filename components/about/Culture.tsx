@@ -1,8 +1,6 @@
 import React from "react";
 import localFont from "next/font/local";
 
-import TargetCursor from "../TargetCursor";
-
 const BlackMangoRegular = localFont({ src: '../../public/fonts/BlackMango/BlackMango-Regular.ttf' })
 
 const cultureValues = [
@@ -27,7 +25,6 @@ const cultureValues = [
 function Culture() {
   return (
     <section className="w-full bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100 px-4 py-24">
-      <TargetCursor targetSelector=".cursor-target" spinDuration={2} hideDefaultCursor={true} />
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-16 text-center">
@@ -43,7 +40,7 @@ function Culture() {
           {/* Top Row - 3 rectangular boxes */}
           <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
             {cultureValues.slice(0, 3).map((value, index) => (
-              <div key={index} className="cursor-target group relative">
+              <div key={index} className="group relative">
                 {/* Enhanced Gradient Background */}
                 <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${value.color} opacity-20 blur-2xl transition-all duration-700 group-hover:opacity-40 group-hover:blur-3xl`}></div>
                 {/* Rectangular Card */}
@@ -61,7 +58,7 @@ function Culture() {
           {/* Bottom Row - 1 rectangular box */}
           <div className="flex justify-center">
             <div className="w-full max-w-2xl">
-              <div className="cursor-target group relative">
+              <div className="group relative">
                 {/* Enhanced Gradient Background */}
                 <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${cultureValues[3].color} opacity-20 blur-2xl transition-all duration-700 group-hover:opacity-40 group-hover:blur-3xl`}></div>
                 {/* Rectangular Card */}

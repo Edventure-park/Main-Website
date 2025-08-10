@@ -25,7 +25,7 @@ const teamXMembers = [
   },
   {
     name: "Siddiqua Begum",
-    image: "/assets/ExecutiveTeam/SadiqaX.jpeg",
+    image: "/assets/ExecutiveTeam/SadiqaB.jpeg",
     role: "Team X Member",
     color: "from-pink-400 to-red-500"
   },
