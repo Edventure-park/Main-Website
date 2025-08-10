@@ -33,7 +33,7 @@ function Cl() {
             Step up as a Campus Lead and unlock exclusive opportunities, resources, and a chance to shape the future of innovation at your university.
           </p>
           <a 
-            href="https://edventurepark.com/campuslead" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfL0GvBQWWzKDviRllhj-FOT688r2U14qGBWiCLI8d_QMgdaQ/viewform?embedded=true" 
             target="_blank" 
             rel="noopener noreferrer"
             className="mt-8 inline-block rounded-full bg-white px-8 py-4 text-lg font-bold text-emerald-700 shadow-lg transition hover:scale-105 hover:bg-emerald-700 hover:text-white"

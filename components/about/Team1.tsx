@@ -28,6 +28,12 @@ const coreTeamMembers = [
     role: "PROGRAM MANAGER",
     image: "/assets/ExecutiveTeam/SadiqaB.jpeg",
     color: "from-pink-400 to-rose-500"
+  },
+  {
+    name: "Meraj",
+    role: "FOUNDER & CEO",
+    image: "/assets/BoD/meeraj.png",
+    color: "from-orange-400 to-red-500"
   }
 ];
 
@@ -55,9 +61,9 @@ function Team1() {
         </div>
         {/* Team Grid */}
         <div className="space-y-8">
-          {/* Grid - 4 members in 2x2 layout */}
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {coreTeamMembers.map((member, index) => (
+          {/* Top Row - 3 members */}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {coreTeamMembers.slice(0, 3).map((member, index) => (
               <div key={index} className="group relative">
                 {/* Gradient Background */}
                 <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
@@ -85,6 +91,39 @@ function Team1() {
                 </div>
               </div>
             ))}
+          </div>
+          {/* Middle Row - 2 members centered */}
+          <div className="flex justify-center">
+            <div className="grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2">
+              {coreTeamMembers.slice(3, 5).map((member, index) => (
+                <div key={index + 3} className="group relative">
+                  {/* Gradient Background */}
+                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} opacity-10 blur-xl transition-all duration-500 group-hover:opacity-30`}></div>
+                  {/* Card */}
+                  <div className="relative overflow-hidden rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl group-hover:-translate-y-2 group-hover:shadow-purple-200/60">
+                    {/* Soft gradient glow inside card */}
+                    <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.color} pointer-events-none opacity-10 blur-2xl`}></div>
+                    {/* Image Container */}
+                    <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
+                      <Image
+                        width={500}
+                        height={500}
+                        src={member.image}
+                        alt={member.name}
+                        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    {/* Content */}
+                    <div className="text-center">
+                      <h3 className="mb-2 text-xl font-bold text-gray-900">{member.name}</h3>
+                      <p className="text-sm font-medium text-gray-600">{member.role}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
