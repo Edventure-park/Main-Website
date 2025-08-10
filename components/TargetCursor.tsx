@@ -347,11 +347,11 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-x-[150%] -translate-y-[150%] border-[3px] border-b-0 border-r-0 border-white" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 translate-x-[-150%] translate-y-[-150%] border-[3px] border-b-0 border-r-0 border-white" 
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-y-[150%] translate-x-1/2 border-[3px] border-b-0 border-l-0 border-white" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 translate-x-1/2 translate-y-[-150%] border-[3px] border-b-0 border-l-0 border-white" 
         style={{ willChange: 'transform' }}
       />
       <div 
@@ -359,7 +359,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
         style={{ willChange: 'transform' }}
       />
       <div 
-        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 -translate-x-[150%] translate-y-1/2 border-[3px] border-r-0 border-t-0 border-white" 
+        className="target-cursor-corner absolute left-1/2 top-1/2 size-3 translate-x-[-150%] translate-y-1/2 border-[3px] border-r-0 border-t-0 border-white" 
         style={{ willChange: 'transform' }}
       />
     </div>

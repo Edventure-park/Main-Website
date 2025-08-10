@@ -24,12 +24,6 @@ const teamXMembers = [
     color: "from-purple-400 to-violet-500"
   },
   {
-    name: "Siddiqua Begum",
-    image: "/assets/ExecutiveTeam/SadiqaX.jpeg",
-    role: "Team X Member",
-    color: "from-pink-400 to-red-500"
-  },
-  {
     name: "Rida Mahveen",
     image: "/assets/ExecutiveTeam/RidaX.jpeg",
     role: "Team X Member",
