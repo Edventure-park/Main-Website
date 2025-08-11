@@ -221,7 +221,7 @@ const GridContent: React.FC = () => {
         <div className="relative aspect-square">
           <Image 
             fill
-            src='/assets/grid/tahera.png'
+            src='/assets/grid/arma.png'
             alt='tahera img'
             className="object-cover"
             sizes="(max-width: 768px) 12.5vw, 12.5vw"
