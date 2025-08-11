@@ -308,7 +308,7 @@ const programsData: Record<ProgramSlug, ProgramData> = {
     banner: {
       title: "Network with founders and investors",
       subtitle: "Join our next Founders' Friday event",
-      cta: "",
+      cta: "Register here",
       ctaLink: "https://foundersfriday.in",
       renderState:true
     },
@@ -375,7 +375,7 @@ const programsData: Record<ProgramSlug, ProgramData> = {
       title: "Join us for the Founders Fest",
       subtitle: "Celebrate entrepreneurship and innovation",
       cta: "Get Tickets",
-      ctaLink: "/events/founders-fest",
+      ctaLink: "https://www.instagram.com/founders.fest?igsh=M3EyZWpmd2d1eXRi",
       renderState:true
     },
     gallery: {

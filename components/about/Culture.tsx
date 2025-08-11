@@ -36,43 +36,22 @@ function Culture() {
           </p>
         </div>
         {/* Culture Values Grid */}
-        <div className="space-y-16">
-          {/* Top Row - 3 rectangular boxes */}
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-            {cultureValues.slice(0, 3).map((value, index) => (
-              <div key={index} className="group relative">
-                {/* Enhanced Gradient Background */}
-                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${value.color} opacity-20 blur-2xl transition-all duration-700 group-hover:opacity-40 group-hover:blur-3xl`}></div>
-                {/* Rectangular Card */}
-                <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${value.color} hover:shadow-3xl transform-gpu p-8 shadow-2xl transition-all duration-500 group-hover:-rotate-1 group-hover:scale-110`}>
-                  {/* Content with Enhanced Typography */}
-                  <div className="relative text-center">
-                    <p className="text-xl font-black leading-tight text-white drop-shadow-lg md:text-2xl">
-                      {value.text}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* Bottom Row - 1 rectangular box */}
-          <div className="flex justify-center">
-            <div className="w-full max-w-2xl">
-              <div className="group relative">
-                {/* Enhanced Gradient Background */}
-                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${cultureValues[3].color} opacity-20 blur-2xl transition-all duration-700 group-hover:opacity-40 group-hover:blur-3xl`}></div>
-                {/* Rectangular Card */}
-                <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${cultureValues[3].color} hover:shadow-3xl transform-gpu p-12 shadow-2xl transition-all duration-500 group-hover:scale-105`}>
-                  {/* Content with Enhanced Typography */}
-                  <div className="relative text-center">
-                    <p className="text-2xl font-black leading-tight text-white drop-shadow-lg md:text-3xl">
-                      {cultureValues[3].text}
-                    </p>
-                  </div>
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          {cultureValues.map((value, index) => (
+            <div key={index} className="group relative">
+              {/* Enhanced Gradient Background */}
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${value.color} opacity-20 blur-2xl transition-all duration-700 group-hover:opacity-40 group-hover:blur-3xl`}></div>
+              {/* Equal-size Card */}
+              <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${value.color} hover:shadow-3xl transform-gpu p-8 shadow-2xl transition-all duration-500 group-hover:-rotate-1 group-hover:scale-105`}>
+                {/* Equal-height content */}
+                <div className="relative flex h-32 items-center justify-center text-center sm:h-44 lg:h-48">
+                  <p className="text-xl font-black leading-tight text-white drop-shadow-lg md:text-2xl">
+                    {value.text}
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

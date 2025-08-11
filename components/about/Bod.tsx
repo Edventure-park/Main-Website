@@ -42,9 +42,9 @@ const boardMembers = [
     note: "Mr. Meraj Faheem is a natural, hardcore entrepreneur with about 10 years of experience in building startups from idea to exit, with 5 years of core experience in setting up incubators and accelerators from infrastructure, team, and program design for Government, corporates, educational institutions, and private entities. His main forte is a product, business, and go-to-market strategy. He also has a strong hold on operations, P&L, and people management (team, partners, vendors, and clients). Over the years, he has mastered the art of executing ideas in various verticals: Fintech, Edtech, and Foodtech. He strongly believes in building companies with strong and broader social motives."
   },
   {
-    name: "Ilyas Shah Khan",
-    image: "/assets/BoD/ilyas.png",
-    role: "Incubation Head",
+    name: "Ilyas Khan",
+    image: "/assets/BoD/ilyasMs.png",
+    role: "Junior Director",
     color: "from-emerald-400 to-teal-500",
     note: "Mohammed Ilyas Khan is the Junior Director at MS Education Academy, one of the leading educational institutions in the region, known for its innovative and inclusive approach to learning. With a strong background in academic leadership and operations, he has been instrumental in driving initiatives that bridge traditional education with modern skill development. At EdVenture Park, he brings strategic insights, educational expertise, and a commitment to fostering the next generation of innovators and entrepreneurs."
   }
@@ -120,7 +120,7 @@ return () => document.removeEventListener('keydown', handleEscape);
                     src={member.image}
                     alt={`${member.name} - ${member.role}`}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`object-cover transition-transform duration-500 group-hover:scale-105 ${member.image.includes('ilyasMs.png') ? 'object-top' : 'object-center'}`}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   {/* Gradient Overlay */}
@@ -205,7 +205,7 @@ return () => document.removeEventListener('keydown', handleEscape);
                       src={selectedMember.image}
                       alt={selectedMember.name}
                       fill
-                      className="object-cover"
+                      className={`object-cover ${selectedMember.image.includes('ilyasMs.png') ? 'object-top' : 'object-center'}`}
                     />
                     {/* Subtle overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
@@ -258,13 +258,7 @@ return () => document.removeEventListener('keydown', handleEscape);
                 </div>
               </div>
               <div className="flex flex-col gap-4 border-t border-gray-200 pt-6 sm:flex-row sm:justify-between sm:pt-8">
-                <div className="flex items-center text-sm text-gray-600">
-                  <svg className="mr-2 size-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Verified Board Member
-                </div>
-                <div className="flex gap-3">
+                <div className="flex gap-3 sm:ml-auto">
                   <button
                     onClick={closeModal}
                     className="flex-1 rounded-xl border-2 border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-gray-700 transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:flex-none"
