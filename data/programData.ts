@@ -386,23 +386,27 @@ const programsData: Record<ProgramSlug, ProgramData> = {
           alt: "Group of founders cutting ribbon"
         },
         {
-          url: "/assets/programs/ffest/image-1.jpg",
+          url: "/assets/programs/ffest/ff-23.jpeg",
           alt: "Audience at business event"
         },
         {
-          url: "/assets/programs/ffest/image-1.jpg",
+          url: "/assets/programs/ffest/img-5.jpeg",
           alt: "Speaker presenting at event"
         },
         {
-          url: "/assets/programs/ffest/image-1.jpg",
+          url: "/assets/programs/ffest/img-6.jpeg",
           alt: "Celebration cake with HURON logo"
         },
         {
-          url: "/assets/programs/ffest/image-1.jpg",
+          url: "/assets/programs/ffest/meraj.jpeg",
           alt: "Speaker and audience at event"
         },
         {
-          url: "/assets/programs/ffest/image-2.jpg",
+          url: "/assets/programs/ffest/img4.jpeg",
+          alt: "Speaker and audience at event"
+        },
+        {
+          url: "/assets/programs/ffest/img-6.jpeg",
           alt: "Speaker and audience at event"
         }
       ]
