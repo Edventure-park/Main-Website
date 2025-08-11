@@ -48,8 +48,8 @@ const teamXMembers = [
     color: "from-cyan-400 to-blue-500"
   },
   {
-    name: "Mohammed Noor",
-    image: "/assets/ExecutiveTeam/NoorX.jpeg",
+    name: "Khaja Targhib",
+    image: "/assets/ExecutiveTeam/targhib.jpeg",
     role: "Team X Member",
     color: "from-teal-400 to-cyan-500"
   }
@@ -70,11 +70,11 @@ function Teamx() {
           </p>
         </div>
         {/* Modern Grid Layout */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[repeat(4,auto)] lg:justify-center">
           {teamXMembers.map((member, index) => (
             <div
               key={index}
-              className="group relative flex flex-col items-center justify-between rounded-3xl border border-white/30 bg-white/60 p-8 pt-16 shadow-2xl backdrop-blur-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-emerald-200/60"
+              className="group relative flex flex-col items-center justify-between rounded-3xl border border-white/30 bg-white/60 p-8 pt-16 shadow-2xl backdrop-blur-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-emerald-200/60 lg:w-72"
             >
               {/* Floating Avatar */}
               <div className="absolute -top-12 left-1/2 size-24 -translate-x-1/2 overflow-hidden rounded-full border-4 border-white bg-gradient-to-br from-emerald-200 via-blue-200 to-purple-200 shadow-lg">
@@ -82,7 +82,7 @@ function Teamx() {
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover"
+                  className={`object-cover ${member.name === 'Rida Mahveen' ? 'scale-110 object-[center_40%]' : ''}`}
                 />
               </div>
               {/* Card Content */}

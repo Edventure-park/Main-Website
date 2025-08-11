@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 export const metadata = {
   title: "EdVenture Park - India's First Student Startup Incubator",
   description:
-    "EdVenture Park empowers student-led startups with a 4-month pre-incubation program, hands-on mentorship, and events like Founders' Friday to transform ideas into real ventures.",
+    "EdVenture Park is India’s First and Favourite Student Focused non-academic startup incubator. We work with idea stage student startups coming from tier 2 & 3 colleges of Telangana..",
   keywords:
     "student startup incubator, early-stage startups, startup mentorship, pre-incubation, EdVenture Park, Indian startups, student entrepreneurs, Founders' Friday, startup ecosystem, Builders' Sunday, startup support programs, EdVenture Park Hyderabad",
   authors: [{ name: "EdVenture Park", url: "https://www.edventurepark.com" }],
@@ -54,7 +54,7 @@ export const metadata = {
     url: "https://www.edventurepark.com",
     logo: "https://www.edventurepark.com/assets/evp-logo.jpeg",
     description:
-      "EdVenture Park is India's first idea-stage startup incubator focused on student-led ventures. Offering mentorship, pre-incubation programs, and startup events.",
+      "EdVenture Park is India’s First and Favourite Student Focused non-academic startup incubator. We work with idea stage student startups coming from tier 2 & 3 colleges of Telangana..",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Support",

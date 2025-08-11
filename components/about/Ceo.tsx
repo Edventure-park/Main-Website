@@ -46,7 +46,7 @@ function Ceo() {
                 "YOUR TIME HAS COME, AND THE SHOW IS ON!"
               </p>
               <p className="text-sm drop-shadow-md md:text-base">
-                - Meraj Faheem, Founder & CEO,
+                - Meraj Faheem, Founder,
                 <br />
                 EdVenture Park, The Hacking School,
                 <br />
@@ -76,7 +76,7 @@ function Ceo() {
                 "YOUR TIME HAS COME, AND THE SHOW IS ON!"
               </p>
               <p className="text-center text-base drop-shadow-md">
-                - Meraj Faheem, Founder & CEO,
+                - Meraj Faheem, Founder,
                 <br />
                 EdVenture Park, The Hacking School,
                 <br />
@@ -87,7 +87,7 @@ function Ceo() {
         </div>
         {/* CEO Description */}
         <div className="mt-8 text-center md:mt-10">
-          <p className="mx-auto max-w-4xl text-sm font-[Black_Mango] leading-relaxed text-black md:text-base lg:text-lg xl:text-xl">
+          <p className="mx-auto max-w-4xl text-base leading-relaxed text-gray-700 sm:text-lg md:text-xl">
             Meraj Faheem is a serial entrepreneur, who started first as a
             student entrepreneur. He founded India's first coding bootcamp - The
             Hacking School (acquired by iCollege Australia), Code.in, Code For

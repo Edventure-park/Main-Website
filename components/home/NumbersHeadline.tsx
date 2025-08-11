@@ -115,7 +115,7 @@ function NumbersHeadline() {
                 <p className="mt-2 text-lg text-emerald-100">Funding the next generation</p>
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="inline-block rounded-md bg-white bg-opacity-10 px-3 py-1 text-sm font-medium text-white">20+ Startups</span>
+                <span className="inline-block rounded-md bg-white bg-opacity-10 px-3 py-1 text-sm font-medium text-white">10+ Startups</span>
                 <span className="inline-block rounded-md bg-white bg-opacity-10 px-3 py-1 text-sm font-medium text-white">5+ Industries</span>
               </div>
             </div>

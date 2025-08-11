@@ -27,8 +27,7 @@ const AboutUS = () => {
             Incubating India - for the World!
           </h2>
           <p className="xs:text-lg max-w-full text-base leading-relaxed text-gray-600 sm:max-w-4xl sm:text-lg md:text-xl">
-            EdVenture Park is a student-focused idea stage startup incubator which aims to empower student-led startups through an intensive 4-month pre incubation program.
-          </p>
+            EdVenture Park is India’s First and Favourite Student Focused non-academic startup incubator. We work with idea stage student startups coming from tier 2 & 3 colleges of Telangana.          </p>
         </div>
         {/* Team Group Image */}
         <div className={`mb-16 transition-all delay-300 duration-1000 sm:mb-32 ${
