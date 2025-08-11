@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -19,7 +19,18 @@ export default function Home() {
   return (
     <>
       <Navbar currentPage="home"/>
-      <DynamicRing/>
+      <div className="hidden md:block">
+        <DynamicRing />
+      </div>
+      <div className="block md:hidden">
+        <Image
+          src="/hero-static-image.png" 
+          alt="Static Ring"
+          width={600}
+          height={400}
+          className="mx-auto"
+        />
+      </div>
       <br />
       <br />
       <Grid/>

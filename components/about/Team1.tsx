@@ -19,7 +19,7 @@ const coreTeamMembers = [
   },
   {
     name: "Aliya Noorain",
-    role: "COMMUNITY AND SOCIAL MEDIA MANAGER",
+    role: "SOCIAL MEDIA MANAGER",
     image: "/assets/ExecutiveTeam/AliyaX.jpeg",
     color: "from-purple-400 to-violet-500"
   },
@@ -29,12 +29,12 @@ const coreTeamMembers = [
     image: "/assets/ExecutiveTeam/SadiqaB.jpeg",
     color: "from-pink-400 to-rose-500"
   },
-  {
-    name: "Meraj",
-    role: "FOUNDER & CEO",
-    image: "/assets/BoD/meeraj.png",
-    color: "from-orange-400 to-red-500"
-  }
+  // {
+  //   name: "Meraj",
+  //   role: "FOUNDER & CEO",
+  //   image: "/assets/BoD/meeraj.png",
+  //   color: "from-orange-400 to-red-500"
+  // }
 ];
 
 function Team1() {
