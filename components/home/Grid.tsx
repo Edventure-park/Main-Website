@@ -58,7 +58,7 @@ const GridContent: React.FC = () => {
       <div className="grid w-full grid-cols-8">
         {/* Column 1 - Person's Image */}
         <div className="relative aspect-square">
-          <Image alt='arma img' fill className="object-cover" src='/assets/grid/arma.png' sizes="(max-width: 768px) 12.5vw, 12.5vw" />
+          <Image alt='arma img' fill className="object-cover" src='/assets/grid/kamal.png' sizes="(max-width: 768px) 12.5vw, 12.5vw" />
         </div>
         {/* Columns 2-3 - Green Boxes */}
         <div className="aspect-square bg-green-600"></div>
@@ -72,7 +72,7 @@ const GridContent: React.FC = () => {
         <div className="aspect-square bg-white"></div>
         {/* Column 8 - Person's Image */}
         <div className="relative aspect-square">
-          <Image alt='rahman img' fill className="object-cover" src='/assets/grid/abdulrahman.png' sizes="(max-width: 768px) 12.5vw, 12.5vw" />
+          <Image alt='rahman img' fill className="object-cover" src='/assets/grid/targhib.png' sizes="(max-width: 768px) 12.5vw, 12.5vw" />
         </div>
       </div>
       {/* Row 4 - Third 8 Column Grid */}
@@ -83,7 +83,7 @@ const GridContent: React.FC = () => {
         <div className="relative aspect-square">
           <Image 
             fill
-            src="/assets/grid/fouzan.png"
+            src="/assets/grid/barelements.png"
             alt="fouzan img"
             className="object-cover"
             sizes="(max-width: 768px) 12.5vw, 12.5vw"
@@ -95,7 +95,7 @@ const GridContent: React.FC = () => {
         <div className="relative aspect-square">
           <Image 
             fill
-            src="/assets/grid/ba1.png"
+            src="/assets/grid/rayyan.png"
             alt="grid img"
             className="object-cover"
             sizes="(max-width: 768px) 12.5vw, 12.5vw"
@@ -116,7 +116,7 @@ const GridContent: React.FC = () => {
         <div className="relative aspect-square">
           <Image 
             fill
-            src="/assets/grid/nisa.png"
+            src="/assets/grid/zahra.png"
             alt="nisa img"
             className="object-cover"
             sizes="(max-width: 768px) 12.5vw, 12.5vw"
@@ -135,7 +135,7 @@ const GridContent: React.FC = () => {
         <div className="relative aspect-square">
           <Image 
             fill
-            src='/assets/grid/ba5.png'
+            src='/assets/grid/jai.png'
             alt='person img'
             className="object-cover"
             sizes="(max-width: 768px) 12.5vw, 12.5vw"
@@ -148,7 +148,7 @@ const GridContent: React.FC = () => {
         <div className="relative aspect-square">
           <Image 
             fill
-            src='/assets/grid/ba3.png'
+            src='/assets/grid/alefiyah.png'
             alt='grid img'
             className="object-cover"
             sizes="(max-width: 768px) 12.5vw, 12.5vw"
@@ -164,7 +164,7 @@ const GridContent: React.FC = () => {
         <div className="relative aspect-square">
           <Image 
             fill
-            src='/assets/grid/ba4.png'
+            src='/assets/grid/amaama.png'
             alt='grid img'
             className="object-cover"
             sizes="(max-width: 768px) 12.5vw, 12.5vw"
@@ -186,7 +186,7 @@ const GridContent: React.FC = () => {
         <div className="relative aspect-square">
           <Image 
             fill
-            src='/assets/grid/omer.png'
+            src='/assets/grid/mub.png'
             alt='omer img'
             className="object-cover"
             sizes="(max-width: 768px) 12.5vw, 12.5vw"
@@ -201,7 +201,7 @@ const GridContent: React.FC = () => {
         <div className="relative aspect-square">
           <Image 
             fill
-            src='/assets/grid/ba6.png'
+            src='/assets/grid/sheema.png'
             alt='grid img'
             className="object-cover"
             sizes="(max-width: 768px) 12.5vw, 12.5vw"
