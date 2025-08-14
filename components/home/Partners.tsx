@@ -8,6 +8,7 @@ const partners = [
   { id: 3, name: 'Company 3', logo: '/assets/partners/T-Hub.png' },
   { id: 4, name: 'Company 4', logo: '/assets/partners/thsLogo.png' },
   { id: 5, name: 'Company 5', logo: '/assets/partners/Tgic.png' },
+  { id: 6, name: 'Company 5', logo: '/assets/partners/meity.startup.png' },
 
 ];
 

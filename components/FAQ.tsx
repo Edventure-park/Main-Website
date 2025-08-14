@@ -1,8 +1,6 @@
 "use client";
-import Image from 'next/image';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Search, ChevronDown, ChevronUp } from 'lucide-react';
-import Link from 'next/link';
 
 interface FAQItem {
   id: number; // Making this required for all items
@@ -15,8 +13,7 @@ function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
-  const endOfFaqsRef = useRef<HTMLDivElement>(null);
-  
+
   const faqData: FAQItem[] = [
     {
       id: 1,
@@ -132,31 +129,7 @@ return matchesSearch && matchesCategory;
     setOpenIndex(openIndex === id ? null : id);
   };
 
-  // Check if we've reached the end of FAQs for animating logo
-  const [showEndContent, setShowEndContent] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShowEndContent(true);
-        } else {
-          setShowEndContent(false);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (endOfFaqsRef.current) {
-      observer.observe(endOfFaqsRef.current);
-    }
-
-    return () => {
-      if (endOfFaqsRef.current) {
-        observer.unobserve(endOfFaqsRef.current);
-      }
-    };
-  }, []);
+  // Removed end-of-FAQs animation and CTA section
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 md:py-12">
@@ -184,7 +157,7 @@ return matchesSearch && matchesCategory;
               onClick={() => setActiveCategory(category)}
               className={`rounded-full px-3 py-1.5 text-sm font-medium transition-all ${
                 activeCategory === category
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-[#169D53] text-white hover:bg-[#0e7c40]'
                   : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
               }`}
             >
@@ -248,34 +221,7 @@ return matchesSearch && matchesCategory;
           </div>
         )}
       </div>
-      {/* End of FAQs marker */}
-      <div ref={endOfFaqsRef} className="h-1"></div>
-      {/* EdVenture Park Section */}
-      <div className={`mt-8 flex flex-col items-center transition-all duration-1000${
-        showEndContent ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-      }`}>
-        <div className="mx-auto max-w-md px-4 text-center">
-          <Image
-            width={640}
-            height={740}
-            src="/assets/evpNewLogo.png"
-            alt="EdVenture Park Logo"
-            className="mx-auto h-auto w-60 md:w-72 lg:w-80"
-          />
-          <p className="mt-4 text-xl font-semibold text-neutral-700">Fly with</p>
-          <h2 className="mt-1 text-3xl font-extrabold text-neutral-900 md:text-4xl">
-            EdVenture Park
-          </h2>
-          <p className="mt-3 text-neutral-600">
-            Take your idea to the next level with our pre-incubation program and supportive community.
-          </p>
-          <button className="mt-6 rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700">
-            <Link href={"https://edventurepark.incubators.app/register"}>
-              Apply Now
-            </Link>
-          </button>
-        </div>
-      </div>
+      {/* Removed "Fly with EdVenture Park" CTA section */}
     </div>
   );
 }
