@@ -50,16 +50,10 @@ export default function Home() {
       <Headlines/>
       <FAQ/>
       <div className="relative flex w-full flex-col items-center bg-gradient-to-br from-emerald-500 via-[#169D53] to-[#0e7c40] py-28">
-        <h2 className={`max-w-5xl px-4 text-center font-black leading-[0.85] tracking-tight drop-shadow-2xl ${BlackMangoRegular.className}`}>
-          <span className="block text-[clamp(1.75rem,4.5vw,3rem)] text-white/95">We</span>
-          <span className="relative z-10 -mt-2 block bg-gradient-to-b from-white to-emerald-100 bg-clip-text text-[clamp(3rem,11vw,7.5rem)] text-transparent">
-            fund
-          </span>
-          <span className="relative -mt-3 block text-[clamp(2.75rem,9vw,7rem)]">
-            <span className="bg-gradient-to-r from-white via-emerald-50 to-white bg-clip-text text-transparent">great</span>
-            <span className="ml-3 align-baseline text-white/95">ideas.</span>
-          </span>
+        <h2 className={`px-4 text-center font-bold text-white ${BlackMangoRegular.className} text-4xl md:text-6xl`}>
+          We fund great ideas.
         </h2>
+        <p className="mt-2 px-4 text-center text-white/90 text-lg md:text-2xl">Let yours be next!</p>
       </div>
       <Footer/>
     </>
