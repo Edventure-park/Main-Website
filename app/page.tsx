@@ -53,7 +53,7 @@ export default function Home() {
         <h2 className={`px-4 text-center font-bold text-white ${BlackMangoRegular.className} text-4xl md:text-6xl`}>
           We fund great ideas.
         </h2>
-        <p className="mt-2 px-4 text-center text-white/90 text-lg md:text-2xl">Let yours be next!</p>
+        <p className="mt-2 px-4 text-center text-lg text-white/90 md:text-2xl">Let yours be next!</p>
       </div>
       <Footer/>
     </>
