@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Filter, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -21,6 +22,7 @@ const Portfolio: React.FC = () => {
   const [companies, setCompanies] = useState<Company[]>([]);
   const [filteredCompanies, setFilteredCompanies] = useState<Company[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [initialQueryApplied, setInitialQueryApplied] = useState(false);
   const [selectedCohorts, setSelectedCohorts] = useState<string[]>(['All cohorts']);
   const [selectedIndustries, setSelectedIndustries] = useState<string[]>(['All industries']);
   const [sortBy, setSortBy] = useState('Default');
@@ -29,6 +31,7 @@ const Portfolio: React.FC = () => {
   
   // Handle window resize for responsive design
   const [isMobile, setIsMobile] = useState(false);
+  const searchParams = useSearchParams();
   
   useEffect(() => {
     const handleResize = () => {
@@ -67,6 +70,17 @@ const Portfolio: React.FC = () => {
     loadData();
   }, []);
 
+  // Initialize search from query param `q`
+  useEffect(() => {
+    if (!searchParams || initialQueryApplied) return;
+    const raw = searchParams.get('q');
+    const q = raw ? raw.replace(/\s+/g, ' ').trim() : '';
+    if (q) {
+      setSearchTerm(q);
+    }
+    setInitialQueryApplied(true);
+  }, [searchParams, initialQueryApplied]);
+
   // Extract unique cohorts and industries for filters - with null checks
   const cohorts = ['All cohorts', ...Array.from(new Set(companies?.map(company => company.cohort) || []))];
   const industries = ['All industries', ...Array.from(new Set(companies?.flatMap(company => company.industry) || []))];
@@ -79,10 +93,14 @@ const Portfolio: React.FC = () => {
     
     // Apply search filter
     if (searchTerm) {
-      result = result.filter(company => 
-        company.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-        company.description.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      const norm = (s: string) => s.normalize('NFKD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+      const terms = norm(searchTerm).split(' ').filter(Boolean);
+      result = result.filter((company) => {
+        const hay = `${company.name} ${company.description}`;
+        const hayNorm = norm(hay);
+        
+return terms.every((t) => hayNorm.includes(t));
+      });
     }
     
     // Apply cohort filter
@@ -198,6 +216,14 @@ const Portfolio: React.FC = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
+            {searchTerm && (
+            <button
+            onClick={() => setSearchTerm('')}
+            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md bg-gray-100 px-3 py-1 text-sm text-gray-600 hover:bg-gray-200"
+          >
+              Clear
+            </button>
+        )}
             <div className="absolute left-3 top-1/2 -translate-y-1/2">
               <svg xmlns="http://www.w3.org/2000/svg" className="size-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

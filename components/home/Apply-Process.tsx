@@ -25,14 +25,14 @@ const STEPS = [
 // StepCard Component
 const StepCard: React.FC<StepCardProps> = ({ stepNumber, title, delay = 0 }) => (
   <div 
-    className="step-card group"
-    style={{ animationDelay: `${delay}ms` }}
-  >
-    <div className="flex size-full flex-col items-center justify-center gap-3 rounded-xl border-2 border-emerald-400 bg-white/90 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/25 dark:border-emerald-500 dark:bg-gray-800/90">
-      <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+		className="step-card group"
+		style={{ animationDelay: `${delay}ms` }}
+	>
+    <div className="relative flex size-full flex-col items-center justify-center gap-4 rounded-2xl border border-[#169D53]/30 bg-white/90 p-8 shadow-sm ring-1 ring-black/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#169D53] hover:shadow-lg hover:shadow-emerald-500/20 dark:border-emerald-500/40 dark:bg-gray-800/90">
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-white px-4 py-1 text-sm font-semibold text-[#169D53] shadow-md ring-1 ring-[#169D53]/20">
         Step {stepNumber}
-      </span>
-      <p className="text-center text-base font-medium text-gray-700 sm:text-lg dark:text-gray-200">
+      </div>
+      <p className="max-w-64 text-center text-base font-semibold leading-snug text-gray-800 sm:text-lg dark:text-gray-100">
         {title}
       </p>
     </div>
@@ -135,30 +135,35 @@ const ApplyProcess: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.05),transparent_50%)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-white">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="bg-gradient-to-r from-[#169D53] via-emerald-600 to-teal-500 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent sm:text-4xl lg:text-5xl">
               How to Apply
             </h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-              Follow these simple steps to join our team
+            <p className="mt-4 text-base text-gray-600 sm:text-lg dark:text-gray-300">
+              Three simple steps to get started with us
             </p>
           </div>
-          {/* Steps Grid */}
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            {STEPS.map((step, index) => (
-              <StepCard
-                key={step.id}
-                stepNumber={step.id}
-                title={step.title}
-                delay={index * 200}
-              />
-            ))}
+          {/* Steps Grid with connector */}
+          <div className="relative mt-12">
+            <div className="pointer-events-none absolute inset-x-0 top-1/2 hidden -translate-y-1/2 lg:block">
+              <div className="mx-8 h-1 rounded-full bg-emerald-200" />
+            </div>
+            <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+              {STEPS.map((step, index) => (
+                <StepCard
+                  key={step.id}
+                  stepNumber={step.id}
+                  title={step.title}
+                  delay={index * 200}
+                />
+              ))}
+            </div>
           </div>
           {/* Rocket Section */}
           <div ref={containerRef} className="relative mt-16 flex justify-center lg:mt-20">
             {/* Subtle background glow */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="size-32 rounded-full bg-emerald-500/10 blur-2xl sm:size-48" />
+              <div className="size-32 rounded-full bg-[#169D53]/10 blur-2xl sm:size-48" />
             </div>
             {/* Rocket Container */}
             <div 
@@ -168,6 +173,7 @@ const ApplyProcess: React.FC = () => {
                 willChange: 'transform',
                 transformOrigin: 'center center'
               }}
+              aria-hidden
             >
               <div className="relative">
                 <Image

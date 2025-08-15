@@ -1,4 +1,5 @@
 import Image from "next/image";
+import localFont from "next/font/local";
 
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -14,11 +15,15 @@ import { What_To_Expect } from "@/components/home/What-To-Expect";
 import Grid from "@/components/home/Grid";
 import DynamicRing from "@/components/DynamicRing";
 import NumbersHeadline from "@/components/home/NumbersHeadline";
+import MobileCompanySearch from "@/components/home/MobileCompanySearch";
+
+const BlackMangoRegular = localFont({ src: "../public/fonts/BlackMango/BlackMango-Regular.ttf" });
 
 export default function Home() {
   return (
     <>
       <Navbar currentPage="home"/>
+      <MobileCompanySearch/>
       <div className="hidden md:block">
         <DynamicRing />
       </div>
@@ -44,12 +49,11 @@ export default function Home() {
       <Partners/>
       <Headlines/>
       <FAQ/>
-      <div className="flex w-full flex-col items-center bg-emerald-600 py-24">
-        <h2 className="font-poppins max-w-3xl px-4 text-center text-2xl leading-tight text-black sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-          <span className="font-bold">We fund great ideas.</span>
-          <br />
-          <span className="text-5xl">Let yours be the next!</span>
+      <div className="relative flex w-full flex-col items-center bg-gradient-to-br from-emerald-500 via-[#169D53] to-[#0e7c40] py-28">
+        <h2 className={`px-4 text-center font-bold text-white ${BlackMangoRegular.className} text-4xl md:text-6xl`}>
+          We fund great ideas.
         </h2>
+        <p className="mt-2 px-4 text-center text-lg text-white/90 md:text-2xl">Let yours be next!</p>
       </div>
       <Footer/>
     </>

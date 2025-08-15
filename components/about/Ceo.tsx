@@ -18,7 +18,7 @@ function Ceo() {
       <div className="pointer-events-none absolute bottom-1/3 right-1/3 z-10 size-3 animate-spin rounded-full bg-green-500 opacity-20"></div>
       <div className="relative z-20 mx-auto max-w-6xl">
         <h2 className={`mb-6 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-center text-2xl tracking-tight text-transparent drop-shadow-sm md:text-3xl lg:text-4xl xl:text-5xl ${BlackMangoRegular.className}`}>
-          The Man Behind It All – Our Founder
+          Our Founder
         </h2>
         {/* CEO Card Container */}
         <div className="group relative mx-auto mb-8 w-full overflow-visible rounded-[20px] bg-green-600 p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/20 md:h-[500px] md:w-[900px] md:rounded-[40px] md:p-4">

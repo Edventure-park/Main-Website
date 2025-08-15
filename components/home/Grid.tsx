@@ -80,15 +80,7 @@ const GridContent: React.FC = () => {
         {/* Column 1 - Green Box */}
         <div className="aspect-square bg-green-600"></div>
         {/* Column 2 - Person's Image */}
-        <div className="relative aspect-square">
-          <Image 
-            fill
-            src="/assets/grid/barelements.png"
-            alt="fouzan img"
-            className="object-cover"
-            sizes="(max-width: 768px) 12.5vw, 12.5vw"
-          />
-        </div>
+        
         {/* Column 3 - Blank Box */}
         <div className="aspect-square bg-white"></div>
         {/* Columns 4-5 - Person's Images */}
