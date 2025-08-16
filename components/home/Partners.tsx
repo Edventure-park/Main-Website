@@ -12,8 +12,6 @@ const partners = [
   { id: 7, name: 'Company 7', logo: '/assets/partners/siasat hub.jpg' },
   { id: 8, name: 'Company 8', logo: '/assets/partners/australian.jpg' },
 
-
-
 ];
 
 const Partners: React.FC = () => {
@@ -120,7 +118,7 @@ const Partners: React.FC = () => {
                   height={80}
                   src={partner.logo} 
                   alt={`${partner.name} logo`} 
-                  className="h-20 w-30 object-contain"
+                  className="w-30 h-20 object-contain"
                 />
               </div>
             ))}
