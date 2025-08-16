@@ -8,7 +8,11 @@ const partners = [
   { id: 3, name: 'Company 3', logo: '/assets/partners/T-Hub.png' },
   { id: 4, name: 'Company 4', logo: '/assets/partners/thsLogo.png' },
   { id: 5, name: 'Company 5', logo: '/assets/partners/Tgic.png' },
-  { id: 6, name: 'Company 5', logo: '/assets/partners/meity.startup.png' },
+  { id: 6, name: 'Company 6', logo: '/assets/partners/meity.startup.png' },
+  { id: 7, name: 'Company 7', logo: '/assets/partners/siasat hub.jpg' },
+  { id: 8, name: 'Company 8', logo: '/assets/partners/australian.jpg' },
+
+
 
 ];
 
@@ -112,11 +116,11 @@ const Partners: React.FC = () => {
                 style={{ width: 'auto', height: 'auto' }}
               >
                 <Image
-                  width={150}
+                  width={120}
                   height={80}
                   src={partner.logo} 
                   alt={`${partner.name} logo`} 
-                  className="h-16 w-auto object-contain sm:h-20 md:h-24"
+                  className="h-20 w-30 object-contain"
                 />
               </div>
             ))}
