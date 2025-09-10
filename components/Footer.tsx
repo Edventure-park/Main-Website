@@ -92,19 +92,22 @@ export default function Footer() {
           </div>
         </div>
         {/* Right Side: Social Links */}
-        <div className="order-1 flex space-x-5 text-gray-700 md:order-3">
-          <Link href="https://www.instagram.com/edventurepark/" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="text-3xl transition hover:text-pink-500" />
-          </Link>
-          <Link href="https://m.facebook.com/EdVenP" target="_blank" rel="noopener noreferrer">
-            <FaFacebookF className="text-3xl transition hover:text-blue-600" />
-          </Link>
-          <Link href="https://twitter.com/EdventurePark" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="text-3xl transition hover:text-sky-400" />
-          </Link>
-          <Link href="https://m.youtube.com/channel/UCJE19g3yFV5aKsf8n4pTz3Q/featured" target="_blank" rel="noopener noreferrer">
-            <FaYoutube className="text-3xl transition hover:text-red-600" />
-          </Link>
+        <div className="order-1 mt-2 flex flex-col items-center text-gray-700 md:order-3">
+          <p className="mb-2 text-xl font-semibold text-black">Our Socials</p>
+          <div className="flex space-x-5 text-gray-700"> 
+            <Link href="https://www.instagram.com/edventurepark/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="text-3xl transition hover:text-pink-500" />
+            </Link>
+            <Link href="https://m.facebook.com/EdVenP" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF className="text-3xl transition hover:text-blue-600" />
+            </Link>
+            <Link href="https://twitter.com/EdventurePark" target="_blank" rel="noopener noreferrer">
+              <FaTwitter className="text-3xl transition hover:text-sky-400" />
+            </Link>
+            <Link href="https://m.youtube.com/channel/UCJE19g3yFV5aKsf8n4pTz3Q/featured" target="_blank" rel="noopener noreferrer">
+              <FaYoutube className="text-3xl transition hover:text-red-600" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
