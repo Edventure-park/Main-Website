@@ -16,7 +16,7 @@ interface StepCardProps {
 }
 
 // Step data
-const STEPS = [
+const STEPS  = [
   { id: 1, title: 'Fill online application' },
   { id: 2, title: 'Interview rounds' },
   { id: 3, title: 'Selection' }
