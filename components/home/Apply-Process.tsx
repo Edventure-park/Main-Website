@@ -137,7 +137,7 @@ const ApplyProcess: React.FC = () => {
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="bg-gradient-to-r from-[#169D53] via-emerald-600 to-teal-500 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent sm:text-4xl lg:text-5xl">
-              How to Apply?
+              How to Apply
             </h2>
             <p className="mt-4 text-base text-gray-600 sm:text-lg dark:text-gray-300">
               Three simple steps to get started with us

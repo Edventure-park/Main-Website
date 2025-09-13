@@ -5,7 +5,7 @@ export function What_To_Expect() {
     <div className="mx-auto max-w-5xl px-8  md:pt-[500px] lg:pt-[160px]">
       <div className="z-10 flex flex-col gap-5 text-center">
         <h1 className="bg-gradient-to-r from-black to-green-500 bg-clip-text text-6xl font-semibold text-transparent md:text-5xl">
-          What to expect?
+          What to expect
         </h1>
         <h2 className="text-xl font-medium text-[#858585]">
           Real stories from real founders. See how entrepreneurs like you transformed their businesses with incubation from us ! 
