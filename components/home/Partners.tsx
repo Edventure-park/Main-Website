@@ -3,13 +3,31 @@ import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
 const partners = [
-  { id: 1, name: 'Company 1', logo: '/assets/partners/CodeForIndia.png' },
-  { id: 2, name: 'Company 2', logo: '/assets/partners/We-Hub.png' },
-  { id: 3, name: 'Company 3', logo: '/assets/partners/T-Hub.png' },
-  { id: 4, name: 'Company 4', logo: '/assets/partners/thsLogo.png' },
-  { id: 5, name: 'Company 5', logo: '/assets/partners/Tgic.png' },
-  { id: 6, name: 'Company 5', logo: '/assets/partners/meity.startup.png' },
-
+  { id: 1, name: 'T-Hub', logo: '/assets/ourpartners/thub.png' },
+  { id: 2, name: 'We-Hub', logo: '/assets/ourpartners/wehub.png' },
+  { id: 3, name: 'TIE Hyderabad', logo: '/assets/ourpartners/Tiehyderabad.png' },
+  { id: 4, name: 'IIIT Hyderabad', logo: '/assets/ourpartners/iiith.png' },
+  { id: 5, name: 'TGIC', logo: '/assets/ourpartners/TGIC.png' },
+  { id: 6, name: 'T-Works', logo: '/assets/ourpartners/tworks.png' },
+  { id: 7, name: 'Growth Hub', logo: '/assets/ourpartners/growthhub.png' },
+  { id: 8, name: 'AG Hub', logo: '/assets/ourpartners/aghub.png' },
+  { id: 9, name: 'Bala Vikasa', logo: '/assets/ourpartners/balavikasa.png' },
+  { id: 10, name: 'Co Karma', logo: '/assets/ourpartners/cokarma.png' },
+  { id: 11, name: 'CoweTelanganaChapter', logo: '/assets/ourpartners/cowetelenganachapter.png' },
+  { id: 12, name: 'Farmaan by Pista House', logo: '/assets/ourpartners/farmaanbypistahouse.png' },
+  { id: 13, name: 'HYSEA', logo: '/assets/ourpartners/hysea.png' },
+  { id: 14, name: 'IFAH', logo: '/assets/ourpartners/ifah.png' },
+  { id: 15, name: 'Maeeshat', logo: '/assets/ourpartners/maeeshat.png' },
+  { id: 16, name: 'Nandi Ventures', logo: '/assets/ourpartners/nandiventures.png' },
+  { id: 17, name: 'Origin Tours and Travels', logo: '/assets/ourpartners/origintoursandtravelsbg.png' },
+  { id: 18, name: 'Pista House', logo: '/assets/ourpartners/pistahouse.png' },
+  { id: 19, name: 'Sahayata Trust', logo: '/assets/ourpartners/sahayatatrust.png' },
+  { id: 20, name: 'Student Tribe', logo: '/assets/ourpartners/studenttribe.png' },
+  { id: 21, name: 'Student Union', logo: '/assets/ourpartners/studentunionim.png' },
+  { id: 22, name: 'The Siasat Daily', logo: '/assets/ourpartners/thesiasatdaily.png' },
+  { id: 23, name: 'Code For India', logo: '/assets/ourpartners/codeforindia.png' },
+  { id: 24, name: 'MEITY Startup Hub', logo: '/assets/ourpartners/meitystartup.png' },
+  { id: 25, name: 'THS', logo: '/assets/ourpartners/thsLogo.png' },
 ];
 
 const Partners: React.FC = () => {
@@ -90,7 +108,10 @@ const Partners: React.FC = () => {
   return (
     <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-left text-3xl font-bold text-gray-900">Our <strong className="text-black">Partners</strong></h2>
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">Our <strong className="bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent">Partners</strong></h2>
+          <p className="mt-4 text-gray-600">Proud to collaborate with these amazing organizations</p>
+        </div>
         <div 
           ref={outerContainerRef}
           className="relative w-full overflow-hidden py-8"
@@ -112,11 +133,23 @@ const Partners: React.FC = () => {
                 style={{ width: 'auto', height: 'auto' }}
               >
                 <Image
-                  width={150}
+                  width={160}
                   height={80}
                   src={partner.logo} 
                   alt={`${partner.name} logo`} 
                   className="h-16 w-auto object-contain sm:h-20 md:h-24"
+                  style={{ 
+                    opacity: 0.9,
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseOver={(e: React.MouseEvent<HTMLImageElement>) => {
+                    e.currentTarget.style.opacity = '1';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseOut={(e: React.MouseEvent<HTMLImageElement>) => {
+                    e.currentTarget.style.opacity = '0.9';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
                 />
               </div>
             ))}

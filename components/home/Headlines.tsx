@@ -32,13 +32,22 @@ const newsCards = [
 ];
 
 const FocusCard = ({ card, index, isHovered, onHover, onLeave }:any) => {
+  // Precompute rotation values to ensure consistent values between server and client
+  const getRotation = (idx: number, isHov: boolean) => {
+    if (isHov) return 0;
+    // Use a fixed value based on index to avoid floating point inconsistencies
+    const rotations = [0, 1.5, -1.5, 2, -2, 1, -1];
+    
+    return rotations[idx % rotations.length];
+  };
+  
   return (
     <div
       className="group relative mx-2 h-80 w-64 shrink-0 cursor-pointer md:mx-4 md:h-96 md:w-80"
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
       style={{
-        transform: `perspective(1000px) rotateY(${isHovered ? 0 : Math.sin(index * 0.5) * 3}deg)`,
+        transform: `perspective(1000px) rotateY(${getRotation(index, isHovered)}deg)`,
         transition: 'all 0.6s cubic-bezier(0.23, 1, 0.320, 1)',
       }}
     >
