@@ -14,24 +14,24 @@ const GridContent: React.FC = () => {
       {/* Row 1 - Header */}
       <div className="flex w-full items-center justify-center gap-2 overflow-hidden text-2xl font-bold tracking-wider sm:gap-4 sm:text-5xl md:text-4xl lg:text-3xl xl:text-4xl">
         {/* Desktop: Constrain header width to be narrower than grid */}
-        <div className="flex items-center justify-center gap-2 sm:gap-4 lg:max-w-2xl xl:max-w-3xl">
+        <div className="flex items-center justify-center lg:max-w-2xl xl:max-w-3xl">
           {/* STUDENT Group */}
           <div className="flex shrink-0">
             <div className={`${BlackMangoBold.className} bg-green-600 px-2 py-1 text-white lg:px-3 lg:py-2`}>
-              STUD
+              STUDENT
             </div>
-            <div className={`${BlackMangoBold.className} bg-white px-2 py-1 text-black lg:px-3 lg:py-2`}>
+            {/* <div className={`${BlackMangoBold.className} bg-white px-2 py-1 text-black lg:px-3 lg:py-2`}>
               ENT
-            </div>
+            </div> */}
           </div>
           {/* FOUNDERS Group */}
           <div className="flex shrink-0">
             <div className={`${BlackMangoBold.className} bg-white px-2 py-1 text-black lg:px-3 lg:py-2`}>
-              FOUND
+              FOUNDERS
             </div>
-            <div className={`${BlackMangoBold.className} bg-green-600 px-2 py-1 text-white lg:px-3 lg:py-2`}>
+            {/* <div className={`${BlackMangoBold.className} bg-green-600 px-2 py-1 text-white lg:px-3 lg:py-2`}>
               ERS
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
