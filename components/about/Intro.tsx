@@ -24,7 +24,7 @@ const AboutUS = () => {
             About Us
           </h1>
           <h2 className="xs:text-2xl mb-4 flex items-center gap-2 text-xl font-bold leading-tight text-gray-900 sm:mb-8 sm:text-3xl md:text-4xl lg:text-5xl">
-            Incubating India - for the World!
+            Incubating India - for the WORLD!
           </h2>
           <p className="xs:text-lg max-w-full text-base leading-relaxed text-gray-600 sm:max-w-4xl sm:text-lg md:text-xl">
             EdVenture Park is India’s First and Favourite Student Focused non-academic startup incubator. We work with idea stage student startups coming from tier 2 & 3 colleges of Telangana.          </p>
