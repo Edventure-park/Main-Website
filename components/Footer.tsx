@@ -1,7 +1,8 @@
 "use client";
 import Link from 'next/link';
 import React from 'react';
-import { FaInstagram, FaFacebookF, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaYoutube} from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 
 // import { AnimatedTooltip } from '../ui/animated-tooltip';
 import { AnimatedTooltip } from './ui/animated-tooltip';
@@ -101,8 +102,8 @@ export default function Footer() {
             <Link href="https://m.facebook.com/EdVenP" target="_blank" rel="noopener noreferrer">
               <FaFacebookF className="text-3xl transition hover:text-blue-600" />
             </Link>
-            <Link href="https://twitter.com/EdventurePark" target="_blank" rel="noopener noreferrer">
-              <FaTwitter className="text-3xl transition hover:text-sky-400" />
+            <Link href="https://x.com/EdventurePark" target="_blank" rel="noopener noreferrer">
+              <FaXTwitter className="text-3xl transition hover:text-sky-400" />
             </Link>
             <Link href="https://m.youtube.com/channel/UCJE19g3yFV5aKsf8n4pTz3Q/featured" target="_blank" rel="noopener noreferrer">
               <FaYoutube className="text-3xl transition hover:text-red-600" />
