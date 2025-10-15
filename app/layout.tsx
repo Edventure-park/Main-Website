@@ -1,6 +1,7 @@
 
 import "./globals.css";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -122,6 +123,8 @@ export default function RootLayout({
           forcedTheme="light"
         >
           <div className="max-w-full overflow-x-hidden">{children}</div>
+          <Toaster position="bottom-center" />
+
         </ThemeProvider>
       </body>
     </html>
