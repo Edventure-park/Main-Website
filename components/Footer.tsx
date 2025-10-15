@@ -1,10 +1,12 @@
 "use client";
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { FaInstagram, FaFacebookF, FaYoutube} from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
+import {FaXTwitter} from "react-icons/fa6";
 
-// import { AnimatedTooltip } from '../ui/animated-tooltip';
+import { createClient } from "@/lib/supabaseClient";
+
 import { AnimatedTooltip } from './ui/animated-tooltip';
 
 // Team members data for EdVenture Park
@@ -24,8 +26,41 @@ const teamMembers = [
 
 ];
 
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  async function subscribeEmail() {
+    // simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.");
+
+      return;
+    }
+
+    // insert into Supabase table "newsletter"
+    const { error } = await supabase.from("newsletter").insert([{ email }]);
+    //error handling :)
+    if (error) {
+      if (error.code === "23505"){
+        toast("You're already subscribed!");
+      }else {
+        toast.error("Error saving email. Try again later.");
+      }
+      toast.error("Error saving email: " + error.message);
+    } else {
+      toast.success("Subscribed successfully!");
+      setEmail("");
+    }
+  }
+  
   return (
+    
     <div className="relative z-10 border-t border-gray-300 bg-white px-8 py-12 font-[Poppins] text-base text-black sm:px-12 md:px-20 lg:px-32 xl:px-40">
 
       {/* Top Section: Address + Links + Newsletter */}
@@ -68,10 +103,14 @@ export default function Footer() {
           <div className="flex">
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email"
               className="w-full rounded-l-full border border-gray-300 px-4 py-3 text-base text-black focus:outline-none focus:ring-2 focus:ring-[#169D53]"
             />
-            <button className="rounded-r-full bg-[#169D53] px-6 py-3 text-base text-white transition hover:bg-green-600">
+            <button 
+            onClick={subscribeEmail}
+            className="rounded-r-full bg-[#169D53] px-6 py-3 text-base text-white transition hover:bg-green-600">
               Subscribe
             </button>
           </div>
