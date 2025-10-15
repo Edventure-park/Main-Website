@@ -48,7 +48,7 @@ export default function Footer() {
     //error handling :)
     if (error) {
       if (error.code === "23505"){
-        toast("You're already subscribed!");
+        toast("You're already subscribed! No need to subscribe again");
       }else {
         toast.error("Error saving email. Try again later.");
       }
