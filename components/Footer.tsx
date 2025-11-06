@@ -26,8 +26,14 @@ const teamMembers = [
 
 export default function Footer() {
   return (
-    <div className="relative z-10 border-t border-gray-300 bg-white px-8 py-12 font-[Poppins] text-base text-black sm:px-12 md:px-20 lg:px-32 xl:px-40">
-
+    // <div className="relative z-10 border-t border-gray-300 bg-white px-8 py-12 font-[Poppins] text-base text-black sm:px-12 md:px-20 lg:px-32 xl:px-40">
+    <div
+      className="relative z-10 border-t border-gray-200 
+      bg-gradient-to-br from-white via-[#f6f9f6] to-[#e8f5e9] 
+      px-8 py-12 font-[Poppins] text-base text-black 
+      shadow-[inset_0_1px_4px_rgba(0,0,0,0.04),0_4px_10px_rgba(0,0,0,0.03)]
+      sm:px-12 md:px-20 lg:px-32 xl:px-40"
+    >
       {/* Top Section: Address + Links + Newsletter */}
       <div className="mb-12 flex w-full flex-col items-start justify-between gap-10 md:flex-row">
 
@@ -55,6 +61,7 @@ export default function Footer() {
             <li><Link href="/about" className="transition-colors hover:text-[#169D53]">About Us</Link></li>
             <li><Link href="/programs/preincubation" className="transition-colors hover:text-[#169D53]">Programs</Link></li>
             <li><Link href="/portfolio" className="transition-colors hover:text-[#169D53]">Portfolio</Link></li>
+            <li><Link href="/Blogs" className="transition-colors hover:text-[#169D53]">Blogs</Link></li>
           </ul>
         </div>
         {/* Newsletter */}

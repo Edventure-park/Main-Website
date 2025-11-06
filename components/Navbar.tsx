@@ -116,6 +116,13 @@ function Navbar({ currentPage }: { currentPage: string }) {
               </Link>
             </li>
             <li
+              className={`text-lg transition-colors hover:text-[#169D53] ${currentPage === "Blogs" ? "font-bold text-[#169D53]" : "text-black"}`}
+            >
+              <Link href="/blogs" onClick={toggleMenu}>
+                Blogs
+              </Link>
+            </li>
+            <li
               className={`text-lg transition-colors hover:text-[#169D53] ${currentPage === "programs" ? "font-bold text-[#169D53]" : "text-black"}`}
             >
               <Link href="/programs/preincubation" onClick={toggleMenu}>
@@ -157,6 +164,11 @@ function Navbar({ currentPage }: { currentPage: string }) {
               className={`text-lg transition-colors hover:text-[#169D53] ${currentPage === "programs" ? "font-bold text-[#169D53]" : "text-black"}`}
             >
               <Link href="/programs/preincubation">Programs</Link>
+            </li>
+            <li
+              className={`text-lg transition-colors hover:text-[#169D53] ${currentPage === "Blogs" ? "font-bold text-[#169D53]" : "text-black"}`}
+            >
+              <Link href="/blogs">Blogs</Link>
             </li>
           </ul>
           <Link
