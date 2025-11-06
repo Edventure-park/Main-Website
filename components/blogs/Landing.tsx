@@ -1,204 +1,325 @@
-/* eslint-disable no-unused-vars */
 "use client";
 
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-
-import mockBlogs from "@/data/blogsData";
+import React, { useState, useEffect, useMemo } from "react";
+import { Search, X, Clock, TrendingUp, Calendar } from "lucide-react";
 
 // Types
-interface Weblog {
-  id: string;
-  name: string;
-  article: string;
-  industry: string[];
-  imageUrl: string;
+interface Blog {
+  blogId: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  category: string;
+  tags: string[];
+  authorName: string;
+  featuredImage: string;
+  featuredImageAltText: string;
+  estimatedReadTime: number;
+  publishedAt: string;
+  views: number;
+  isFeatured: boolean;
+}
+
+interface ApiResponse {
+  success: boolean;
+  message: string;
+  data: Blog[];
 }
 
 const Blogs: React.FC = () => {
-  // State
-  const [weblogs, setWeblogs] = useState<Weblog[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [initialQueryApplied, setInitialQueryApplied] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [isLoading, setIsLoading] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
-  const searchParams = useSearchParams();
+  const [error, setError] = useState<string | null>(null);
 
-  // Responsive behavior
+  // Fetch blogs from API
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Load blogs
-  useEffect(() => {
-    const loadData = async () => {
+    const fetchBlogs = async () => {
       setIsLoading(true);
+      setError(null);
       try {
-        setWeblogs(mockBlogs || []);
-      } catch (error) {
-        console.error("Error loading blogs:", error);
-        setWeblogs([]);
+        const response = await fetch(
+          "https://hono-backend-cms.edventure-park.workers.dev/blog/get-all"
+        );
+        if (!response.ok) throw new Error("Failed to fetch blogs");
+        const result: ApiResponse = await response.json();
+        if (result.success && result.data) {
+          console.log("response received as: ", response)
+          setBlogs(result.data);
+        } else {
+          throw new Error("Invalid API response");
+        }
+      } catch (err) {
+        console.error("Error fetching blogs:", err);
+        setError("Failed to load blogs. Please try again later.");
       } finally {
         setIsLoading(false);
       }
     };
-    loadData();
+    fetchBlogs();
   }, []);
 
-  // Load search query from URL
-  useEffect(() => {
-    if (!searchParams || initialQueryApplied) return;
-    const q = (searchParams.get("q") || "").trim();
-    if (q) setSearchTerm(q);
-    setInitialQueryApplied(true);
-  }, [searchParams, initialQueryApplied]);
+  // Extract unique categories
+  const categories = useMemo(() => {
+    const cats = new Set(blogs.map((blog) => blog.category));
 
-  // Filter blogs
-  const filteredBlogs = weblogs.filter(
-    (blog) =>
-      blog.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      blog.article.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    return ["all", ...Array.from(cats)];
+  }, [blogs]);
 
-  // ✅ Animation variants (typed properly)
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
+  // Filter blogs based on search and category
+  const filteredBlogs = useMemo(() => {
+    return blogs.filter((blog) => {
+      const matchesSearch =
+        blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.tags.some((tag) =>
+          tag.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      const matchesCategory =
+        selectedCategory === "all" || blog.category === selectedCategory;
+
+      return matchesSearch && matchesCategory;
+    });
+  }, [blogs, searchTerm, selectedCategory]);
+
+  // Sort: featured first, then by published date
+  const sortedBlogs = useMemo(() => {
+    return [...filteredBlogs].sort((a, b) => {
+      if (a.isFeatured && !b.isFeatured) return -1;
+      if (!a.isFeatured && b.isFeatured) return 1;
+
+      return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+    });
+  }, [filteredBlogs]);
+
+  // Get random 3-4 tags
+  const getRandomTags = (tags: string[]) => {
+    const count = Math.min(tags.length, Math.floor(Math.random() * 2) + 3);
+
+    return tags.slice(0, count);
   };
 
-  const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: "spring", stiffness: 100, damping: 12 },
-    },
+  // Format date
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
   };
 
   // Loading state
   if (isLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-white">
-        <div className="text-center">
-          <div className="mx-auto mb-4 size-16 animate-spin rounded-full border-4 border-gray-200 border-t-green-600" />
-          <p className="text-gray-600">Loading blogs...</p>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="container mx-auto px-4 py-12">
+          <div className="mb-8 h-12 w-64 animate-pulse rounded-lg bg-gray-200" />
+          <div className="mb-8 h-12 w-full animate-pulse rounded-xl bg-gray-200" />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div
+                key={i}
+                className="overflow-hidden rounded-2xl bg-white shadow-sm"
+              >
+                <div className="h-56 w-full animate-pulse bg-gray-200" />
+                <div className="space-y-3 p-6">
+                  <div className="h-4 w-3/4 animate-pulse rounded bg-gray-200" />
+                  <div className="h-4 w-full animate-pulse rounded bg-gray-200" />
+                  <div className="h-4 w-2/3 animate-pulse rounded bg-gray-200" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="mx-auto max-w-md px-4 text-center">
+          <div className="mb-4 text-6xl">⚠️</div>
+          <h2 className="mb-2 text-2xl font-bold text-gray-900">
+            Oops! Something went wrong
+          </h2>
+          <p className="mb-6 text-gray-600">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="rounded-lg bg-green-600 px-6 py-3 font-medium text-white transition-all hover:bg-green-700 hover:shadow-lg"
+          >
+            Try Again
+          </button>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-8">
-        {/* Title */}
-        <motion.h1
-          className="mb-8 text-center text-3xl font-bold md:text-4xl"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Blogs by EdVenturePark
-        </motion.h1>
-        {/* Search Input */}
-        <motion.div
-          className="mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="container mx-auto px-4 py-12">
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h1 className="mb-3 text-4xl font-bold text-gray-900 md:text-5xl lg:text-6xl">
+            Explore Our Blogs
+          </h1>
+          <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            Discover insights, tutorials, and stories from EdVenturePark
+          </p>
+        </div>
+        {/* Search and Filter */}
+        <div className="mb-10 space-y-4">
+          {/* Search Bar */}
           <div className="relative">
+            <Search className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
-              placeholder="Search blogs..."
-              className="w-full rounded-lg border border-gray-300 p-3 pl-10 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="Search by title, content, or tags..."
+              className="w-full rounded-xl border-2 border-gray-200 bg-white py-4 pl-12 pr-24 text-gray-900 shadow-sm transition-all placeholder:text-gray-400 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm("")}
-                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md bg-gray-100 px-3 py-1 text-sm text-gray-600 hover:bg-gray-200"
+                className="absolute right-3 top-1/2 flex h-8 w-16 -translate-y-1/2 items-center justify-center rounded-lg bg-gray-100 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
               >
+                <X className="mr-1 size-4" />
                 Clear
               </button>
             )}
-            <div className="absolute left-3 top-1/2 -translate-y-1/2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-5 text-gray-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
           </div>
-        </motion.div>
-        {/* Blog Cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          <AnimatePresence>
-            {filteredBlogs.map((blog) => (
-              <motion.div
-                key={blog.id}
-                variants={itemVariants}
-                layout
-                className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+          {/* Category Filter */}
+          <div className="flex flex-wrap gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
+                  selectedCategory === cat
+                    ? "bg-green-600 text-white shadow-md"
+                    : "bg-white text-gray-700 hover:bg-gray-100"
+                }`}
               >
-                <div className="h-48 w-full overflow-hidden">
-                  <Image
-                    src={blog.imageUrl}
-                    alt={blog.name}
-                    width={600}
-                    height={300}
-                    className="size-full object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
-                {/* Blog Info */}
-                <div className="flex grow flex-col p-4">
-                  <h3 className="mb-1 text-lg font-semibold text-gray-900">
-                    {blog.name}
-                  </h3>
-                  <p className="mb-3 text-sm text-gray-500 line-clamp-3">
-                    {blog.article}
-                  </p>
-                  <div className="mt-auto flex flex-wrap gap-1.5">
-                    {blog.industry.map((ind) => (
-                      <span
-                        key={`${blog.id}-${ind}`}
-                        className="rounded-full bg-green-50 px-2 py-0.5 text-xs text-green-700"
-                      >
-                        {ind}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
+                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              </button>
             ))}
-          </AnimatePresence>
-        </motion.div>
-        {/* Empty State */}
-        {filteredBlogs.length === 0 && (
-          <p className="mt-10 text-center text-gray-500">No blogs found.</p>
+          </div>
+        </div>
+        {/* Results Count */}
+        <div className="mb-6 text-sm text-gray-600">
+          Showing <span className="font-semibold">{sortedBlogs.length}</span> of{" "}
+          <span className="font-semibold">{blogs.length}</span> articles
+        </div>
+        {/* Blog Grid */}
+        {sortedBlogs.length > 0 ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {sortedBlogs.map((blog) => {
+              const displayTags = getRandomTags(blog.tags);
+
+              return (
+                <article
+                  key={blog.blogId}
+                  className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  {/* Featured Badge */}
+                  {blog.isFeatured && (
+                    <div className="absolute left-4 top-4 z-10 flex items-center gap-1 rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold text-yellow-900 shadow-md">
+                      <TrendingUp className="size-3" />
+                      Featured
+                    </div>
+                  )}
+                  {/* Image */}
+                  <div className="relative h-56 w-full overflow-hidden bg-gray-200">
+                    <img
+                      src={blog.featuredImage}
+                      alt={blog.featuredImageAltText || blog.title}
+                      className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        e.currentTarget.src =
+                          "https://via.placeholder.com/600x400?text=No+Image";
+                      }}
+                    />
+                  </div>
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col p-6">
+                    {/* Meta Info */}
+                    <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-gray-500">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="size-3.5" />
+                        {formatDate(blog.publishedAt)}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="size-3.5" />
+                        {blog.estimatedReadTime} min read
+                      </span>
+                    </div>
+                    {/* Category */}
+                    <div className="mb-2">
+                      <span className="inline-block rounded-md bg-green-50 px-2.5 py-1 text-xs font-semibold text-green-700">
+                        {blog.category}
+                      </span>
+                    </div>
+                    {/* Title */}
+                    <h2 className="mb-3 line-clamp-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-green-600">
+                      {blog.title}
+                    </h2>
+                    {/* Excerpt */}
+                    <p className="mb-4 line-clamp-3 flex-1 text-sm leading-relaxed text-gray-600">
+                      {blog.excerpt}
+                    </p>
+                    {/* Tags */}
+                    <div className="mb-4 flex flex-wrap gap-1.5">
+                      {displayTags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-700"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                    {/* Author & Read More */}
+                    <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+                      <span className="text-sm text-gray-600">
+                        By <span className="font-medium">{blog.authorName}</span>
+                      </span>
+                      <a
+                        href={`/blog/${blog.slug}`}
+                        className="inline-flex items-center gap-1 rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:gap-2 hover:bg-green-700"
+                      >
+                        Read More
+                        <span className="transition-transform">→</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="py-20 text-center">
+            <div className="mb-4 text-6xl">🔍</div>
+            <h3 className="mb-2 text-2xl font-bold text-gray-900">
+              No blogs found
+            </h3>
+            <p className="mb-6 text-gray-600">
+              Try adjusting your search or filters
+            </p>
+            <button
+              onClick={() => {
+                setSearchTerm("");
+                setSelectedCategory("all");
+              }}
+              className="rounded-lg bg-green-600 px-6 py-3 font-medium text-white transition-all hover:bg-green-700"
+            >
+              Clear Filters
+            </button>
+          </div>
         )}
       </div>
     </div>
