@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 "use client";
+
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 import mockBlogs from "@/data/blogsData";
 
@@ -31,7 +32,7 @@ const Blogs: React.FC = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
     
-return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Load blogs
@@ -65,13 +66,16 @@ return () => window.removeEventListener("resize", handleResize);
       blog.article.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Animation variants
-  const containerVariants = {
+  // ✅ Animation variants (typed properly)
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -95,6 +99,7 @@ return () => window.removeEventListener("resize", handleResize);
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8">
+        {/* Title */}
         <motion.h1
           className="mb-8 text-center text-3xl font-bold md:text-4xl"
           initial={{ opacity: 0, y: -20 }}
@@ -156,6 +161,7 @@ return () => window.removeEventListener("resize", handleResize);
               <motion.div
                 key={blog.id}
                 variants={itemVariants}
+                layout
                 className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
               >
                 <div className="h-48 w-full overflow-hidden">
@@ -172,32 +178,25 @@ return () => window.removeEventListener("resize", handleResize);
                   <h3 className="mb-1 text-lg font-semibold text-gray-900">
                     {blog.name}
                   </h3>
-                  <p className="mb-2 text-sm text-gray-500">{blog.article}</p>
+                  <p className="mb-3 text-sm text-gray-500 line-clamp-3">
+                    {blog.article}
+                  </p>
                   <div className="mt-auto flex flex-wrap gap-1.5">
                     {blog.industry.map((ind) => (
                       <span
                         key={`${blog.id}-${ind}`}
-                        className="rounded-full bg-blue-50 px-2 py-0.5 text-xs text-blue-700"
+                        className="rounded-full bg-green-50 px-2 py-0.5 text-xs text-green-700"
                       >
                         {ind}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div className="mt-auto flex flex-wrap gap-1.5">
-                  {blog.industry.map((ind) => (
-                    <span
-                      key={`${blog.id}-${ind}`}
-                      className="rounded-full bg-blue-50 px-2 py-0.5 text-xs text-blue-700"
-                    >
-                      {ind}
-                    </span>
-                  ))}
-                </div>
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
+        {/* Empty State */}
         {filteredBlogs.length === 0 && (
           <p className="mt-10 text-center text-gray-500">No blogs found.</p>
         )}
